@@ -1,5 +1,5 @@
 # Girls_group
-Amanda
-Isabela Silva
-Emanuele
+Amanda,
+Isabela Silva,
+Emanuele,
 Kamilla
