@@ -1,9 +1,11 @@
 <?php
-//Endereço, email, telefone, responsável
+//email, senha, telefone
 class Raca extends CRUD{
-    protected $table = "raca";
     private $id;
     private $nome;
+    private $telefone;
+    private $email;
+    private $senha;
 
     public function setId($id){
         $this->id = $id;
@@ -11,12 +13,31 @@ class Raca extends CRUD{
     public function setNome($nome){
         $this->nome = $nome;
     }
+    public function setTel($telefone){
+        $this->telefone = $telefone;
+    }
+    public function setEmail($email){
+        $this->email = $email;
+    }
+    public function setSenha($senha){
+        $this->senha = $senha;
+    }
     public function getId($id){
         $this->id = $id;
     }
     public function getNome($nome){
         $this->nome = $nome;
     }
+    public function getTel($telefone){
+        $this->telefone = $telefone;
+    }
+    public function getEmail($email){
+        $this->email = $email;
+    }
+    public function getSenha($senha){
+        $this->senha = $senha;
+    }
+
     public function add(){
         $sql = "INSERT INTO {$this->table} (nome) VALUES (:nome)";
         $stmt = $this->db->prepare($sql);
