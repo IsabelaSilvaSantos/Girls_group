@@ -6,25 +6,25 @@
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #9e9898;
+    color: #443e3e;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #6e6e77;
+    color: rgb(224, 219, 219);
     text-align: center;
     padding: 20px;
 }
 
 nav {
-    background-color: #2e7d32;
+    background-color: #35323b;
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: rgb(209, 202, 202);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -45,12 +45,12 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 500px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: rgb(214, 230, 217);
+    color: rgb(70, 71, 77);
     font-size: 24px;
     font-weight: bold;
 }

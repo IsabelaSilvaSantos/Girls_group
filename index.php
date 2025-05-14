@@ -5,71 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/layout.css">
-    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon"> <!-- Nao Sei se fica -->
-    <title> titulo da empresa </title>
+    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+    <title>Nome da empresa - frase curta</title>
 </head>
 
 <body>
 
-    <!-- Nosso cabeçalho  -->
+    
     <header>
-        <h1>titulo da empresa</h1>
-        <p> frase explicativa e curta sobre a empresa</p>
+        <h1>Nome da Empresa</h1>
+        <p> Frase curta e explicativa sobre a empresa</p>
     </header>
 
-    <!-- menu de navegação -->
     <nav>
         <a href="#sobre">Sobre</a>
-        <a href="#servicos">Atividades</a>
+        <a href="#servicos">Produtos</a>
         <a href="#estrutura">Nossa Estrutura</a>
         <a href="#contato">Contato</a>
-    </nav> <!-- Nao Sei pra que serve ja que eles nao sao variaveis --> 
+    </nav>
 
     <main>
         <div class="dest">
-            frase que ficara no centro e em cima.
+            Frase central que ficara em cima
         </div>
 
         <section id="sobre">
-            <div class="container"> <!-- Tem que ligar -->
-                <img src="images/gado2.png" alt="Sobre a propriedade"> <!-- Nao sei se fica -->
+            <div class="container">
+                <img src="images/propietarios.png" alt="Sobre a propriedade">
                 <div class="texto">
                     <h2>Sobre Nós</h2>
-                    <p>fale sobre a empresa: o que ela faz, como faz, sua historia...</p>
+                    <p>Fale sobre a empresa, seus principios, sua historia...</p>
                 </div>
             </div>
         </section>
 
-        <section id="atividade">
-            <div class="container"></div> <!-- Tem que ligar -->
-                <img src="images/atividades3.png" alt="Atividades da fazenda"> <!-- Nao sei se fica -->
+        <section id="produtos">
+            <div class="container"></div>
+                <img src="images/produtos.png" alt="Produtos">
                 <div class="texto"></div>
-                    <h2>Atividades</h2>
+                    <h2>Produtos</h2>
                     <ul>
-                        <li>Atividades</li>
-                        <li>atividades</li>
-                        <li>atividades</li>
-                        <li>atividaes</li>
+                        <li>Produtos</li>
+                        <li>Produto</li>
+                        <li>Produto</li>
+                        <li>Produto</li>
                     </ul>
                 </div>
             </div>
         </section>
         <section id="estrutura">
             <div class="container">
-                <img src="images/imagem4.png" alt="Estrutura da fazenda ">
+                <img src="images/imagem4.png" alt="Estrutura da empresa ">
                 <div class="texto">
                     <h2>Nossa estrutura</h2>
-                    <p>Contamos com pastagens de qualidade, curral moderno, áreas de confinamento e gestão eficiente do
-                        rebanho
-                    </p>
+                    <p>Fale onde a empresa opera e sua estrutura para a produção </p>
                 </div>
             </div>
         </section>
         <section id="contato">
             <div class="container">
+                <img src="images/conts.png" alt="contatos ">
                 <div class="texto">
                     <h2>Contato</h2>
-                    <p>Email: contato@empresa.com</p>
+                    <p>Email: contato@fazendaboigordo.com</p>
                     <p>Telefone: (99) 9999-9999</p>
                 </div>
             </div>
@@ -79,7 +77,7 @@
 
     </main>
     <footer>
-        <p>&copy;rodape com data de publicaçao, e falando sobre os direitos</p>
+        <p>&copy;2025 Nome da empresa- Todos os direitos reservados</p>
     </footer>
 </body>
 
