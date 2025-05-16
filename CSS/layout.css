@@ -6,25 +6,27 @@
 }
 
 body {
-    background-color: #9e9898;
-    color: #443e3e;
+    background-color: #e2dada;
+    color: #3f3939;
+    background-image: url('../images/fundo.png');
+    
 }
 
 header {
-    background-color: #6e6e77;
-    color: rgb(224, 219, 219);
+    background-color: #3b3b3f;
+    color: rgb(221, 208, 208);
     text-align: center;
     padding: 20px;
 }
 
 nav {
-    background-color: #35323b;
+    background-color: #434347;
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: rgb(209, 202, 202);
+    color: rgb(199, 191, 191);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -35,14 +37,12 @@ main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgb(224, 221, 221);
+    border-radius: 50px;
+    box-shadow: 0 0 50px rgba(43, 42, 42);
 }
 
 .dest {
-    background-image: url('../images/fazenda.png');
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 200px;
@@ -50,8 +50,8 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: rgb(70, 71, 77);
-    font-size: 24px;
+    color: rgb(76, 76, 78);
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -60,7 +60,7 @@ main {
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto ;
 }
 
 .container img {
@@ -71,10 +71,7 @@ main {
 }
 
 .texto {
-    width: 50%;
-    padding: 20px;
+    width: 500%;
+    padding: 30px;
 }
 
-section:nth-child(even) .texto {
-    order: -1;/*Move o texto para antes da imagem*/
-}
