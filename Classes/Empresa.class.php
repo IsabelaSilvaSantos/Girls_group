@@ -9,7 +9,7 @@ class Empresa extends CRUD{
     private $email; 
     private $telefone;
     private $nomeFantasia;
-    private $rasaoSocial;
+    private $razaoSocial;
     private $cnpj;
 
     public function setNome($nome) {
@@ -27,8 +27,8 @@ public function setTelefone($telefone){
 public function setNomeFantasia($nomeFantasia){
     $this->nomeFantasia = $nomeFantasia;
 }
-public function setRasaoSocial($rasaoSocial){
-    $this->rasaoSocial = $rasaoSocial;
+public function setRazaoSocial($razaoSocial){
+    $this->razaoSocial = $razaoSocial;
 }
 public function setCnpj($cnpj){
     $this->cnpj = $cnpj;
@@ -45,8 +45,8 @@ public function getEmail($email) {
 public function getTelefone($telefone) {
     $this->telefone = $telefone;
 }
-public function getRasaoSocial($rasaoSocial) {
-    $this->rasaoSocial = $rasaoSocial;
+public function getRazaoSocial($razaoSocial) {
+    $this->razaoSocial = $razaoSocial;
 }
 public function getNomeFantasia($nomeFantasia) {
     $this->nomeFantasia = $nomeFantasia;
@@ -57,9 +57,15 @@ public function getCnpj($cnpj) {
 
 
 public function add(){
-    $sql = "INSERT INTO $this->table (nome) VALUES (:nome)";
+    $sql = "INSERT INTO $this->table (nome, endereco, email, telefone, nomeFantasia, razaoSocial, cnpj) VALUES (:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj)";
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+    $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
+    $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
+    $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
+    $stmt->bindParam(":nomeFantasia", $this->nomeFantasia, PDO::PARAM_STR);
+    $stmt->bindParam(":razaoSocial", $this->razaoSocial, PDO::PARAM_STR);
+    $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
     return $stmt->execute();
 }
 public function update(string $campo, int $id){

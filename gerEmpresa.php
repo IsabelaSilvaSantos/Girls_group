@@ -5,46 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/baseAdmin.css">
-    <title>Document</title>
-    
+    <title>Cadastro da Empresa</title>
+    </head>
+    <body>
     <main class="container">
+    
+    <h3>Cadastro da Empresa</h3>
+
         <form action="dbEmpresa.php" method="post" class="row g3 mt-3">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome da empresa" required
                     class="form-control">
                   </div>
 
-            <div> 
-                <div class="col-md-3">
+                <div class="col-md-3 mt-3">
                     <label for="telefone">Telefone</label>
                     <input type="text" telefone="telefone" id="telefone" placeholder="Digite o telefone da empresa"required
                     class="form-control">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6 mt-3">
                     <label for="email">Email</label>
                     <input type="text" email="email" id="email" placeholder="Digite o email da empresa"required
                     class="form-control">
                </div>
-               <div class="col-md-3">
+               <div class="col-md-3 mt-3">
                     <label for="nomeFantasia">Nome Fantasia</label>
                     <input type="text" nomeFantasia="nomeFantasia" id="nomeFantasia" placeholder="Digite o nome fantasia da empresa"required
                     class="form-control">
                    </div>
                    
-                   <div> 
-                   <div class="col-md-3">
+                   
+                   <div class="col-md-6 mt-3">
                     <label for="endereco">Endereço</label>
                     <input type="text" endereco="endereco" id="endereco" placeholder="Digite o endereço da empresa"required
                     class="form-control">
                    </div>
-
+                   
+                   <div class="col-md-3  mt-3">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" cnpj="cnpj" id="cnpj" placeholder="Digite o CNPJ da empresa"required
+                    class="form-control">
                    </div>
+
+                   <div class="col-md-6 mt-3">
+                    <label for="rasaoSocial">Razão Social</label>
+                    <input type="text" endereco="razaoSocial" id="razaoSocial" placeholder="Digite a razão social da empresa"required
+                    class="form-control">
+                   </div>
+                     <div class= "cool-12 mt-3"> 
+                        <button type="button" class="btn btn-dark">Cadastrar</button>
+
                </div>
         </form>
-        
-</head>
-<body>
+        </main>
+
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
