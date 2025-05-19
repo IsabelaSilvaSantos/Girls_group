@@ -69,10 +69,15 @@ public function add(){
     return $stmt->execute();
 }
 public function update(string $campo, int $id){
-    $sql = "UPDATE $this->table SET nome=:nome WHERE $campo=:id";
+    $sql = "UPDATE $this->table SET nome=:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj WHERE $campo=:id";
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":endereco", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":email", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":telefone", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":nomeFantasia", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":razaoSocial", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":cnpj", $id, PDO::PARAM_INT);
     return $stmt->execute();
 }
 }
