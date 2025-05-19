@@ -14,6 +14,9 @@ if (filter_has_var(INPUT_POST,'button')){
     $Empresa->setnomeFantasia(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
     $Empresa->setrazaoSocial(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
     $Empresa->setcnpj(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
+    $Empresa->setprincipalAtividade(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
+    $Empresa->sethitoria(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
+    $Empresa->setapresentacao(filter_input(INPUT_POST, "Empresa", FILTER_SANITIZE_STRING));
 
     //Tenta adicionar e exibe a mensagem aousuário 
     if($Empresa->add()){

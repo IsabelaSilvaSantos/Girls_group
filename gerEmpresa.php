@@ -53,6 +53,25 @@
                     <input type="text" endereco="razaoSocial" id="razaoSocial" placeholder="Digite a razão social da empresa"required
                     class="form-control">
                    </div>
+
+                   <div class="col-md-3 mt-3">
+                    <label for="principalAtividade">Principal Atividade</label>
+                    <input type="text" endereco="principalAtividade" id="principalAtividade" placeholder="Digite a principal atividade da empresa"required
+                    class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+                    <label for="hitoria">História da Empresa</label>
+                    <input type="text" endereco="hitoria" id="hitoria" placeholder="Digite a hitoria da empresa"required
+                    class="form-control">
+                    </div>
+                    
+                    <div class="col-md-3 mt-3">
+                    <label for="apresentacao">Apresentação da Empresa</label>
+                    <input type="text" endereco="apresentacao" id="apresentacao" placeholder="Digite a apresentação da empresa"required
+                    class="form-control">
+                    </div>
+                    
                      <div class= "cool-12 mt-3"> 
                         <button type="button" class="btn btn-dark">Cadastrar</button>
 
