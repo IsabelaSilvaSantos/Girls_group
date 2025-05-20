@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="cool-12 mt-3">
-                            <button type="button" class="btn btn-dark">Cadastrar</button>
+                            <button type="submit" class="btn btn-dark">Cadastrar</button>
                             </div>
                             
                      
