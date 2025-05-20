@@ -6,14 +6,14 @@ if(filter_has_var(INPUT_POST, 'btnGravar')){
    });
    //Criando uma instância da classe Cliente
     $Cliente = new Cliente();
-    $Cliente->setNome(filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING));
-    $Cliente->setTelefone(filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING));
-    $Cliente->setEmail(filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING));
-    $Cliente->setSenha(filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING));
+    $Cliente->setNome(filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING));
+    $Cliente->setTel(filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING));
+    $Cliente->setEmail(filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING));
+    $Cliente->setSenha(filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING));
 
     //Tentar adicionar exibir mensagem ao usuário
     if($Cliente->add()){
-        echo "<script>window.alert('Cliente inserido com sucesso!');window.location.href=racas.php;</script>";
+        echo "<script>window.alert('Cliente inserido com sucesso!');window.location.href=clientes.php;</script>";
     }else{
         echo "<script>window.alert('Erro ao inserir Cliente!');window.open(document.referrer,'_self');</script>";
     }

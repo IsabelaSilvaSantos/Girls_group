@@ -10,25 +10,26 @@
 <body>
     <main class="container">
     <h3>Cadastro de Cliente</h3>
+
 <form action="dbCliente.php" method="post" class="row g3 mt-3">
     <div class="col-md-6 mt-3">
         <label for="nome">Nome</label>
-        <input type="text" telefone="telefone" id="teleone" placeholder="First name" required>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control">
 </div>
 <div class="col-md-5 mt-3">
     <label for="telefone">Telefone</label>
-    <input type="text" telefone="form-control" id="First name" placeholder="First name" required>
+    <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone" required class="form-control">
 </div>
 <div class="col-md-6 mt-3">
     <label for="email">E-mail</label>
-    <input type="text" telefone="form-control" id="First name" placeholder="First name" required>
+    <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required class="form-control">
 </div>
 <div class="col-md-3 mt-3">
     <label for="senha">Senha</label>
-    <input type="text" telefone="form-control" id="First name" placeholder="First name" required>
+    <input type="text" name="senha" id="senha" placeholder="Digite sua senha" required class="form-control">
 </div>
 <div class="col-12 mt-3">
-<button type="button" class="btn btn-dark">Enviar</button>
+<button type="submit" class="btn btn-dark" name="btnGravar" >Enviar</button>
 </div>
 </form>
 </main>

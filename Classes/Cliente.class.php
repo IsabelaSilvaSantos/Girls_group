@@ -1,7 +1,7 @@
 <?php
 //email, senha, telefone
 class Cliente extends CRUD{
-    protected $table = "Cliente";
+    protected $table = "Clientes";
     private $id;
     private $nome;
     private $telefone;
@@ -23,24 +23,24 @@ class Cliente extends CRUD{
     public function setSenha($senha){
         $this->senha = $senha;
     }
-    public function getId($id){
-        $this->id = $id;
+    public function getId(){
+        return $this-> id;
     }
-    public function getNome($nome){
-        $this->nome = $nome;
+    public function getNome(){
+        return $this->nome;
     }
-    public function getTel($telefone){
-        $this->telefone = $telefone;
+    public function getTel(){
+        return $this->telefone;
     }
-    public function getEmail($email){
-        $this->email = $email;
+    public function getEmail(){
+        return $this->email;
     }
-    public function getSenha($senha){
-        $this->senha = $senha;
+    public function getSenha(){
+        return $this->senha;
     }
 
     public function add(){
-        $sql = "INSERT INTO $this->table (nome, telefone, email, senha) VALUES (:nome, telefone, email, senha)";
+        $sql = "INSERT INTO $this->table (nome, telefone, email, senha) VALUES (:nome, :telefone, :email, :senha)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
@@ -49,7 +49,7 @@ class Cliente extends CRUD{
         return $stmt->execute();
     }
     public function update(string $campo, int $id){
-        $sql = "UPDATE $this->table SET nome = :nome, telefone, email, senha WHERE $campo = :id";
+        $sql = "UPDATE $this->table SET nome = :nome, :telefone, :email, :senha WHERE $campo = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(":telefone", $id, PDO::PARAM_INT);
