@@ -8,7 +8,7 @@ class Usuario extends CRUD{
     private $senha;
 
     
-    public function getnome(){
+    public function setnome(){
        return $this->nome;
     }
     
@@ -20,19 +20,23 @@ class Usuario extends CRUD{
        return $this->papel;
     }
     
-    public function getsenha(){
+    public function setsenha(){
         return $this->senha;
     }
 
 
     public function add() {  
-        $sql = "INSERT INTO $this->table(nome, email, senha) VALUES (:nome, email, senha)";
+        $sql = "INSERT INTO $this->table(nome, email, papel, senha) VALUES (:nome, :email, :papel, :senha)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam("ome", $this->nome, $this->nome);
-        $stmt->bindParam("email", $this->email);
-        $stmt->bindParam("papel", $this->papel);
-        $stmt->bindParam("senha", $this->senha);
+        $stmt->bindParam(":nome", $this->nome);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":papel", $this->papel);
+        $stmt->bindParam(":senha", $this->senha);
         return $stmt->execute();
+    }
+
+    public function update(string $campo, int $id){
+
     }
 
 }
