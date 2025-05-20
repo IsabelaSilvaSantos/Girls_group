@@ -45,35 +45,35 @@ public function setapresentacao($apresentacao){
 public function setprincipalAtividade($principalAtividade){
     $this->principalAtividade = $principalAtividade;
 }
-public function getNome($nome) {
-    $this->nome = $nome;
+public function getNome() {
+    return $this-> id;
 }
-public function getEndereco($endereco) {
-    $this->endereco = $endereco;
+public function getEndereco() {
+    return $this-> id;
 }
-public function getEmail($email) {
-    $this->email = $email;
+public function getEmail() {
+    return $this-> id;
 }
-public function getTelefone($telefone) {
-    $this->telefone = $telefone;
+public function gettelefone() {
+    return $this-> id;
 }
-public function getRazaoSocial($razaoSocial) {
-    $this->razaoSocial = $razaoSocial;
+public function getRazaoSocial() {
+    return $this-> id;
 }
-public function getNomeFantasia($nomeFantasia) {
-    $this->nomeFantasia = $nomeFantasia;
+public function getNomeFantasia() {
+    return $this-> id;
 }
-public function getCnpj($cnpj) {
-    $this->cnpj = $cnpj;
+public function getCnpj() {
+    return $this-> id;
 }
-public function getprincipalAtividade($principalAtividade) {
-    $this->principalAtividade = $principalAtividade;
+public function getprincipalAtividade() {
+    return $this-> id;
 }
 public function gethitoria($hitoria) {
-    $this->hitoria = $hitoria;
+    return $this-> id;
 }
 public function getapresentacao($apresentacao) {
-    $this->apresentacao = $apresentacao;
+    return $this-> id;
 }
 
 

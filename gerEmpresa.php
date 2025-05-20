@@ -21,59 +21,59 @@
 
                 <div class="col-md-3 mt-3">
                     <label for="telefone">Telefone</label>
-                    <input type="text" telefone="telefone" id="telefone" placeholder="Digite o telefone da empresa"required
+                    <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone da empresa"required
                     class="form-control">
             </div>
             <div class="col-md-6 mt-3">
                     <label for="email">Email</label>
-                    <input type="text" email="email" id="email" placeholder="Digite o email da empresa"required
+                    <input type="text" name="email" id="email" placeholder="Digite o email da empresa"required
                     class="form-control">
                </div>
                <div class="col-md-3 mt-3">
                     <label for="nomeFantasia">Nome Fantasia</label>
-                    <input type="text" nomeFantasia="nomeFantasia" id="nomeFantasia" placeholder="Digite o nome fantasia da empresa"required
+                    <input type="text" name="nomeFantasia" id="nomeFantasia" placeholder="Digite o nome fantasia da empresa"required
                     class="form-control">
                    </div>
                    
                    
                    <div class="col-md-6 mt-3">
                     <label for="endereco">Endereço</label>
-                    <input type="text" endereco="endereco" id="endereco" placeholder="Digite o endereço da empresa"required
+                    <input type="text" name="endereco" id="endereco" placeholder="Digite o endereço da empresa"required
                     class="form-control">
                    </div>
                    
                    <div class="col-md-3  mt-3">
                     <label for="cnpj">CNPJ</label>
-                    <input type="text" cnpj="cnpj" id="cnpj" placeholder="Digite o CNPJ da empresa"required
+                    <input type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ da empresa"required
                     class="form-control">
                    </div>
 
                    <div class="col-md-6 mt-3">
                     <label for="rasaoSocial">Razão Social</label>
-                    <input type="text" endereco="razaoSocial" id="razaoSocial" placeholder="Digite a razão social da empresa"required
+                    <input type="text" name="razaoSocial" id="razaoSocial" placeholder="Digite a razão social da empresa"required
                     class="form-control">
                    </div>
 
                    <div class="col-md-3 mt-3">
                     <label for="principalAtividade">Principal Atividade</label>
-                    <input type="text" endereco="principalAtividade" id="principalAtividade" placeholder="Digite a principal atividade da empresa"required
+                    <input type="text" name="principalAtividade" id="principalAtividade" placeholder="Digite a principal atividade da empresa"required
                     class="form-control">
                     </div>
 
                     <div class="col-md-6 mt-3">
                     <label for="hitoria">História da Empresa</label>
-                    <input type="text" endereco="hitoria" id="hitoria" placeholder="Digite a hitoria da empresa"required
+                    <input type="text" name="hitoria" id="hitoria" placeholder="Digite a hitoria da empresa"required
                     class="form-control">
                     </div>
                     
                     <div class="col-md-3 mt-3">
                     <label for="apresentacao">Apresentação da Empresa</label>
-                    <input type="text" endereco="apresentacao" id="apresentacao" placeholder="Digite a apresentação da empresa"required
+                    <input type="text" name="apresentacao" id="apresentacao" placeholder="Digite a apresentação da empresa"required
                     class="form-control">
                     </div>
                     
                      <div class= "cool-12 mt-3"> 
-                        <button type="button" class="btn btn-dark">Cadastrar</button>
+                        <button type="submit" class="btn btn-dark" name="button" >Cadastrar</button>
 
                </div>
         </form>

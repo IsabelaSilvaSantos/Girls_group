@@ -6,16 +6,16 @@ private $connection;
 
 private function __construct(){
     try{
-        $confing = parse_ini_file(__DIR__.'/../config.ini',true)['database'];
+        $config = parse_ini_file(__DIR__.'/../config.ini',true)['database'];
         $dsn='';
-        if($confing['driver']==='mysql'){
-            $dsn= "mysql:host={$confing['host']};port={$confing['port']};dbname={$confing['dbname']};charset=utf8";
-        }elseif($confing['driver']==='pgsql'){ 
-            $dsn= "pgsql:host={$confing['host']};port={$confing['port']};dbname={$confing['dbname']}";
+        if($config['driver']==='mysql'){
+            $dsn= "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset=utf8";
+        }elseif($config['driver']==='pgsql'){ 
+            $dsn= "pgsql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
         }else{
-            throw new exception("Driver de banco de dado não suportado.".$confing['driver']);
+            throw new exception("Driver de banco de dado não suportado.".$config['driver']);
         }
-        $this->connection = new PDO($dsn, $confing['username'], $confing['password']);
+        $this->connection = new PDO($dsn, $config['username'], $config['password']);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
         error_log(' Erro de conexão'.$e->getMessage());
