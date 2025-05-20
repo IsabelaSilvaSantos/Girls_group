@@ -9,7 +9,6 @@ body {
     background-color: #e2dada;
     color: #3f3939;
     background-image: url('../images/fundo.png');
-    
 }
 
 header {
@@ -74,4 +73,22 @@ main {
     width: 500%;
     padding: 30px;
 }
+
+#carouselExampleFade {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+
+
+
+
 
