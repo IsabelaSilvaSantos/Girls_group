@@ -1,27 +1,40 @@
 <?php
 
 class Usuario extends CRUD{
-    protected $table = "cadastro_usario";
+    protected $table = "cadastro_usuario";
     private $nome;
     private $email;
     private $papel;
     private $senha;
 
     
-    public function setnome(){
+    public function getnome(){
        return $this->nome;
     }
+    public function setnome($nome){
+        $this->nome = $nome;
+    }
     
-    public function setemail(){
+    public function getemail(){
        return $this->email;
     }
-    
-    public function setpapel(){
-       return $this->papel;
+    public function setemail($email){
+        $this->email = $email;
     }
     
-    public function setsenha(){
+    public function getpapel(){
+       return $this->papel;
+    }
+    public function setpapwl($papel){
+        $this->papel = $papel;
+    }
+    
+    
+    public function getsenha(){
         return $this->senha;
+    }
+    public function setsenha($senha){
+        $this->senha = $senha;
     }
 
 
