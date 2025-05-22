@@ -46,34 +46,34 @@ public function setprincipalAtividade($principalAtividade){
     $this->principalAtividade = $principalAtividade;
 }
 public function getNome() {
-    return $this-> id;
+    return $this->nome;
 }
 public function getEndereco() {
-    return $this-> id;
+    return $this-> endereco;
 }
 public function getEmail() {
-    return $this-> id;
+    return $this-> email;
 }
 public function gettelefone() {
-    return $this-> id;
+    return $this-> telefone;
 }
 public function getRazaoSocial() {
-    return $this-> id;
+    return $this-> razaoSocial;
 }
 public function getNomeFantasia() {
-    return $this-> id;
+    return $this-> nomeFantasia;
 }
 public function getCnpj() {
-    return $this-> id;
+    return $this-> cnpj;
 }
 public function getprincipalAtividade() {
-    return $this-> id;
+    return $this-> principalAtividade;
 }
 public function gethitoria($hitoria) {
-    return $this-> id;
+    return $this-> hitoria;
 }
 public function getapresentacao($apresentacao) {
-    return $this-> id;
+    return $this-> apresentacao;
 }
 
 
