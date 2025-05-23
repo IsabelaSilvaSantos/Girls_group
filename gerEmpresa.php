@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/baseAdmin.css">
+    <link rel="stylesheet" href="CSS/layoutkami.css">
     <title>Cadastro da Empresa</title>
     </head>
     <body>
@@ -19,7 +19,7 @@
                     class="form-control">
                   </div>
 
-                <div class="col-md-3 mt-3">
+                <div class="col-md-6 mt-3">
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone da empresa"required
                     class="form-control">
@@ -29,7 +29,7 @@
                     <input type="text" name="email" id="email" placeholder="Digite o email da empresa"required
                     class="form-control">
                </div>
-               <div class="col-md-3 mt-3">
+               <div class="col-md-6 mt-3">
                     <label for="nomeFantasia">Nome Fantasia</label>
                     <input type="text" name="nomeFantasia" id="nomeFantasia" placeholder="Digite o nome fantasia da empresa"required
                     class="form-control">
@@ -42,7 +42,7 @@
                     class="form-control">
                    </div>
                    
-                   <div class="col-md-3  mt-3">
+                   <div class="col-md-6  mt-3">
                     <label for="cnpj">CNPJ</label>
                     <input type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ da empresa"required
                     class="form-control">
@@ -54,7 +54,7 @@
                     class="form-control">
                    </div>
 
-                   <div class="col-md-3 mt-3">
+                   <div class="col-md-6 mt-3">
                     <label for="principalAtividade">Principal Atividade</label>
                     <input type="text" name="principalAtividade" id="principalAtividade" placeholder="Digite a principal atividade da empresa"required
                     class="form-control">
@@ -66,7 +66,7 @@
                     class="form-control">
                     </div>
                     
-                    <div class="col-md-3 mt-3">
+                    <div class="col-md-6 mt-3">
                     <label for="apresentacao">Apresentação da Empresa</label>
                     <input type="text" name="apresentacao" id="apresentacao" placeholder="Digite a apresentação da empresa"required
                     class="form-control">
