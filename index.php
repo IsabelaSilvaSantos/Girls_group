@@ -27,11 +27,8 @@
     </nav>
 
     <main>
-        <div class="dest">
-            Frase central que ficara em cima
-        </div>
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/imagemum.png" class="d-block w-100" alt="imagem um">
@@ -54,6 +51,11 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <div class="dest">
+            Frase central 
+        </div>
+
         <section id="sobre">
             <div class="container">
                 <div class="texto">
