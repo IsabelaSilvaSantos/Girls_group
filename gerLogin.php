@@ -23,7 +23,7 @@
 
             <div class="mb-3 col-md-10">
                 <label for="inputSenha" class="form-label">Senha</label>
-                 <input type="text" name="Senha" id="Senha" placeholder="Digite a senha"required
+                 <input type="password" name="Senha" id="Senha" placeholder="Digite a senha"required
                     class="form-control">
             </div>
 

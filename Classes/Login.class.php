@@ -25,15 +25,16 @@ class Login extends CRUD{
         $sql = "INSERT INTO $this->table (usuario, senha) VALUES (:usuario, :senha)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":usuario", $this->usuario, PDO::PARAM_STR);
-        $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
+        $stmt->bindParam(":senha", $senhaComHash, PDO::PARAM_STR);
         return $stmt->execute();
 
     }
         public function update(string $campo, int $id){
-            $sql = "UPDATE $this->table SET nome=:usuario, :senha)  WHERE $campo=:usuario, :senha)";
+            $sql = "UPDATE $this->table SET usuario = :usuario, senha = :senha WHERE $campo = :id";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(":usuario", $id, PDO::PARAM_INT);
-            $stmt->bindParam(":senha", $id, PDO::PARAM_INT);
+            $stmt->bindParam(":usuario", $this->usuario, PDO::PARAM_STR);
+            $stmt->bindParam(":senha", $this->senha, PDO::PARAM_INT);
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             return $stmt->execute();
         }
         }
