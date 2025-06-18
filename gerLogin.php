@@ -16,8 +16,8 @@
 
         <form action="dbLogin.php" method="post">
             <div class="mb-3 col-md-10">
-                <label for="inputusuario" class="form-label">Usuário</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Digite o usuário"required
+                <label for="inputnome" class="form-label">Usuário</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o usuário"required
                     class="form-control">
             </div>
 

@@ -5,7 +5,7 @@ if(filter_has_var(INPUT_POST,"btnGravar")){
     });
     //Criando uma intância da classe Usuario
     $Login = new Login();
-    $Login->setusuario(filter_input(INPUT_POST, "usuario", FILTER_SANITIZE_STRING));
+    $Login->setnome(filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING));
     $Login->setsenha(filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING));
     
     //Tentar adicionar e exibe a mensagem ao usuário
