@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="CSS/layoutLogin.css">
     <title>Tela de Login</title>
 </head>
-
 <body>
 
     <main class="container mt-5">
         <h3>Login</h3>
 
-        <form action="dbLogin.php" method="post">
+        <form action="validarLogin.php" method="post">
             <div class="mb-3 col-md-10">
                 <label for="inputnome" class="form-label">Usuário</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o usuário"required
