@@ -58,7 +58,7 @@ class Usuario extends CRUD{
             return $stmt->execute();
     }
 public function buscarUsuario($usuario): mixed{
-$sql = "SELECT * FROM cadastro_usuario WHERE nome = :nome";
+$sql = "SELECT * FROM $this->table WHERE lower (nome) = lower (:nome)";
 $stmt = $this->db->prepare(query: $sql);
 $stmt->bindValue(param: ':nome', value: $usuario);
 $stmt->execute();
