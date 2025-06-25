@@ -57,4 +57,10 @@ class Produto extends CRUD{
         $stmt->bindParam(":unidadeMedida", $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+    public function findAll() {
+        $sql = "select * from $this->table";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
