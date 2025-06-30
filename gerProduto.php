@@ -10,10 +10,13 @@
 </head>
 
 <body>
-    <main class="container">
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+    <main class="container-fluid">
         <h3>Cadastro de Produtos</h3>
 
-        <form action="dbProduto.php" method="post" class="row g3 mt-3">
+        <form action="dbProduto.php" method="post" class="row g3 mt-4">
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control">
@@ -30,13 +33,17 @@
             </div>
             <div class="col-md-3 mt-3">
                 <label for="unidadeMedida">Unidade de Medida</label>
-                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required class="form-control">
+                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required 
+                class="form-control">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
             </div>
         </form>
     </main>
+    <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 
