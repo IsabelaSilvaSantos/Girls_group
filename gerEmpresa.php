@@ -8,7 +8,13 @@
     <title>Cadastro da Empresa</title>
     </head>
     <body>
+        <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+
+    
     <main class="container">
+    
     
     <h3>Cadastro da Empresa</h3>
 

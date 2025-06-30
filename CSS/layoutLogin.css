@@ -5,22 +5,22 @@
     font-family: Arial, sans-serif;
     }
     body{
-    background-color: #e2dada;
+    background-color: #e2e2e4;
     color:#000000;
     }
     header{
-        background-color: #ffffff;
+        background-color: #000000;
         color:rgb(255, 255, 255);
         text-align: center;
         padding: 50px;
     }
     nav{
-        background-color: #ffffff;
+        background-color: #000000;
         padding: 14px;
         text-align: center;
     }
     nav a{
-        color:#193820;
+        color:#000000;
         text-decoration:none;
         margin: 0 70px;
         font-weight: bold;
