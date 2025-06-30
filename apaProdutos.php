@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/baseAdmin.css">
+    <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Produtos</title>
 </head>
 
@@ -20,13 +20,12 @@
         <div class="mt-3">
             <a href="gerProduto.php" class="btn btn-outline-secondary">Novo Produto</a>
         </div>
-         <a href="">ㅤ</a>
         <table class="table">
             <thead class="table-secondary">
                 <tr>
                     <th>#</th>
-                    <th>Produto</th>
-                    <th>Ações</th>
+                    <th>Produtos</th>
+                    <th class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,26 +35,27 @@
                 });
 
                 $p = new Produto();
-                $produtos = $p->findAll(); 
-
-                foreach ($produtos as $produto):
-                ?>
+                $produto = $p->all();
+                foreach ($produto as $Produto):
+                    ?>
                     <tr>
-                        <td><?php echo $produto['id']; ?></td>
-                        <td><?php echo $produto['nome']; ?></td>
-                        <td class="d-flex justify-content-center gap-1">
-                            <form action="gerProduto.php" method="post" class="d-flex">
-                                <input type="hidden" name="idProduto" value="<?php echo $produto['id']; ?>">
+                        <td><?php echo $Produto->id?></td>
+                        <td><?php echo $Produto->nome?></td>
+                        
+                        <td class="d-flex gap-1 justify-content-center">
+                            <form action="<?php echo htmlspecialchars("gerProduto.php") ?>" method="post" class="d-flex">
+                                <input type="hidden" name="id" value="<?php echo $Produto->id ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja editar esse Produto?');">
-                                    <i class="bi bi-pencil-square"></i> 
+                                    onclick="return confirm('Tem certeza que deseja editar esse produto?');"><i
+                                    class="bi bi-pencil-square"></i>
                                 </button>
                             </form>
-                            <form action="dbProduto.php" method="post" class="d-flex">
-                                <input type="hidden" name="idProduto" value="<?php echo $produto['id']; ?>">
+
+                            <form action="<?php echo htmlspecialchars("dbProduto.php") ?>" method="post" class="d-flex">
+                                <input type="hidden" name="id" value="<?php echo $Produto->id ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja deletar esse Produto?');">
-                                    <i class="bi bi-trash"></i> 
+                                    onclick="return confirm('Tem certeza que deseja deletar esse produto?');"><i
+                                    class="bi bi-trash"></i>
                                 </button>
                             </form>
                         </td>
@@ -63,11 +63,13 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+
     </main>
     <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
 
 </html>
