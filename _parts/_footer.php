@@ -1,6 +1,6 @@
-<div class="r-linha" style="background-color: rgb(196, 210, 219);">
+<div class="r-linha" style="background-color: rgb(0, 0, 0);">
 
-    <div class="r-linha-item" style="background-color: rgb(196, 210, 219);;">
+    <div class="r-linha-item" style="background-color: rgb(255, 255, 255);;">
         <p>Contatos:</p>
         <p><i class="bi bi-telephone"></i> (69) 9999-9999</p>
     </div>
