@@ -10,6 +10,22 @@
 </head>
 
 <body>
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+    <main class="container">
+        <h3>Cadastro de Usuarios</h3>
+        <?php
+        spl_autoload_register(function ($class){
+            require_once "classes/{$class}.class.php";
+        });
+        if(filter_has_var(INPUT_POST, "id")):
+            $edtUsuario = new Usuario();
+            $id = intval(filter_input(INPUT_POST, "id"));
+            $Usuario = $edtUsuario->search("id", $id);
+            
+        endif;
+        ?>
 
     <main class="container mt-5">
         <h3 >Cadastro do usuário</h3>

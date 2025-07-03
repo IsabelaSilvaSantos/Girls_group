@@ -9,7 +9,7 @@
     <title>Produtos</title>
 </head>
 
-<body>
+<body> 
     <header>
         <?php require_once "_parts/_menu.php"; ?>
     </header>
