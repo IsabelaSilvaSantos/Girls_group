@@ -1,3 +1,6 @@
+:root {
+  --color-font-clara: #f4ebeb;
+}
 *{
     margin:0;
     padding:0;
@@ -36,4 +39,21 @@
     }
     footer{
     text-align: justify;
+}
+.nav-custom{
+background-color: rgb(224, 219, 219);
+}
+.navbar-nav{
+gap: 10px;
+}
+.nav-link{
+color: var(--color-font-clara);
+box-shadow: 0 1px 5px rgb(226, 221, 221);
+border-radius: 12px;
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover{
+color: var(--color-font-clara);
+box-shadow: 0 16px 32px rgb(248, 244, 244);
+transform: translateY(-4px);
 }
