@@ -49,12 +49,14 @@ class Produto extends CRUD{
         return $stmt->execute();
     }
     public function update(string $campo, int $id){
-        $sql = "UPDATE $this->table SET nome=:nome, :descricao, :preco, :unidadeMedida WHERE $campo = :id, :nome, :descricao, :preco, :unidadeMedida";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":descricao", $id, PDO::PARAM_INT);
-        $stmt->bindParam(":preco", $id, PDO::PARAM_INT);
-        $stmt->bindParam(":unidadeMedida", $id, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
+    $sql = "UPDATE $this->table SET nome = :nome, descricao = :descricao, preco = :preco, unidadeMedida = :unidadeMedida WHERE $campo = :id";
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+    $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR); 
+    $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR); 
+    $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR); 
+    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+
+    return $stmt->execute();
+}
 }
