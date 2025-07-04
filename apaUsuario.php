@@ -52,7 +52,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbUsuario.php") ?>" method="post" class="d-flex">
-                                <input type="hidden" name="id" value="<?php echo $$Usuario->id ?>">
+                                <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o Usuario?');"><i
                                     class="bi bi-trash"></i>
