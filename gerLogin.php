@@ -9,6 +9,9 @@
     <title>Tela de Login</title>
 </head>
 <body>
+<header>
+        <?php require_once "_parts/_menuAdimin.php"; ?>
+    </header>
 
     <main class="container mt-5">
         <h3>Login</h3>
