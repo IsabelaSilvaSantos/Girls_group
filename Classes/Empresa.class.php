@@ -36,7 +36,7 @@ public function setRazaoSocial($razaoSocial){
 public function setCnpj($cnpj){
     $this->cnpj = $cnpj;
 }
-public function sethitoria($hitoria){
+public function sethistoria($hitoria){
     $this->hitoria = $hitoria;
 }
 public function setapresentacao($apresentacao){

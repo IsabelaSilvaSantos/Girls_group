@@ -21,7 +21,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
         }
     else:
         if ($Produto->update('id', $idProduto)) {
-            echo "<script> window.alert('Raça alterada com sucesso.');window.location.href='apaProdutos.php'; </script>";
+            echo "<script> window.alert('Produto alterado com sucesso.');window.location.href='apaProdutos.php'; </script>";
         } else {
             echo "<script> window.alert('Erro ao alterar o produto.');window.open(document.referrer, '_self'); </script>";
         }
