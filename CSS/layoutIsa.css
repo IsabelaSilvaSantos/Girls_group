@@ -1,75 +1,59 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-    }
-    body{
-    background-color: #e2dada;
-    color:#000000;
-    }
-    header{
-        background-color: #ffffff;
-        color:rgb(255, 255, 255);
-        text-align: center;
-        padding: 50px;
-    }
-    nav{
-        background-color: #ffffff;
-        padding: 14px;
-        text-align: center;
-    }
-    nav a{
-        color:#193820;
-        text-decoration:none;
-        margin: 0 70px;
-        font-weight: bold;
-    }
-    main{
-        width:80%;
-        max-width: 1000px;
-        margin: 30px auto;
-        padding: 40px;
-        background-color: #ffffff;
-        border-radius: 40px;
-        box-shadow: 0 0 10px #706b6b;
-    }
-    .dest{
-        background-image: url('../Images/Fazenda.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 300px;
-        display: flex;
-        align-items:center;
-        justify-content:center;
-        text-align: center;
-        color:#ffffff;
-        font-size: 20px;
-        font-weight: bold;
-       
-    }
-    .container{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content:center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .container img{
-        width: 50%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 10px;
-    }
-    .texto{
-        width: 50%;
-        padding: 20px;
-    }
-    section:nth-child(ever).texto{
-        order: -1;/*Move o texto para antes da imagem*/
-    }
-    footer{
-    text-align:justify;
-    }
+:root {
+    --color-font-clara: #f4ebeb;
+  }
+  *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+      }
+      body{
+      background-color: #e3e4e9;
+      color:#000000;
+      }
+      header{
+          background-color: #000000;
+          color:rgb(0, 0, 0);
+          text-align: center;
+          padding: 50px;
+      }
+      nav{
+          background-color: #000000;
+          padding: 14px;
+          text-align: center;
+      }
+      nav a{
+          color:#000000;
+          text-decoration:none;
+          margin: 0 40px;
+          font-weight: bold;
+      }
+      main{
+          width:80%;
+          max-width: 1000px;
+          margin: 90px auto;
+          padding: 200px;
+          background-color: #ffffff;
+          border-radius: 30px;
+          box-shadow: 0 0 10px #706b6b;
+      }
+      footer{
+      text-align: justify;
+  }
+  .nav-custom{
+  background-color: rgb(224, 219, 219);
+  }
+  .navbar-nav{
+  gap: 10px;
+  }
+  .nav-link{
+  color: var(--color-font-clara);
+  box-shadow: 0 1px 5px rgb(226, 221, 221);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .nav-link:hover{
+  color: var(--color-font-clara);
+  box-shadow: 0 16px 32px rgb(248, 244, 244);
+  transform: translateY(-4px);
+  }

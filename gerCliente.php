@@ -9,11 +9,9 @@
     <title>Cadastro de Clintes</title>
 </head>
 <body>
-
-    <header>
-        <?php require_once "_parts/_menu.php"; ?>
+<header>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
-    
     <main class="container">
         <h3>Cadastro de Cliente</h3>
         <?php

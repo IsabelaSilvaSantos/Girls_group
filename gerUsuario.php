@@ -11,12 +11,10 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menu.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
-
-    <main class="container mt-5">
-
-        <h3>Cadastro do usuário</h3>
+    <main class="container">
+        <h3>Cadastro de Usuarios</h3>
         <?php
         spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
