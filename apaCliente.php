@@ -13,6 +13,7 @@
     <header>
         <?php require_once "_parts/_menu.php"; ?>
     </header>
+
     <main class="container mt-3">
         <div class="mt-3">
             <h3>Clientes</h3>
@@ -35,8 +36,8 @@
                 });
 
                 $p = new Cliente();
-                $Cliente = $p->all();
-                foreach ($Cliente as $Cliente):
+                $cliente = $p->all();
+                foreach ($cliente as $Cliente):
                     ?>
                     <tr>
                         <td><?php echo $Cliente->id?></td>
@@ -63,11 +64,12 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-
     </main>
+
     <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
     </script>
 </body>

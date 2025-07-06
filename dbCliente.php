@@ -13,7 +13,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $idCliente = filter_input(INPUT_POST, 'id');
 
     if (empty($idCliente)):
-        //Tentar adicionar exibir mensagem ao usuário
+        //Tentar adicionar exibir mensagem ao cliente
         if ($Cliente->add()) {
             echo "<script>window.alert('Cliente inserido com sucesso!');window.location.href=apaCliente.php;</script>";
         } else {
