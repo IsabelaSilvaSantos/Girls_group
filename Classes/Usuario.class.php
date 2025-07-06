@@ -2,11 +2,19 @@
 
 class Usuario extends CRUD{
     protected $table = "cadastro_usuario";
+    private $id;
     private $nome;
     private $email;
     private $papel;
     private $senha;
 
+    
+    public function getid(){
+       return $this->id;
+    }
+    public function setid($id){
+        $this->id = $id;
+    }
     
     public function getnome(){
        return $this->nome;
@@ -14,7 +22,7 @@ class Usuario extends CRUD{
     public function setnome($nome){
         $this->nome = $nome;
     }
-    
+
     public function getemail(){
        return $this->email;
     }
@@ -53,6 +61,8 @@ class Usuario extends CRUD{
             $sql = "UPDATE $this->table SET nome = :nome, senha = :senha WHERE $campo = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $this->email, PDO::PARAM_INT);
+            $stmt->bindParam(":papel", $this->papel, PDO::PARAM_INT);
             $stmt->bindParam(":senha", $this->senha, PDO::PARAM_INT);
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             return $stmt->execute();

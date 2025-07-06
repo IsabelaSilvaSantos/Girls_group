@@ -8,81 +8,102 @@
     <title>Cadastro da Empresa</title>
     </head>
     <body>
+
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+
     <main class="container">
     <header>
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
     
     <h3>Cadastro da Empresa</h3>
+    <?php
+        spl_autoload_register(function ($class){
+            require_once "classes/{$class}.class.php";
+        });
+        if(filter_has_var(INPUT_POST, "id")):
+            $edtEmpresa = new Empresa();
+            $id = intval(filter_input(INPUT_POST, "id"));
+            $Empresa = $edtEmpresa->search("id", $id);
+            
+        endif;
+        ?>
 
         <form action="dbEmpresa.php" method="post" class="row g3 mt-3">
+            <input type="hidden" value="<?php echo $Empresa->id ?? null;?>" name="id">
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome da empresa" required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->nome ?? null;?>">
                   </div>
 
                 <div class="col-md-6 mt-3">
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->telefone ?? null;?>">
             </div>
+
             <div class="col-md-6 mt-3">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" placeholder="Digite o email da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->email ?? null;?>">
                </div>
+
                <div class="col-md-6 mt-3">
                     <label for="nomeFantasia">Nome Fantasia</label>
                     <input type="text" name="nomeFantasia" id="nomeFantasia" placeholder="Digite o nome fantasia da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->nomeFantasia ?? null;?>">
                    </div>
-                   
-                   
+
                    <div class="col-md-6 mt-3">
                     <label for="endereco">Endereço</label>
                     <input type="text" name="endereco" id="endereco" placeholder="Digite o endereço da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->endereco ?? null;?>">
                    </div>
                    
                    <div class="col-md-6  mt-3">
                     <label for="cnpj">CNPJ</label>
                     <input type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->cnpj ?? null;?>">
                    </div>
 
                    <div class="col-md-6 mt-3">
-                    <label for="rasaoSocial">Razão Social</label>
+                    <label for="razaoSocial">Razão Social</label>
                     <input type="text" name="razaoSocial" id="razaoSocial" placeholder="Digite a razão social da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->razaoSocial ?? null;?>">
                    </div>
 
                    <div class="col-md-6 mt-3">
                     <label for="principalAtividade">Principal Atividade</label>
                     <input type="text" name="principalAtividade" id="principalAtividade" placeholder="Digite a principal atividade da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->principalAtividade ?? null;?>">
                     </div>
 
                     <div class="col-md-6 mt-3">
-                    <label for="hitoria">História da Empresa</label>
-                    <input type="text" name="hitoria" id="hitoria" placeholder="Digite a hitoria da empresa"required
-                    class="form-control">
+                    <label for="historia">História da Empresa</label>
+                    <input type="text" name="historia" id="historia" placeholder="Digite a historia da empresa"required
+                    class="form-control" value="<?php print $Empresa->historia ?? null;?>">
                     </div>
                     
                     <div class="col-md-6 mt-3">
                     <label for="apresentacao">Apresentação da Empresa</label>
                     <input type="text" name="apresentacao" id="apresentacao" placeholder="Digite a apresentação da empresa"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Empresa->apresentacao ?? null;?>">
                     </div>
                     
                      <div class= "cool-12 mt-3"> 
-                        <button type="submit" class="btn btn-dark" name="button" >Cadastrar</button>
+                       <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
 
                </div>
         </form>
         </main>
 
-    
+         <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </html>

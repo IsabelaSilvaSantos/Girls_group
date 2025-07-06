@@ -14,9 +14,6 @@
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
     <main class="container">
-       
-  
-    
         <h3>Cadastro de Produtos</h3>
         <?php
         spl_autoload_register(function ($class){
