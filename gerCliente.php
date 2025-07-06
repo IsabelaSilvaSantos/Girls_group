@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="CSS/layoutIsa.css">
     <title>Cadastro de Clintes</title>
 </head>
-
 <body>
+
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+    
     <main class="container">
         <h3>Cadastro de Cliente</h3>
         <?php
@@ -51,9 +55,11 @@
             </div>
         </form>
     </main>
+
     <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 

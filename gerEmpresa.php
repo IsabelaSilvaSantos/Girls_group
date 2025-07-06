@@ -8,15 +8,19 @@
     <title>Cadastro da Empresa</title>
     </head>
     <body>
+
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
+    </header>
+
     <main class="container">
-    
     <h3>Cadastro da Empresa</h3>
     <?php
         spl_autoload_register(function ($class){
             require_once "classes/{$class}.class.php";
         });
         if(filter_has_var(INPUT_POST, "id")):
-            $edtEmpresa = new Produto();
+            $edtEmpresa = new Empresa();
             $id = intval(filter_input(INPUT_POST, "id"));
             $Empresa = $edtEmpresa->search("id", $id);
             
@@ -24,6 +28,7 @@
         ?>
 
         <form action="dbEmpresa.php" method="post" class="row g3 mt-3">
+            <input type="hidden" value="<?php echo $Empresa->id ?? null;?>" name="id">
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome da empresa" required
@@ -73,8 +78,8 @@
                     </div>
 
                     <div class="col-md-6 mt-3">
-                    <label for="hitoria">História da Empresa</label>
-                    <input type="text" name="hitoria" id="hitoria" placeholder="Digite a hitoria da empresa"required
+                    <label for="historia">História da Empresa</label>
+                    <input type="text" name="historia" id="historia" placeholder="Digite a historia da empresa"required
                     class="form-control" value="<?php print $Empresa->historia ?? null;?>">
                     </div>
                     
@@ -85,11 +90,16 @@
                     </div>
                     
                      <div class= "cool-12 mt-3"> 
-                        <button type="submit" class="btn btn-dark" name="button" >Cadastrar</button>
+                       <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
 
                </div>
         </form>
         </main>
+
+         <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </html>
