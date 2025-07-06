@@ -12,7 +12,7 @@ class Empresa extends CRUD{
     private $razaoSocial;
     private $cnpj;
     private $principalAtividade;
-    private $hitoria;
+    private $historia;
     private $apresentacao;
 
     public function setNome($nome) {
@@ -36,8 +36,8 @@ public function setRazaoSocial($razaoSocial){
 public function setCnpj($cnpj){
     $this->cnpj = $cnpj;
 }
-public function sethitoria($hitoria){
-    $this->hitoria = $hitoria;
+public function sethistoria($historia){
+    $this->historia = $historia;
 }
 public function setapresentacao($apresentacao){
     $this->apresentacao = $apresentacao;
@@ -54,7 +54,7 @@ public function getEndereco() {
 public function getEmail() {
     return $this-> email;
 }
-public function gettelefone() {
+public function getTelefone() {
     return $this-> telefone;
 }
 public function getRazaoSocial() {
@@ -69,16 +69,16 @@ public function getCnpj() {
 public function getprincipalAtividade() {
     return $this-> principalAtividade;
 }
-public function gethitoria($hitoria) {
-    return $this-> hitoria;
+public function gethistoria() {
+    return $this-> historia;
 }
-public function getapresentacao($apresentacao) {
+public function getapresentacao() {
     return $this-> apresentacao;
 }
 
 
 public function add(){
-    $sql = "INSERT INTO $this->table (nome, endereco, email, telefone, nomeFantasia, razaoSocial, cnpj, principalAtividade, hitoria, apresentacao ) VALUES (:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj, :principalAtividade, :hitoria, :apresentacao)";
+    $sql = "INSERT INTO $this->table (nome, endereco, email, telefone, nomeFantasia, razaoSocial, cnpj, principalAtividade, historia, apresentacao ) VALUES (:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj, :principalAtividade, :historia, :apresentacao)";
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
     $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
@@ -88,23 +88,25 @@ public function add(){
     $stmt->bindParam(":razaoSocial", $this->razaoSocial, PDO::PARAM_STR);
     $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
     $stmt->bindParam(":principalAtividade", $this->principalAtividade, PDO::PARAM_STR);
-    $stmt->bindParam(":hitoria", $this->hitoria, PDO::PARAM_STR);
+    $stmt->bindParam(":historia", $this->historia, PDO::PARAM_STR);
     $stmt->bindParam(":apresentacao", $this->apresentacao, PDO::PARAM_STR);
     return $stmt->execute();
 }
 public function update(string $campo, int $id){
-    $sql = "UPDATE $this->table SET nome=:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj, :principalAtividade, :hitoria, :apresentaca WHERE $campo=:id,:endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj, :principalAtividade, :hitoria, :apresentaca ";
+    $sql = "UPDATE $this->table SET nome = :nome, endereco= :endereco, email = :email, telefone = :telefone, nomeFantasia = :nomeFantasia, razaoSocial = :razaoSocial, cnpj = :cnpj, principalAtividade = :principalAtividade, historia = :historia, apresentacao = :apresentacao WHERE $campo = :id";
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-    $stmt->bindParam(":endereco", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":email", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":telefone", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":nomeFantasia", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":razaoSocial", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":cnpj", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":principalAtividade", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":hitoria", $id, PDO::PARAM_INT);
-    $stmt->bindParam(":apresentaca", $id, PDO::PARAM_INT);
+    $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
+    $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
+    $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
+    $stmt->bindParam(":nomeFantasia", $this->nomeFantasia, PDO::PARAM_STR);
+    $stmt->bindParam(":razaoSocial", $this->razaoSocial, PDO::PARAM_STR);
+    $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
+    $stmt->bindParam(":principalAtividade", $this->principalAtividade, PDO::PARAM_STR);
+    $stmt->bindParam(":historia", $this->historia, PDO::PARAM_STR);
+    $stmt->bindParam(":apresentacao", $this->apresentacao, PDO::PARAM_STR);
+    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    
     return $stmt->execute();
 }
 }
