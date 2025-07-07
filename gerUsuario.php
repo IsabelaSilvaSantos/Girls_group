@@ -31,20 +31,20 @@
             <input type="hidden" value="<?php echo $Usuario->id ?? null; ?>" name="id">
             <div class="mb-3 col-md-6">
                 <label for="inputNome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="inputNome" name="usuario
-                "value="<?php print $Usuario->nome ?? null;?>">
+                <input type="text" class="form-control" id="inputNome" name="nome"
+                    value="<?php print $Usuario->nome ?? null; ?>">
             </div>
 
             <div class="mb-3 col-md-6">
                 <label for="inputEmail3" class="form-label">Email</label>
                 <input type="email" class="form-control" id="inputEmail3" name="email"
-                value="<?php print $Usuario->email ?? null;?>">
+                    value="<?php print $Usuario->email ?? null; ?>">
             </div>
 
             <div class="mb-3 col-md-6">
                 <label for="inputSenha" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="inputSenha" name="senha"
-                value="<?php print $Usuario->senha ?? null;?>">
+                    value="<?php print $Usuario->senha ?? null; ?>">
             </div>
 
             <div class="mb-3 col-md-6">
@@ -52,10 +52,10 @@
                 <select id="papel" name="papel" class="form-select" required>
                     <option value="">Selecione</option>
                     <option value="Administrador" <?= (isset($Usuario->papel) && $Usuario->papel == 'Administrador') ? 'selected' : '' ?>>Administrador</option>
-                    <option value="Gerente"<?= (isset($Usuario->papel) && $Usuario->papel == 'Gerente') ? 'selected' : '' ?>>Gerente</option>
-                    <option value="Técnico"<?= (isset($Usuario->papel) && $Usuario->papel == 'Técnico') ? 'selected' : '' ?>>Técnico</option>
-                    <option value="Financeiro"<?= (isset($Usuario->papel) && $Usuario->papel == 'Financeiro') ? 'selected' : '' ?>>Financeiro</option>
-                    <option value="Recursos Humanos"<?= (isset($Usuario->papel) && $Usuario->papel == 'Recursos Humanos') ? 'selected' : '' ?>>Recursos Humanos</option>
+                    <option value="Gerente" <?= (isset($Usuario->papel) && $Usuario->papel == 'Gerente') ? 'selected' : '' ?>>Gerente</option>
+                    <option value="Técnico" <?= (isset($Usuario->papel) && $Usuario->papel == 'Técnico') ? 'selected' : '' ?>>Técnico</option>
+                    <option value="Financeiro" <?= (isset($Usuario->papel) && $Usuario->papel == 'Financeiro') ? 'selected' : '' ?>>Financeiro</option>
+                    <option value="Recursos Humanos" <?= (isset($Usuario->papel) && $Usuario->papel == 'Recursos Humanos') ? 'selected' : '' ?>>Recursos Humanos</option>
                 </select>
             </div>
 
@@ -65,10 +65,10 @@
         </form>
     </main>
 
-     <footer>
+    <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

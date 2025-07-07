@@ -46,8 +46,8 @@
                             <form action="<?php echo htmlspecialchars("gerUsuario.php") ?>" method="post" class="d-flex">
                                 <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja editar o Usuario?');"><i
-                                    class="bi bi-pencil-square"></i>
+                                    onclick="return confirm('Tem certeza que deseja editar o Usuario?');">
+                                    <i class="bi bi-pencil-square"></i>
                                 </button>
                             </form>
 

@@ -5,7 +5,7 @@
     //Criando uma intância da classe Usuario
     $Usuario = new Usuario();
 if(filter_has_var(INPUT_POST,"btnGravar")):
-    $Usuario->setnome(filter_input(INPUT_POST, "usuario", FILTER_SANITIZE_STRING));
+    $Usuario->setnome(filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING));
     $Usuario->setemail(filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING));
     $Usuario->setsenha(filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING));
     $Usuario->setpapel(filter_input(INPUT_POST, "papel", FILTER_SANITIZE_STRING));
