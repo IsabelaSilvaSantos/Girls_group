@@ -16,6 +16,7 @@ controles de ária="barra de navegaçãoNav" ária expandida="falso" rótulo de 
           <li class="navbar-item"><a href="gerCliente.php" class="nav-link">Cadastro do Cliente</a></li>
           <li class="navbar-item"><a href="gerUsuario.php" class="nav-link">Cadastro do Usuário</a></li>
            <li class="navbar-item"><a href="gerLogin.php" class="nav-link">Entrar</a></li>
+           <li class="navbar-item"><a href="#" class="nav-link">Categorias</a></li>
 
 
         </ul>
