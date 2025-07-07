@@ -1,0 +1,55 @@
+.dest{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/fundas.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ffffff;
+    text-shadow: 
+    1px  1px 0 #000000,
+    2px 2px 4px #ffffff;
+}
+
+section{
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(to right,#ffffff,#fffdfd,#ffffff);
+    background-color: #eee;
+}
+
+section h2{
+    text-align: center;
+    font-family: var(--font-secundaria);
+    margin: 20px;
+    border-bottom: 10px solid #972323 ;
+    padding: 10px;
+}
+
+section .msn{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+section .msn img{
+    width: 50%;
+}
+
+@media screen and (max-width: 600px){
+    main{
+        width: 100%;
+    }
+    section .msn{
+        flex-direction: column;
+    }
+    .dest{
+        text-align: center;
+        padding: 15px;
+    }
+}
