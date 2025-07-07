@@ -11,7 +11,7 @@
 
 <body> 
     <header>
-        <?php require_once "_parts/_menuAdimin.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     <main class="container mt-3">
