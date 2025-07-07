@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/LOgoMenu.png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/baseSite.css" />
   <link rel="stylesheet" href="CSS/index.css" />
@@ -33,7 +33,7 @@
 
   
   <header>
-    <img src="images/logo.png" alt="Logo da empresa" />
+    <img src="images/LOgoMenu.png" alt="Logo da empresa" />
     <div class="empresa">
       <h1>Nome da Empresa</h1>
       <p>Frase curta e explicativa sobre a empresa</p>

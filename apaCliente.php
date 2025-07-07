@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/baseAdmin.css">
+    <link rel="stylesheet" href="CSS/layoutProduto.css">
     <title>Clientes</title>
 </head>
 
@@ -33,7 +33,7 @@
                 <?php
                 spl_autoload_register(function ($class) {
                     require_once "classes/{$class}.class.php";
-                });
+                }); 
 
                 $p = new Cliente();
                 $cliente = $p->all();

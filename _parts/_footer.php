@@ -11,4 +11,4 @@
         <a href="https://wa.me/5569984060305" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
     </div>
 </div>
-<p>&copy; 2025 Fazenda Girls Group, Todos os direitos reservados</p>
+<p>&copy; 2025 Empresa Girls Group, Todos os direitos reservados</p>
