@@ -9,14 +9,12 @@
     </head>
     <body>
 
-    <header>
-        <?php require_once "_parts/_menu.php"; ?>
+   <header>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     <main class="container">
-    <header>
-        <?php require_once "_parts/_menuAdmin.php"; ?>
-    </header>
+    
     
     <h3>Cadastro da Empresa</h3>
     <?php
