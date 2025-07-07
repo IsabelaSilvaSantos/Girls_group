@@ -1,0 +1,75 @@
+@import url('base.css');
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo-cinza-escuro);
+    color: var(--cor-fonte-claro);
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+header .empresa {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+
+.nav-custom {
+    background-color: var(--cor-fundo-cinza-escuro);
+}
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    color: var(--cor-fonte-claro);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--cor-fonte-claro);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--cor-fundo-claro);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .nav-link,
+    .nav-link:hover {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+}
