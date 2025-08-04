@@ -48,6 +48,7 @@
             <div class="col-md-3 mt-3">
                 <label for="unidadeMedida">Unidade de Medida</label>
                 <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required class="form-control">
+                 class="form-control" value="<?php print $Produto->unidadeMedida ?? null;?>">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
