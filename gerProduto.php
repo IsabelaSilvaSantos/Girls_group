@@ -28,6 +28,8 @@
         ?>
 
         <form action="dbProduto.php" method="post" class="row g3 mt-3">
+
+            <input type="hidden" value="<?php echo $Produto->id ?? null; ?>" name="id">
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
