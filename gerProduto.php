@@ -28,8 +28,6 @@
         ?>
 
         <form action="dbProduto.php" method="post" class="row g3 mt-3">
-            <input type="hidden" value="<?php echo $Produto->id ?? null;?>" name="id">
-
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
@@ -47,8 +45,7 @@
             </div>
             <div class="col-md-3 mt-3">
                 <label for="unidadeMedida">Unidade de Medida</label>
-                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required class="form-control"
-                value="<?php print $Produto->unidadeMedida ?? null;?>">
+                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required class="form-control">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
