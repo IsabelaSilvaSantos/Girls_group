@@ -21,7 +21,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     if (empty($idEmpresa)):
         //Tentar adicionar exibir mensagem a empresa
         if ($Empresa->add()) {
-            echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href=apaEmpresa.php;</script>";
+            echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href='apaEmpresa.php';</script>";
         } else {
             echo "<script>window.alert('Erro ao inserir Empresa!');window.open(document.referrer,'_self');</script>";
         }
@@ -37,7 +37,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     $idEmpresa = intval(filter_input(INPUT_POST, "id"));
     if ($Empresa->delete("id", $idEmpresa)) {
-        header("location:apaEmpresa.php");
+        header("location:'apaEmpresa.php'");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
     }
