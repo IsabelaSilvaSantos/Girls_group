@@ -9,10 +9,11 @@
     </head>
     <body>
 
-   <header>
-        <?php require_once "_parts/_menuAdmin.php"; ?>
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
     </header>
 
+    
     <main class="container">
     
     

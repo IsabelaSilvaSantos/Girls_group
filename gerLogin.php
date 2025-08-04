@@ -12,7 +12,8 @@
 <header>
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
-    <main class="container">
+
+    <main class="container mt-5">
         <h3>Login</h3>
         <?php
         spl_autoload_register(function ($class){
@@ -49,7 +50,6 @@
      <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
