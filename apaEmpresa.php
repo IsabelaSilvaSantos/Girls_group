@@ -35,10 +35,7 @@
                     require_once "classes/{$class}.class.php";
                 });
 
-                $p = new Empresa();
-                $empresa = $p->all();
-                foreach ($empresa as $Empresa):
-                    ?>
+                e("'");
                     <tr>
                         <td><?php echo $Empresa->id?></td>
                         <td><?php echo $Empresa->nome?></td>
