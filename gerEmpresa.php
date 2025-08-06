@@ -17,7 +17,7 @@
     <main class="container">
     
     
-    <h3>Cadastro da Empresa</h3>
+    <h3 class="text-center">Cadastro da Empresa</h3>
     <?php
         spl_autoload_register(function ($class){
             require_once "classes/{$class}.class.php";
@@ -98,7 +98,9 @@
                </div>
         </form>
         </main>
-
+        <footer>
+    <?php require_once "_parts/_footer.php" ?>
+  </footer>
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>

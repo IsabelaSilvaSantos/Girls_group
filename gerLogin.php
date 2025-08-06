@@ -14,7 +14,7 @@
     </header>
 
     <main class="container mt-5">
-        <h3>Login</h3>
+    <h3 class="text-center">Login</h3>
         <?php
         spl_autoload_register(function ($class){
             require_once "classes/{$class}.class.php";

@@ -16,7 +16,7 @@
 
     <main class="container mt-5">
 
-        <h3>Cadastro do usuário</h3>
+    <h3 class="text-center">Cadastro do usuário</h3>
         <?php
         spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
