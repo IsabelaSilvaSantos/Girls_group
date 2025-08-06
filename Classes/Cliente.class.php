@@ -49,12 +49,13 @@ class Cliente extends CRUD{
         return $stmt->execute();
     }
     public function update(string $campo, int $id){
-        $sql = "UPDATE $this->table SET nome=:nome, :telefone, :email, :senha WHERE $campo = :id, :nome, :telefone, :email, :senha";
+        $sql = "UPDATE $this->table SET nome = :nome, telefone = :telefone, email = :email, senha = :senha WHERE $campo = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":telefone", $id, PDO::PARAM_INT);
-        $stmt->bindParam(":email", $id, PDO::PARAM_INT);
-        $stmt->bindParam(":senha", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":telefone", $telefone, PDO::PARAM_STR);
+        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+        $stmt->bindParam(":senha", $senha, PDO::PARAM_STR);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 }

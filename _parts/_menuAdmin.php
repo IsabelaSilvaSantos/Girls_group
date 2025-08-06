@@ -1,0 +1,26 @@
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #000;">
+    <div class="container">
+      <img src="images/LOgoMenu.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
+      <botão tipo="botão" aula="alternador da barra de navegação" data-bs-toggle="colapso" dados-bs-alvo="#navbarnav"
+controles de ária="barra de navegaçãoNav" ária expandida="falso" rótulo de ária="Alternar navegação">
+<extensão aula="ícone de alternância da barra de navegação"></extensão>
+
+      
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="navbar-item"><a href="idexAdmin.php" class="nav-link">Home</a></li>
+          <li class="navbar-item"><a href="gerProduto.php" class="nav-link">Cadastro de Produtos</a></li>
+          <li class="navbar-item"><a href="gerEmpresa.php" class="nav-link">Cadastro da Empresa </a></li>
+          <li class="navbar-item"><a href="gerCliente.php" class="nav-link">Cadastro do Cliente</a></li>
+          <li class="navbar-item"><a href="gerUsuario.php" class="nav-link">Cadastro do Usuário</a></li>
+           <li class="navbar-item"><a href="gerLogin.php" class="nav-link">Entrar</a></li>
+           <li class="navbar-item"><a href="#" class="nav-link">Categorias</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e2dada;
+    color: #3f3939;
+    background-image: url('../images/fundo.png');
+    background-repeat: no-repeat;        
+    background-position: center center; 
+    background-size: cover;              
+    background-attachment: fixed;        
+}
+
+header {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    background-image: url('../images/nav.png');
+    background-repeat: no-repeat;   
+    background-position: center center; 
+    background-size: cover;
+}
+
+nav {
+    background-color: #f3ebeb;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(247, 244, 244);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+main {
+    
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(224, 221, 221);
+    border-radius: 50px;
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+}
+
+.dest {
+    
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(2, 2, 2);
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 20px;
+  margin-bottom: 30px;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;   
+  overflow: hidden;      
+}
+
+
+.container img {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.1);
+}
+
+.texto {
+    width: 500%;
+    padding: 30px;
+}
+
+#carouselExampleFade {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+.nav-custom{
+    background-color: rgb(224, 219, 219);
+    }
+    .navbar-nav{
+    gap: 10px;
+    }
+    .nav-link{
+    color: var(--color-font-clara);
+    box-shadow: 0 1px 5px rgb(226, 221, 221);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .nav-link:hover{
+    color: var(--color-font-clara);
+    box-shadow: 0 16px 32px rgb(248, 244, 244);
+    transform: translateY(-4px);
+    }
+
+
+
+
+

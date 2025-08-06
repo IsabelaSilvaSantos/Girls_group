@@ -11,10 +11,10 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menu.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
     <main class="container">
-        <h3>Cadastro de Produtos</h3>
+        <h3 class="text-center">Cadastro de Produtos</h3>
         <?php
         spl_autoload_register(function ($class){
             require_once "classes/{$class}.class.php";
@@ -28,8 +28,8 @@
         ?>
 
         <form action="dbProduto.php" method="post" class="row g3 mt-3">
-            <input type="hidden" value="<?php echo $Produto->id ?? null;?>" name="id">
 
+            <input type="hidden" value="<?php echo $Produto->id ?? null; ?>" name="id">
             <div class="col-md-6 mt-3">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
@@ -47,8 +47,8 @@
             </div>
             <div class="col-md-3 mt-3">
                 <label for="unidadeMedida">Unidade de Medida</label>
-                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required class="form-control"
-                value="<?php print $Produto->unidadeMedida ?? null;?>">
+                <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida" required
+                 class="form-control" value="<?php print $Produto->unidadeMedida ?? null;?>">
             </div>
             <div class="col-12 mt-3">
                 <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>

@@ -10,14 +10,12 @@ controles de ária="barra de navegaçãoNav" ária expandida="falso" rótulo de 
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="navbar-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="navbar-item"><a href="#" class="nav-link">Página Principal</a></li>
-          <li class="navbar-item"><a href="#" class="nav-link">Usuário</a></li>
+          <li class="navbar-item"><a href="index.php" class="nav-link">Home</a></li>
           <li class="navbar-item"><a href="#" class="nav-link">Cliente</a></li>
+          <li class="navbar-item"><a href="#" class="nav-link">Usuário</a></li>
           <li class="navbar-item"><a href="#" class="nav-link">Produtos</a></li>
-          <li class="navbar-item"><a href="#" class="nav-link">Contato</a></li>
+
         </ul>
       </div>
     </div>
-  </nav>
-  
+</nav>

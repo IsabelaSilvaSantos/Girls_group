@@ -15,7 +15,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     if (empty($idProduto)):
         //Tentar adicionar exibir mensagem ao usuário
         if ($Produto->add()) {
-            echo "<script>window.alert('Produto inserido com sucesso!');window.location.href=apaProdutos.php;</script>";
+            echo "<script>window.alert('Produto inserido com sucesso!');window.location.href='apaProdutos.php';</script>";
         } else {
             echo "<script>window.alert('Erro ao inserir Produto!');window.open(document.referrer,'_self');</script>";
         }
@@ -31,7 +31,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     $idProduto = intval(filter_input(INPUT_POST, "id"));
     if ($Produto->delete("id", $idProduto)) {
-        header("location:apaProdutos.php");
+        header("location:'apaProdutos.php'");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
     }

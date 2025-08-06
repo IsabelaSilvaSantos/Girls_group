@@ -2,7 +2,7 @@
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
-//Criando uma instância da classe Produto
+//Criando uma instância da classe Empresa
 $Empresa = new Empresa();
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
@@ -10,8 +10,8 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $Empresa->setEndereco(filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_STRING));
     $Empresa->setEmail(filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING));
     $Empresa->setTelefone(filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING));
-    $Empresa->setNomeFantasia(filter_input(INPUT_POST, "NomeFantasia", FILTER_SANITIZE_STRING));
-    $Empresa->setRazaoSocial(filter_input(INPUT_POST, "RazaoSocial", FILTER_SANITIZE_STRING));
+    $Empresa->setNomeFantasia(filter_input(INPUT_POST, "nomeFantasia", FILTER_SANITIZE_STRING));
+    $Empresa->setRazaoSocial(filter_input(INPUT_POST, "razaoSocial", FILTER_SANITIZE_STRING));
     $Empresa->setCnpj(filter_input(INPUT_POST, "cnpj", FILTER_SANITIZE_STRING));
     $Empresa->sethistoria(filter_input(INPUT_POST, "historia", FILTER_SANITIZE_STRING));
     $Empresa->setapresentacao(filter_input(INPUT_POST, "apresentacao", FILTER_SANITIZE_STRING));
@@ -19,9 +19,9 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $idEmpresa = filter_input(INPUT_POST, 'id');
 
     if (empty($idEmpresa)):
-        //Tentar adicionar exibir mensagem ao usuário
+        //Tentar adicionar exibir mensagem a empresa
         if ($Empresa->add()) {
-            echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href=apaEmpresa.php;</script>";
+            echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href='apaEmpresa.php';</script>";
         } else {
             echo "<script>window.alert('Erro ao inserir Empresa!');window.open(document.referrer,'_self');</script>";
         }
@@ -37,7 +37,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     $idEmpresa = intval(filter_input(INPUT_POST, "id"));
     if ($Empresa->delete("id", $idEmpresa)) {
-        header("location:apaEmpresa.php");
+        header("location:'apaEmpresa.php'");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
     }
