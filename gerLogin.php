@@ -10,24 +10,35 @@
 </head>
 <body>
 <header>
-        <?php require_once "_parts/_menuAdimin.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     <main class="container mt-5">
         <h3>Login</h3>
-
+        <?php
+        spl_autoload_register(function ($class){
+            require_once "classes/{$class}.class.php";
+        });
+        if(filter_has_var(INPUT_POST, "id")):
+            $edtLogin = new Login();
+            $id = intval(filter_input(INPUT_POST, "id"));
+            $Usuario = $edtUsuario->search("id", $id);
+            
+        endif;
+        ?>
     
         <form action="validarLogin.php" method="post">
+             <input type="hidden" value="<?php echo $Usuario->id ?? null;?>" name="id">
             <div class="mb-3 col-md-10">
                 <label for="inputnome" class="form-label">Usuário</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o usuário"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Usuario->nome ?? null;?>">
             </div>
 
             <div class="mb-3 col-md-10">
                 <label for="inputSenha" class="form-label">Senha</label>
                  <input type="password" name="Senha" id="Senha" placeholder="Digite a senha"required
-                    class="form-control">
+                    class="form-control" value="<?php print $Usuario->senha ?? null;?>">
             </div>
 
             <div class="col-12 mt-3">
@@ -39,7 +50,6 @@
      <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

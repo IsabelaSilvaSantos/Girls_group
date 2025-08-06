@@ -18,5 +18,4 @@ controles de ária="barra de navegaçãoNav" ária expandida="falso" rótulo de 
         </ul>
       </div>
     </div>
-  </nav>
-  
+</nav>
