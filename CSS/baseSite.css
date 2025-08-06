@@ -5,7 +5,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--cor-fundo-cinza-escuro);
+    background-color: var( --cor-fundo-claro);
     color: var(--cor-fonte-claro);
     padding: 20px;
     flex-wrap: wrap;
@@ -27,7 +27,7 @@ header img {
 
 
 .nav-custom {
-    background-color: var(--cor-fundo-cinza-escuro);
+    background-color: var( --cor-fundo-claro);
 }
 
 .navbar-nav {

@@ -3,12 +3,12 @@
 
 :root {
     --font-primaria: "Oswald", sans-serif;
-    --font-secundaria: "Roboto", sans-serif;
+    --font-secundaria: "Times New Roman', Times, serif;"
     --cor-fundo-claro: #918f8f;
     --cor-fundo-cinza-escuro: #b3b4b6;
     --cor-fundo-cinza-medio: #4a4a4a;
-    --cor-fundo-preto: #000000;
-    --cor-texto: #1c1c1c;
+    --cor-fundo-preto: #e8dbdb;
+    --cor-texto: #f1eaea;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 
 
 header {
-    background-color: var(--cor-fundo-cinza-escuro);
+    background-color: var(--cor-fundo-claro);
     color: white;
     text-align: center;
     padding: 30px 15px;
@@ -37,27 +37,33 @@ header {
 }
 
 header img {
+    background-color: #999999;
     max-width: 120px;
     margin-bottom: 10px;
 }
 
 
 nav {
-    background-color: #1f1f1f;
-    padding: 12px;
-    text-align: center;
+     background-color: #999999; 
+     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
-    color: #ffffff;
+     color: white;
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 20px;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px #ccc;
+    transition: all 0.3s;
 }
-
 nav a:hover {
-    color: #cccccc;
+     background-color: #888;
+    color: #fff;
 }
 
 
@@ -89,7 +95,6 @@ main {
     width: 1000%;
 }
 
-/* Faixa central */
 .dest {
     background-image: url('../images/LOgoMenu.png');
     background-repeat: no-repeat;
@@ -140,7 +145,7 @@ section:nth-child(even) .texto {
     order: -1;
 }
 
-/* Rodapé */
+
 footer {
     background-color: var(--cor-fundo-cinza-medio);
     color: #fff;
@@ -179,7 +184,6 @@ footer a {
     transition: 0.3s;
 }
 
-/* Redes Sociais */
 .rede-social {
     display: flex;
     flex-direction: column;

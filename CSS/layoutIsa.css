@@ -5,25 +5,25 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Times New Roman', Times, serif;"
       }
       body{
       background-color: #e3e4e9;
-      color:#000000;
+      color:#999999;
       }
       header{
-          background-color: #000000;
+          background-color: #999999;
           color:rgb(0, 0, 0);
           text-align: center;
           padding: 50px;
       }
       nav{
-          background-color: #000000;
+          background-color: #999999;
           padding: 14px;
           text-align: center;
       }
       nav a{
-          color:#000000;
+          color:#999999;
           text-decoration:none;
           margin: 0 40px;
           font-weight: bold;
@@ -43,7 +43,9 @@
   .nav-custom{
   background-color: rgb(224, 219, 219);
   }
-  .navbar-nav{
+  nav.navbar {
+  background-color: #999999;
+
   gap: 10px;
   }
   .nav-link{
