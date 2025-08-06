@@ -14,7 +14,7 @@
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
     <main class="container">
-        <h3>Cadastro de Produtos</h3>
+        <h3 class="text-center">Cadastro de Produtos</h3>
         <?php
         spl_autoload_register(function ($class){
             require_once "classes/{$class}.class.php";

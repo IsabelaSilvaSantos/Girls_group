@@ -8,12 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/baseSite.css" />
   <link rel="stylesheet" href="CSS/index.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
   <title>Nome da empresa - frase curta</title>
 </head>
 
 <body>
-
-  
   <nav class="navbar navbar-expand-lg nav-custom">
     <div class="container-fluid">
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,7 +29,6 @@
       </div>
     </div>
   </nav>
-
   
   <header>
     <img src="images/LOgoMenu.png" alt="Logo da empresa" />
@@ -41,8 +39,6 @@
   </header>
 
   <main>
-
-    
     <div id="carouselExampleFade" class="carousel slide carousel-fade mb-4">
       <div class="carousel-inner">
         <div class="carousel-item active">
