@@ -10,7 +10,7 @@
     <body>
 
     <header>
-        <?php require_once "_parts/_menu.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     
