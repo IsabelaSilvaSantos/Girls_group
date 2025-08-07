@@ -13,11 +13,7 @@
     <header>
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
-
-    
     <main class="container">
-    
-    
     <h3 class="text-center">Cadastro da Empresa</h3>
     <?php
         spl_autoload_register(function ($class){

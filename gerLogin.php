@@ -21,7 +21,7 @@
             require_once "classes/{$class}.class.php";
         });
         if(filter_has_var(INPUT_POST, "id")):
-            $edtLogin = new Login();
+            $edtusuario = new Usuario();
             $id = intval(filter_input(INPUT_POST, "id"));
             $Usuario = $edtUsuario->search("id", $id);
             
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-6">
             <label for="inputSenha" class="form-label">Senha</label>
-            <input type="password" name="Senha" id="Senha" placeholder="Digite a senha" required
+            <input type="password" name="senha" id="senha" placeholder="Digite a senha" required
                 class="form-control" value="<?php print $Usuario->senha ?? null;?>">
         </div>
     </div>

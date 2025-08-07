@@ -34,19 +34,19 @@
             <input type="hidden" value="<?php echo $Usuario->id ?? null; ?>" name="id">
           <div class="row g-4">
         <div class="col-md-6">
-            <label for="inputNome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="inputNome" name="usuario">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="usuario">
         </div>
         <div class="col-md-6">
-            <label for="inputEmail3" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail3" name="email">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
         </div>
     </div>
 
     <div class="row g-4 mt-4">
         <div class="col-md-6">
-            <label for="inputSenha" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="inputSenha" name="senha">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senha" name="senha">
         </div>
         <div class="col-md-6">
             <label for="papel" class="form-label">Papel na empresa</label>

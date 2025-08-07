@@ -61,9 +61,9 @@ class Usuario extends CRUD{
             $sql = "UPDATE $this->table SET nome = :nome, senha = :senha WHERE $campo = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-            $stmt->bindParam(":email", $this->email, PDO::PARAM_INT);
-            $stmt->bindParam(":papel", $this->papel, PDO::PARAM_INT);
-            $stmt->bindParam(":senha", $this->senha, PDO::PARAM_INT);
+            $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
+            $stmt->bindParam(":papel", $this->papel, PDO::PARAM_STR);
+            $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             return $stmt->execute();
     }

@@ -36,8 +36,8 @@
                     require_once "classes/{$class}.class.php";
                 });
 
-                $p = new Empresa();
-                $empresa = $p->all();
+                $P = new Empresa();
+                $empresa = $P->all();
                 foreach ($empresa as $Empresa):
                     ?>
                     <tr>

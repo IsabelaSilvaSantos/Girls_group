@@ -17,16 +17,16 @@
     <main class="container">
         <h3 class="text-center">Cadastro de Clientes</h3>
         <?php
-        spl_autoload_register(function ($class){
-            require_once "classes/{$class}.class.php";
-        });
-        if(filter_has_var(INPUT_POST, "id")):
-            $edtProduto = new Cliente();
-            $id = intval(filter_input(INPUT_POST, "id"));
-            $Cliente = $edtCliente->search("id", $id);
-            
-        endif;
-        ?>
+spl_autoload_register(function ($class){
+    require_once "classes/{$class}.class.php";
+});
+
+if (filter_has_var(INPUT_POST, "id")):
+    $edtCliente = new Cliente(); // Corrigido aqui
+    $id = intval(filter_input(INPUT_POST, "id"));
+    $Cliente = $edtCliente->search("id", $id);
+endif;
+?>
 
     <form action="dbCliente.php" method="post" class="row g-4 mt-3">
     <input type="hidden" value="<?php echo $Cliente->id ?? null;?>" name="id">
