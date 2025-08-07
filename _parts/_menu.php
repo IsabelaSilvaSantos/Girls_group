@@ -1,6 +1,6 @@
 
   <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #999;">
-  <div class="container d-flex justify-content-between align-items-center">
+  <div class="container-fluid">
     
     <a class="navbar-brand" href="#">
       <img src="images/LOgoMenu.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
@@ -11,22 +11,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav gap-4">
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav gap-4">
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#">Sobre</a>
+            <a class="nav-link text-white fw-semibold" href="#sobre" class="nav-link">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#">Produtos</a>
+            <a class="nav-link text-white fw-semibold" href="#produtos" class="nav-link">Produtos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#">Estrutura</a>
+            <a class="nav-link text-white fw-semibold" href="#estrutura" class="nav-link">Estrutura</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#">Contato</a>
+            <a class="nav-link text-white fw-semibold" href="#contato" class="nav-link">Contato</a>
         </li>
-      </ul>
-    </div>
-
-  </div>
+       <li class="nav-item">
+          <a class="nav-link text-white fw-semibold" href="" class="nav-link">Entrar</a>
+        </li>
+    </ul>
+</div>
 </nav>

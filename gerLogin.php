@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/layoutLogin.css">
     <title>Tela de Login</title>
 </head>
@@ -27,23 +28,24 @@
         endif;
         ?>
     
-        <form action="validarLogin.php" method="post">
+        <form action="validarLogin.php" method="post" class="row g-4 mt-2">
              <input type="hidden" value="<?php echo $Usuario->id ?? null;?>" name="id">
-            <div class="mb-3 col-md-10">
-                <label for="inputnome" class="form-label">Usuário</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o usuário"required
-                    class="form-control" value="<?php print $Usuario->nome ?? null;?>">
-            </div>
+           <div class="row g-4">
+        <div class="col-md-6">
+            <label for="inputnome" class="form-label">Usuário</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite o usuário" required
+                class="form-control" value="<?php print $Usuario->nome ?? null;?>">
+        </div>
+        <div class="col-md-6">
+            <label for="inputSenha" class="form-label">Senha</label>
+            <input type="password" name="Senha" id="Senha" placeholder="Digite a senha" required
+                class="form-control" value="<?php print $Usuario->senha ?? null;?>">
+        </div>
+    </div>
 
-            <div class="mb-3 col-md-10">
-                <label for="inputSenha" class="form-label">Senha</label>
-                 <input type="password" name="Senha" id="Senha" placeholder="Digite a senha"required
-                    class="form-control" value="<?php print $Usuario->senha ?? null;?>">
-            </div>
-
-            <div class="col-12 mt-3">
-                <button type="submit" class="btn btn-dark" name="btnGravar">Efetuar Login</button>
-            </div>
+    <div class="col-12 mt-4">
+        <button type="submit" class="btn btn-dark" name="btnGravar">Efetuar Login</button>
+    </div>
         </form>
     </main>
 
