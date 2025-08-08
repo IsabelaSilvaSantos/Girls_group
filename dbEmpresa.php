@@ -37,7 +37,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     $idEmpresa = intval(filter_input(INPUT_POST, "id"));
     if ($Empresa->delete("id", $idEmpresa)) {
-        header("location:'apaEmpresa.php'");
+        header("location:apaEmpresa.php");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
     }

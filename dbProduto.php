@@ -31,7 +31,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     $idProduto = intval(filter_input(INPUT_POST, "id"));
     if ($Produto->delete("id", $idProduto)) {
-        header("location:'apaProdutos.php'");
+        header("location:apaProdutos.php");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
     }
