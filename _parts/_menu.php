@@ -26,7 +26,7 @@
             <a class="nav-link text-white fw-semibold" href="#contato" class="nav-link">Contato</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="" class="nav-link">Entrar</a>
+          <a class="nav-link text-white fw-semibold" href="gerLogin.php" class="nav-link">Entrar</a>
         </li>
     </ul>
 </div>

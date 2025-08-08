@@ -27,9 +27,6 @@
         <li class="nav-item">
           <a class="nav-link text-white fw-semibold" href="gerUsuario.php" class="nav-link">Usuário</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="gerLogin.php" class="nav-link">Entrar</a>
-        </li>
       </ul>
     </div>
   </div>
