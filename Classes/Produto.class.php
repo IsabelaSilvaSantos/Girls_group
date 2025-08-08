@@ -1,6 +1,7 @@
 <?php
 //Nome do Produto, Descrição, Preço, Unidade de Medida
-class Produto extends CRUD{
+class Produto extends CRUD
+{
     protected $table = "Produtos";
     private $id;
     private $nome;
@@ -8,38 +9,49 @@ class Produto extends CRUD{
     private $preco;
     private $unidadeMedida;
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->id = $id;
     }
-    public function setNome($nome){
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
-    public function setDesc($descricao){
+    public function setDesc($descricao)
+    {
         $this->descricao = $descricao;
     }
-    public function setPreco($preco){
+    public function setPreco($preco)
+    {
         $this->preco = $preco;
     }
-    public function setUnidMed($unidadeMedida){
+    public function setUnidMed($unidadeMedida)
+    {
         $this->unidadeMedida = $unidadeMedida;
     }
-    public function getId(){
-        return $this-> id;
+    public function getId()
+    {
+        return $this->id;
     }
-    public function getNome(){
+    public function getNome()
+    {
         return $this->nome;
     }
-    public function getDesc(){
+    public function getDesc()
+    {
         return $this->descricao;
     }
-    public function getPreco(){
+    public function getPreco()
+    {
         return $this->preco;
     }
-    public function getUnidMed(){
+    public function getUnidMed()
+    {
         return $this->unidadeMedida;
     }
 
-    public function add(){
+    public function add()
+    {
         $sql = "INSERT INTO $this->table (nome, descricao, preco, unidadeMedida) VALUES (:nome, :descricao, :preco, :unidadeMedida)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
@@ -48,15 +60,16 @@ class Produto extends CRUD{
         $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR);
         return $stmt->execute();
     }
-    public function update(string $campo, int $id){
-    $sql = "UPDATE $this->table SET nome = :nome, descricao = :descricao, preco = :preco, unidadeMedida = :unidadeMedida WHERE $campo = :id";
-    $stmt = $this->db->prepare($sql);
-    $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-    $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR); 
-    $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR); 
-    $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR); 
-    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    public function update(string $campo, int $id)
+    {
+        $sql = "UPDATE $this->table SET nome = :nome, descricao = :descricao, preco = :preco, unidadeMedida = :unidadeMedida WHERE $campo = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
+        $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
+        $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
-    return $stmt->execute();
-}
+        return $stmt->execute();
+    }
 }
