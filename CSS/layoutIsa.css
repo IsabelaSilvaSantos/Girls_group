@@ -10,6 +10,9 @@
       body{
       background-color: #ffffff;
       color:#000000;
+      display: flex; /* Transforma o body em um contêiner flexível */
+      flex-direction: column; /* Empilha os filhos verticalmente */
+      min-height: 100vh; /* Garante que o body tenha pelo menos a altura total da janela de visualização */
       }
       header{
           background-color: #999999;
@@ -54,7 +57,8 @@
           background-color:rgb(224, 221, 221);
           border-radius: 30px;
           box-shadow: 0 0 10px #d8cdcd;
-          color:#000000
+          color:#000000;
+          flex-grow: 1;
       }
   
   .dest {
