@@ -9,47 +9,48 @@
     <link rel="stylesheet" href="CSS/layoutLogin.css">
     <title>Tela de Login</title>
 </head>
+
 <body>
-<header>
-        <?php require_once "_parts/_menuAdmin.php"; ?>
+    <header>
+        <?php require_once "_parts/_menuLogin.php"; ?>
     </header>
 
     <main class="container mt-5">
-    <h3 class="text-center">Login</h3>
+        <h3 class="text-center">Login</h3>
         <?php
-        spl_autoload_register(function ($class){
+        spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
         });
-        if(filter_has_var(INPUT_POST, "id")):
-            $edtusuario = new Usuario();
+        if (filter_has_var(INPUT_POST, "id")):
+            $edtUsuario = new Usuario();
             $id = intval(filter_input(INPUT_POST, "id"));
             $Usuario = $edtUsuario->search("id", $id);
-            
+
         endif;
         ?>
-    
-        <form action="validarLogin.php" method="post" class="row g-4 mt-2">
-             <input type="hidden" value="<?php echo $Usuario->id ?? null;?>" name="id">
-           <div class="row g-4">
-        <div class="col-md-6">
-            <label for="inputnome" class="form-label">Usuário</label>
-            <input type="text" name="nome" id="nome" placeholder="Digite o usuário" required
-                class="form-control" value="<?php print $Usuario->nome ?? null;?>">
-        </div>
-        <div class="col-md-6">
-            <label for="inputSenha" class="form-label">Senha</label>
-            <input type="password" name="senha" id="senha" placeholder="Digite a senha" required
-                class="form-control" value="<?php print $Usuario->senha ?? null;?>">
-        </div>
-    </div>
 
-    <div class="col-12 mt-4">
-        <button type="submit" class="btn btn-dark" name="btnGravar">Efetuar Login</button>
-    </div>
+        <form action="validarLogin.php" method="post" class="row g-4 mt-2">
+            <input type="hidden" value="<?php echo $Usuario->id ?? null; ?>" name="id">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Usuário</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o usuário" required
+                        class="form-control" value="<?php print $Usuario->nome ?? null; ?>">
+                </div>
+                <div class="col-md-6">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite a senha" required
+                        class="form-control" value="<?php print $Usuario->senha ?? null; ?>">
+                </div>
+            </div>
+
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-dark" name="btnGravar">Efetuar Login</button>
+            </div>
         </form>
     </main>
 
-     <footer>
+    <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>

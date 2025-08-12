@@ -17,7 +17,7 @@
 
     <main class="container mt-5">
 
-    <h3 class="text-center">Cadastro do usuário</h3>
+        <h3 class="text-center">Cadastro do usuário</h3>
         <?php
         spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
@@ -30,40 +30,43 @@
         endif;
 
         ?>
-        <form action="dbUsuario.php" method="post">
+        <form action="dbUsuario.php" method="post" class="row g3 mt-3">
             <input type="hidden" value="<?php echo $Usuario->id ?? null; ?>" name="id">
-          <div class="row g-4">
-        <div class="col-md-6">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="usuario">
-        </div>
-        <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email">
-        </div>
-    </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
+                        value="<?php print $Usuario->nome ?? null; ?>">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required
+                        class="form-control" value="<?php print $Usuario->email ?? null; ?>">
+                </div>
+            </div>
 
-    <div class="row g-4 mt-4">
-        <div class="col-md-6">
-            <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senha" name="senha">
-        </div>
-        <div class="col-md-6">
-            <label for="papel" class="form-label">Papel na empresa</label>
-            <select id="papel" name="papel" class="form-select" required>
-                <option value="">Selecione</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Gerente">Gerente</option>
-                <option value="Técnico">Técnico</option>
-                <option value="Financeiro">Financeiro</option>
-                <option value="Recursos Humanos">Recursos Humanos</option>
-            </select>
-        </div>
+           <div class="row g-4 mt-4">
+    <div class="col-md-6">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" name="senha" id="senha" class="form-control">
     </div>
+    
+                <div class="col-md-6">
+                    <label for="papel" class="form-label">Papel na empresa</label>
+                    <select id="papel" name="papel" class="form-select" required>
+                        <option value="">Selecione</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Técnico">Técnico</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>
+                    </select>
+                </div>
+            </div>
 
-    <div class="col-12 mt-4">
-        <button type="submit" class="btn btn-dark" name="btnGravar">Cadastrar</button>
-    </div>
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-dark" name="btnGravar">Cadastrar</button>
+            </div>
         </form>
     </main>
 
