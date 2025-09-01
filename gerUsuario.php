@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/layoutGer.css">
     <title>Cadastro de Usuário</title>
 </head>
 
@@ -48,7 +48,7 @@
            <div class="row g-4 mt-4">
     <div class="col-md-6">
         <label for="senha" class="form-label">Senha</label>
-        <input type="password" name="senha" id="senha" class="form-control">
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" class="form-control">
     </div>
     
                 <div class="col-md-6">

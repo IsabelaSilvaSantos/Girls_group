@@ -1,16 +1,59 @@
-<footer class="footer-custom">
-  <div class="footer-logo">
-    <img src="images/Logo.png" alt="Logo Girls Group">
-  </div>
+<footer style="background-color: #de9ca4;">
+    <div class="container-fluid">
+        <div class="row text-center align-items-center justify-content-center">
+            
+            <div class="col-6 col-md-2">
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>WhatsApp</p>
+                        <p>99 99999-9999</p>
+                    </div>
+                </div>
+            </div>
 
-  <div class="footer-info">
-    <p>2025 Empresa Girls Group, Todos os direitos reservados</p>
-    <p>99 99999-9999</p>
-  </div>
+            <div class="col-6 col-md-2">
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>Telefone</p>
+                        <p>99 99999-9999</p>
+                    </div>
+                </div>
+            </div>
 
-  <div class="footer-social">
-    <a href="https://www.instagram.com/_isabela_13g/" class="instagram" target="_blank"><i
-        class="bi bi-instagram"></i></a>
-    <a href="https://wa.me/5569984060305" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
-  </div>
+            <div class="col-md-auto d-flex align-items-center justify-content-center">
+                <div class="vertical-divider"></div>
+            </div>
+
+            <div class="col-6 col-md-2">
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="bi bi-instagram"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>Instagram</p>
+                        <p>@nomeempresa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2">
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="bi bi-facebook"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>Facebook</p>
+                        <p>@nomeempresa</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </footer>
