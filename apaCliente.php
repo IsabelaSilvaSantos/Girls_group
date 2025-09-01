@@ -20,7 +20,7 @@
             <h3>Clientes</h3>
         </div>
         <div class="mt-3 mb-4">
-            <a href="gerCliente.php" class="btn btn-outline-secondary">Novo Cliente</a>
+            <a href="gerCliente.php" class="btn btn-outline-light">Novo Cliente</a>
         </div>
         <table class="table">
             <thead class="table-secondary">
@@ -69,7 +69,7 @@
     </main>
 
     <footer>
-        <?php require_once "_parts/_footer.php"; ?>
+        <?php require_once "_parts/_footer.php"?>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">

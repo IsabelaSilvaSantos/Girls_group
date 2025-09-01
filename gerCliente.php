@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/layoutIsa.css">
+    <link rel="stylesheet" href="CSS/layout.css">
 
     <title>Cadastro de Clintes</title>
 </head>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
+                <button type="submit" class="btn btn-light" name="btnGravar">Enviar</button>
             </div>
         </form>
     </main>
