@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap');
+
+:raiz{ 
+  --fonte-primaria:"Imperial";
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f2eee8;
   color: #000000;
+  font-family: var(--fonte-primaria);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -92,7 +99,7 @@ main {
   text-align: center;
   color: rgb(2, 2, 2);
   font-size: 40px;
-  font-weight: bold;
+  font-family: var(--fonte-primaria);
   margin-bottom: 5px;
   margin-top: 80px;
 }
@@ -126,16 +133,15 @@ main {
 }
 
 #carouselExampleFade {
-  max-width: 900px;
-  margin: 40px auto;
-  border-radius: 15px;
+  max-width: 2000px;
+  margin: 0px auto;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px #ffeae9;
 }
 
 .carousel-inner img {
   object-fit: cover;
-  height: 300px;
+  height: 600px;
   width: 1000%;
 }
 
@@ -149,19 +155,18 @@ main {
 
 .nav-link {
   color: var(--color-font-clara);
-  box-shadow: 0 1px 5px rgb(226, 221, 221);
-  border-radius: 12px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--color-font-clara);
+   border-radius: 12px;
   box-shadow: 0 16px 32px rgb(248, 244, 244);
   transform: translateY(-4px);
 }
 
 .footer-custom {
-  background-color: #999999;
+  background-color: #de9ca4;
   color: #f0f0f0;
   display: flex;
   justify-content: space-between;

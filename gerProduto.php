@@ -58,7 +58,7 @@
             </div>
 
             <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
+                <button type="submit" class="btn btn-light" name="btnGravar">Enviar</button>
             </div>
         </form>
         </form>

@@ -1,6 +1,6 @@
 <footer class="footer-custom">
   <div class="footer-logo">
-    <img src="images/LOgoMenu.png" alt="Logo Girls Group">
+    <img src="images/Logo.png" alt="Logo Girls Group">
   </div>
 
   <div class="footer-info">

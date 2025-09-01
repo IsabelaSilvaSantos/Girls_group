@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #ffeae9;
   color: #000000;
   min-height: 100vh;
   display: flex;
@@ -18,27 +18,27 @@ body {
 }
 
 header {
-  background-color: #999999;
+  background-color: #de9ca4;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 10px;
 }
 
 nav {
-  background-color: #999999;
+  background-color: #de9ca4;
   padding: 5px;
   text-align: center;
 }
 
 nav a {
-  color: #999999;
+  color: #de9ca4;
   text-decoration: none;
   margin: 5 15px;
   font-weight: bold;
 }
 
 .nav-custom {
-  background-color: rgb(224, 219, 219);
+  background-color: #de9ca4;
 }
 
 .navbar-nav {
@@ -47,17 +47,15 @@ nav a {
 
 .nav-link {
   color: var(--color-font-clara);
-  box-shadow: 0 1px 5px rgb(226, 221, 221);
-  border-radius: 12px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--color-font-clara);
+   border-radius: 12px;
   box-shadow: 0 16px 32px rgb(248, 244, 244);
   transform: translateY(-4px);
 }
-
 main {
   flex-grow: 1; 
 }
@@ -67,14 +65,14 @@ main.container {
   max-width: 1000px;
   margin: 90px auto;
   padding: 50px;
-  background-color: rgb(224, 221, 221);
+  background-color: #de9ca4(224, 221, 221);
   border-radius: 30px;
   box-shadow: 0 0 10px #d8cdcd;
   color: #000000;
 }
 
 .dest {
-  background-image: url('../images/LOgoMenu.png');
+  background-image: url('../images/Logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -101,7 +99,7 @@ section:nth-child(even) .texto {
 }
 
 .footer-custom {
-  background-color: #999999;
+  background-color: #de9ca4;
   color: #f0f0f0;
   display: flex;
   justify-content: space-between;
