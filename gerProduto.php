@@ -20,27 +20,27 @@
         spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
         });
-        if (filter_has_var(INPUT_POST, "id")):
+        if (filter_has_var(INPUT_POST, "id_produto")):
             $edtProduto = new Produto();
-            $id = intval(filter_input(INPUT_POST, "id"));
-            $Produto = $edtProduto->search("id", $id);
+            $id_produto = intval(filter_input(INPUT_POST, "id_produto"));
+            $Produto = $edtProduto->search("id_produto", $id_produto);
 
         endif;
         ?>
 
         <form action="dbProduto.php" method="post" class="row g3 mt-3">
 
-            <input type="hidden" value="<?php echo $Produto->id ?? null; ?>" name="id">
+            <input type="hidden" value="<?php echo $Produto->id_produto ?? null; ?>" name="id_produto">
             <div class="row g-4">
                 <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
-                        value="<?php print $Produto->nome ?? null; ?>">
+                    <label for="nome_produto" class="form-label">Nome</label>
+                    <input type="text" name="nome_produto" id="nome_produto" placeholder="Digite seu nome" required 
+                    class="form-control" value="<?php print $Produto->nome_produto ?? null; ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" name="descricao" id="descricao" placeholder="Digite a descricao do produto"
-                        required class="form-control" value="<?php print $Produto->descricao ?? null; ?>">
+                    <input type="text" name="descricao" id="descricao" placeholder="Digite a descricao do produto" required 
+                    class="form-control" value="<?php print $Produto->descricao ?? null; ?>">
                 </div>
             </div>
 
@@ -51,9 +51,9 @@
                         class="form-control" value="<?php print $Produto->preco ?? null; ?>">
                 </div>
                 <div class="col-md-6">
-                    <label for="unidadeMedida" class="form-label">Unidade de Medida</label>
-                    <input type="text" name="unidadeMedida" id="unidadeMedida" placeholder="Digite a unidade de medida"
-                        required class="form-control" value="<?php print $Produto->unidadeMedida ?? null; ?>">
+                    <label for="unidade_medida" class="form-label">Unidade de Medida</label>
+                    <input type="text" name="unidade_medida" id="unidade_medida" placeholder="Digite a unidade de medida" required 
+                        class="form-control" value="<?php print $Produto->unidade_medida ?? null; ?>">
                 </div>
             </div>
 

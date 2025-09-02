@@ -4,22 +4,29 @@
 
 class Empresa extends CRUD
 {
-    protected $table = "Empresa";
-    private $nome;
+    protected $table = "empresa";
+    private $id_empresa;
+    private $nome_empresa;
     private $endereco;
     private $email;
     private $telefone;
-    private $nomeFantasia;
-    private $razaoSocial;
+    private $nome_fantasia;
+    private $razao_social;
     private $cnpj;
-    private $principalAtividade;
+    private $principal_atividade;
     private $historia;
     private $apresentacao;
 
-    public function setNome($nome)
+    public function setNome($nome_empresa)
     {
-        $this->nome = $nome;
+        $this->nome_empresa = $nome_empresa;
     }
+
+    public function setid_empresa($id_empresa)
+    {
+        $this->id_empresa = $id_empresa;
+    }
+
     public function setEndereco($endereco)
     {
         $this->endereco = $endereco;
@@ -32,13 +39,13 @@ class Empresa extends CRUD
     {
         $this->telefone = $telefone;
     }
-    public function setNomeFantasia($nomeFantasia)
+    public function setNomeFantasia($nome_fantasia)
     {
-        $this->nomeFantasia = $nomeFantasia;
+        $this->nome_fantasia = $nome_fantasia;
     }
-    public function setRazaoSocial($razaoSocial)
+    public function setRazaoSocial($razao_social)
     {
-        $this->razaoSocial = $razaoSocial;
+        $this->razao_social = $razao_social;
     }
     public function setCnpj($cnpj)
     {
@@ -52,13 +59,17 @@ class Empresa extends CRUD
     {
         $this->apresentacao = $apresentacao;
     }
-    public function setprincipalAtividade($principalAtividade)
+    public function setprincipalAtividade($principal_atividade)
     {
-        $this->principalAtividade = $principalAtividade;
+        $this->principal_atividade = $principal_atividade;
     }
     public function getNome()
     {
-        return $this->nome;
+        return $this->nome_empresa;
+    }
+    public function getid_empresa()
+    {
+        return $this->id_empresa;
     }
     public function getEndereco()
     {
@@ -72,21 +83,21 @@ class Empresa extends CRUD
     {
         return $this->telefone;
     }
-    public function getRazaoSocial()
+    public function getRazao_social()
     {
-        return $this->razaoSocial;
+        return $this->razao_social;
     }
-    public function getNomeFantasia()
+    public function getNome_fantasia()
     {
-        return $this->nomeFantasia;
+        return $this->nome_fantasia;
     }
     public function getCnpj()
     {
         return $this->cnpj;
     }
-    public function getprincipalAtividade()
+    public function getprincipal_atividade()
     {
-        return $this->principalAtividade;
+        return $this->principal_atividade;
     }
     public function gethistoria()
     {
@@ -100,35 +111,35 @@ class Empresa extends CRUD
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome, endereco, email, telefone, nomeFantasia, razaoSocial, cnpj, principalAtividade, historia, apresentacao ) VALUES (:nome, :endereco, :email, :telefone, :nomeFantasia, :razaoSocial, :cnpj, :principalAtividade, :historia, :apresentacao)";
+        $sql = "INSERT INTO $this->table (nome_empresa, endereco, email, telefone, nome_fantasia, razao_social, cnpj, principal_atividade, historia, apresentacao ) VALUES (:nome_empresa, :endereco, :email, :telefone, :nome_fantasia, :razao_social, :cnpj, :principal_atividade, :historia, :apresentacao)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_empresa", $this->nome_empresa, PDO::PARAM_STR);
         $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
         $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-        $stmt->bindParam(":nomeFantasia", $this->nomeFantasia, PDO::PARAM_STR);
-        $stmt->bindParam(":razaoSocial", $this->razaoSocial, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_fantasia", $this->nome_fantasia, PDO::PARAM_STR);
+        $stmt->bindParam(":razao_social", $this->razao_social, PDO::PARAM_STR);
         $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
-        $stmt->bindParam(":principalAtividade", $this->principalAtividade, PDO::PARAM_STR);
+        $stmt->bindParam(":principal_atividade", $this->principal_atividade, PDO::PARAM_STR);
         $stmt->bindParam(":historia", $this->historia, PDO::PARAM_STR);
         $stmt->bindParam(":apresentacao", $this->apresentacao, PDO::PARAM_STR);
         return $stmt->execute();
     }
-    public function update(string $campo, int $id)
+    public function update(string $campo, int $id_empresa)
     {
-        $sql = "UPDATE $this->table SET nome = :nome, endereco= :endereco, email = :email, telefone = :telefone, nomeFantasia = :nomeFantasia, razaoSocial = :razaoSocial, cnpj = :cnpj, principalAtividade = :principalAtividade, historia = :historia, apresentacao = :apresentacao WHERE $campo = :id";
+        $sql = "UPDATE $this->table SET nome_empresa = :nome_empresa, endereco= :endereco, email = :email, telefone = :telefone, nome_fantasia = :nome_fantasia, razao_social = :razao_social, cnpj = :cnpj, principal_atividade = :principal_atividade, historia = :historia, apresentacao = :apresentacao WHERE $campo = :id_empresa";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_empresa", $this->nome_empresa, PDO::PARAM_STR);
         $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
         $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-        $stmt->bindParam(":nomeFantasia", $this->nomeFantasia, PDO::PARAM_STR);
-        $stmt->bindParam(":razaoSocial", $this->razaoSocial, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_fantasia", $this->nome_fantasia, PDO::PARAM_STR);
+        $stmt->bindParam(":razao_social", $this->razao_social, PDO::PARAM_STR);
         $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
-        $stmt->bindParam(":principalAtividade", $this->principalAtividade, PDO::PARAM_STR);
+        $stmt->bindParam(":principal_atividade", $this->principal_atividade, PDO::PARAM_STR);
         $stmt->bindParam(":historia", $this->historia, PDO::PARAM_STR);
         $stmt->bindParam(":apresentacao", $this->apresentacao, PDO::PARAM_STR);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":id_empresa", $id_empresa, PDO::PARAM_INT);
 
         return $stmt->execute();
     }

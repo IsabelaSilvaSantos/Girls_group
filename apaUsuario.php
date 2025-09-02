@@ -40,12 +40,12 @@
                 foreach ($usuario as $Usuario):
                     ?>
                     <tr>
-                        <td><?php echo $Usuario->id ?></td>
-                        <td><?php echo $Usuario->nome ?></td>
+                        <td><?php echo $Usuario->id_usuario ?></td>
+                        <td><?php echo $Usuario->nome_usuario ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerUsuario.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $Usuario->id_usuario ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar o Usuario?');">
                                     <i class="bi bi-pencil-square"></i>
@@ -53,7 +53,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbUsuario.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $Usuario->id_usuario ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o Usuario?');">
                                     <i class="bi bi-trash"></i>

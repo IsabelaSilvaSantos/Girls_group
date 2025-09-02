@@ -2,20 +2,20 @@
 //Nome do Produto, Descrição, Preço, Unidade de Medida
 class Produto extends CRUD
 {
-    protected $table = "Produtos";
-    private $id;
-    private $nome;
+    protected $table = "produto";
+    private $id_produto;
+    private $nome_produto;
     private $descricao;
     private $preco;
-    private $unidadeMedida;
+    private $unidade_medida;
 
-    public function setId($id)
+    public function setId($id_produto)
     {
-        $this->id = $id;
+        $this->id_produto = $id_produto;
     }
-    public function setNome($nome)
+    public function setNome($nome_produto)
     {
-        $this->nome = $nome;
+        $this->nome_produto = $nome_produto;
     }
     public function setDesc($descricao)
     {
@@ -25,17 +25,17 @@ class Produto extends CRUD
     {
         $this->preco = $preco;
     }
-    public function setUnidMed($unidadeMedida)
+    public function setUnidMed($unidade_medida)
     {
-        $this->unidadeMedida = $unidadeMedida;
+        $this->unidade_medida = $unidade_medida;
     }
-    public function getId()
+    public function getId_produto()
     {
-        return $this->id;
+        return $this->id_produto;
     }
     public function getNome()
     {
-        return $this->nome;
+        return $this->nome_produto;
     }
     public function getDesc()
     {
@@ -47,28 +47,28 @@ class Produto extends CRUD
     }
     public function getUnidMed()
     {
-        return $this->unidadeMedida;
+        return $this->unidade_medida;
     }
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome, descricao, preco, unidadeMedida) VALUES (:nome, :descricao, :preco, :unidadeMedida)";
+        $sql = "INSERT INTO $this->table (nome_produto, descricao, preco, unidade_medida) VALUES (:nome_produto, :descricao, :preco, :unidade_medida)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_produto", $this->nome_produto, PDO::PARAM_STR);
         $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
         $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
-        $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR);
+        $stmt->bindParam(":unidade_medida", $this->unidade_medida, PDO::PARAM_STR);
         return $stmt->execute();
     }
-    public function update(string $campo, int $id)
+    public function update(string $campo, int $id_produto)
     {
-        $sql = "UPDATE $this->table SET nome = :nome, descricao = :descricao, preco = :preco, unidadeMedida = :unidadeMedida WHERE $campo = :id";
+        $sql = "UPDATE $this->table SET nome_produto = :nome_produto, descricao = :descricao, preco = :preco, unidade_medida = :unidade_medida WHERE $campo = :id_produto";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_produto", $this->nome_produto, PDO::PARAM_STR);
         $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
         $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
-        $stmt->bindParam(":unidadeMedida", $this->unidadeMedida, PDO::PARAM_STR);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":unidade_medida", $this->unidade_medida, PDO::PARAM_STR);
+        $stmt->bindParam(":id_produto", $id_produto, PDO::PARAM_INT);
 
         return $stmt->execute();
     }

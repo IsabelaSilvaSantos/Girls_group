@@ -22,21 +22,21 @@
             require_once "classes/{$class}.class.php";
         });
 
-        if (filter_has_var(INPUT_POST, "id")):
+        if (filter_has_var(INPUT_POST, "id_cliente")):
             $edtCliente = new Cliente(); // Corrigido aqui
-            $id = intval(filter_input(INPUT_POST, "id"));
-            $Cliente = $edtCliente->search("id", $id);
+            $id_cliente = intval(filter_input(INPUT_POST, "id_cliente"));
+            $Cliente = $edtCliente->search("id_cliente", $id_cliente);
         endif;
         ?>
 
         <form action="dbCliente.php" method="post" class="row g-4 mt-3">
-            <input type="hidden" value="<?php echo $Cliente->id ?? null; ?>" name="id">
+            <input type="hidden" value="<?php echo $Cliente->id_cliente ?? null; ?>" name="id_cliente">
 
             <div class="row g-4">
                 <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
-                        value="<?php echo $Cliente->nome ?? ''; ?>">
+                    <label for="nome_cliente" class="form-label">Nome</label>
+                    <input type="text" name="nome_cliente" id="nome_cliente" placeholder="Digite seu nome" required class="form-control"
+                        value="<?php echo $Cliente->nome_cliente ?? ''; ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="telefone" class="form-label">Telefone</label>

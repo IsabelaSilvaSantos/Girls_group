@@ -6,13 +6,13 @@ spl_autoload_register(function ($class) {
 $Cliente = new Cliente();
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
-    $Cliente->setNome(filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING));
+    $Cliente->setNome(filter_input(INPUT_POST, "nome_cliente", FILTER_SANITIZE_STRING));
     $Cliente->setTel(filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING));
     $Cliente->setEmail(filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING));
     $Cliente->setSenha(filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING));
-    $idCliente = filter_input(INPUT_POST, 'id');
+    $id_cliente = filter_input(INPUT_POST, 'id_cliente');
 
-    if (empty($idCliente)):
+    if (empty($id_cliente)):
         //Tentar adicionar exibir mensagem ao cliente
         if ($Cliente->add()) {
             echo "<script>window.alert('Cliente inserido com sucesso!');window.location.href='apaCliente.php';</script>";
@@ -20,7 +20,7 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
             echo "<script>window.alert('Erro ao inserir Cliente!');window.open(document.referrer,'_self');</script>";
         }
     else:
-        if ($Cliente->update('id', $idCliente)) {
+        if ($Cliente->update('id_cliente', $id_cliente)) {
             echo "<script> window.alert('Cliente alterado com sucesso.');window.location.href='apaCliente.php'; </script>";
         } else {
             echo "<script> window.alert('Erro ao alterar o Cliente.');window.open(document.referrer, '_self'); </script>";
@@ -29,8 +29,8 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     endif;
 
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
-    $idCliente = intval(filter_input(INPUT_POST, "id"));
-    if ($Cliente->delete("id", $idCliente)) {
+    $id_cliente = intval(filter_input(INPUT_POST, "id_cliente"));
+    if ($Cliente->delete("id_cliente", $id_cliente)) {
         header("location:apaCliente.php");
     } else {
         echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";

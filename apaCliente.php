@@ -42,12 +42,12 @@
                 foreach ($cliente as $Cliente):
                     ?>
                     <tr>
-                        <td><?php echo $Cliente->id ?></td>
-                        <td><?php echo $Cliente->nome ?></td>
+                        <td><?php echo $Cliente->id_cliente ?></td>
+                        <td><?php echo $Cliente->nome_cliente ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerCliente.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Cliente->id ?>">
+                                <input type="hidden" name="id_cliente" value="<?php echo $Cliente->id_cliente ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar esse Cliente?');">
                                     <i class="bi bi-pencil-square"></i>
@@ -55,7 +55,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbCliente.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Cliente->id ?>">
+                                <input type="hidden" name="id_cliente" value="<?php echo $Cliente->id_cliente ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar esse cliente?');">
                                     <i class="bi bi-trash"></i>

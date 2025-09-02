@@ -41,12 +41,12 @@
                 foreach ($empresa as $Empresa):
                     ?>
                     <tr>
-                        <td><?php echo $Empresa->id ?></td>
-                        <td><?php echo $Empresa->nome ?></td>
+                        <td><?php echo $Empresa->id_empresa ?></td>
+                        <td><?php echo $Empresa->nome_empresa ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerEmpresa.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Empresa->id ?>">
+                                <input type="hidden" name="id_empresa" value="<?php echo $Empresa->id_empresa ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar essa empresa?');">
                                     <i class="bi bi-pencil-square"></i>
@@ -54,7 +54,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbEmpresa.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Empresa->id ?>">
+                                <input type="hidden" name="id_empresa" value="<?php echo $Empresa->id_empresa ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar essa empresa?');">
                                     <i class="bi bi-trash"></i>

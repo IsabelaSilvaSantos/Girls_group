@@ -41,12 +41,12 @@
                 foreach ($produto as $Produto):
                     ?>
                     <tr>
-                        <td><?php echo $Produto->id ?></td>
-                        <td><?php echo $Produto->nome ?></td>
+                        <td><?php echo $Produto->id_produto ?></td>
+                        <td><?php echo $Produto->nome_produto ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerProduto.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Produto->id ?>">
+                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar esse produto?');">
                                     <i class="bi bi-pencil-square"></i>
@@ -54,7 +54,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbProduto.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Produto->id ?>">
+                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar esse produto?');">
                                     <i class="bi bi-trash"></i>
