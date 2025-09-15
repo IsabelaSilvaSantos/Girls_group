@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="CSS/index.css" />
+  <link rel="stylesheet" href="CSS/catalogo.css" />
   <title>Nome da empresa - frase curta</title>
 </head>
 
@@ -41,15 +42,36 @@
     </div>
 
 
-    <div class="dest">
-      Produtos
-    </div>
+
+    <div>
+      <h3 class = "ProdutosTexto"> Produtos</h3>
+      <div class="product-grid">
+      <div class="product">
+      <img src="images/bolo1.png" alt="bolo cor de rosa">
+      <p class="name"> Bolo Rosa</p>
+      <p class="prince">R$20,00</p>
+      </div>
+
+    <div class="product">
+      <img src="images/bolo1.png" alt="bolo cor de rosa">
+      <p class="name"> Bolo Rosa</p>
+      <p class="prince">R$20,00</p>
+      </div>
+
+      <div class="product">
+      <img src="images/bolo1.png" alt="bolo cor de rosa">
+      <p class="name"> Bolo Rosa</p>
+      <p class="prince">R$20,00</p>
+      </div>
+      </div>
+        
+      
 
     <main>
-      <section id="sobre" class="bloco">
+      <section id="sobre Nós" class="bloco">
         <h2 class="text-center">Sobre Nós</h2>
         <div class="msn">
-          <img src="images/sobrenos.png" alt="Imagem do sobre nós" />
+          <img src="images/sobre1.png" alt="Imagem do sobre nós" />
           <div>
             <p>Texto Texto Texto Texto Texto</p>
             <p>Texto Texto Texto Texto Texto</p>
@@ -59,8 +81,8 @@
         </div>
       </section>
 
-      <section id="produtos" class="bloco">
-        <h2 class="text-center">Produtos</h2>
+      <section id="Empresa" >
+        <h2 class="text-center">Nossa Empresa</h2>
         <div class="msn">
           <img src="images/atividades.png" alt="Imagem de produtos" />
           <ul>
@@ -72,18 +94,9 @@
         </div>
       </section>
 
-      <section id="estrutura" class="bloco">
-        <h2 class="text-center">Nossa Estrutura</h2>
-        <div class="msn">
-          <img src="images/estruturas.png" alt="Imagem de estruturas" />
-          <div>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
-          </div>
-        </div>
-      </section>
+      
+        
+      
         </div>
         <div> 
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.999850372924!2d-61.38241022562322!3d-11.479935931604729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93c826519e7eca21%3A0x9c3ad57fa8cc996d!2sInstituto%20Federal%20de%20Rond%C3%B4nia%20-%20C%C3%A2mpus%20Cacoal!5e0!3m2!1spt-BR!2sbr!4v1756738790493!5m2!1spt-BR!2sbr" width="1000" height="400" style="border: 1px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
