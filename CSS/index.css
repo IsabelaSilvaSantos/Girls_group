@@ -139,15 +139,16 @@ main {
 }
 
 #carouselExampleFade {
-  max-width: 2000px;
-  margin: 0px auto;
+  max-width: 10000px;
+  margin: 40px auto;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 25px #ffeae9;
 }
 
 .carousel-inner img {
   object-fit: cover;
-  height: 600px;
+  height: 300px;
   width: 1000%;
 }
 

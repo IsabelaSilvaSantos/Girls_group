@@ -14,7 +14,7 @@
     <header>
         <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
-    <main class="container mt-6">
+    <main class="container mt-5">
         <div class="mt-3">
             <h3>Usuarios</h3>
         </div>
