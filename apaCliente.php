@@ -20,8 +20,9 @@
             <h3>Clientes</h3>
         </div>
         <div class="mt-3 mb-4">
-            <a href="gerCliente.php" class="btn btn-outline-light">Novo Cliente</a>
+            <a href="gerCliente.php" class="btn btn-outline-primary">Novo Cliente</a>
         </div>
+        <div class="table-responsive"></div>
         <table class="table">
             <thead class="table-secondary">
                 <tr>
