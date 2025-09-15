@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #999;">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #de9ca4;">
   <div class="container-fluid">
 
     <a class="navbar-brand" href="#">
-      <img src="images/LOgoMenu.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
+      <img src="images/Logo.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,7 +22,10 @@
           <a class="nav-link text-white fw-semibold" href="#estrutura" class="nav-link">Estrutura</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#contato" class="nav-link">Contato</a>
+          <a class="nav-link text-white fw-semibold" href="#iframe" class="nav-link">Localização</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-semibold" href="#" class="nav-link">Contato</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white fw-semibold" href="gerLogin.php" class="nav-link">Entrar</a>

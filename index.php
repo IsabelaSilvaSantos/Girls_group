@@ -16,12 +16,8 @@
     <?php require_once "_parts/_menu.php"; ?>
   </header>
 
-  <div class="empresa">
-    <h1 class="text-center">Nome da Empresa</h1>
-    <p class="text-center">Frase curta e explicativa sobre a empresa</p>
-  </div>
+  
 
-  <main>
     <div id="carouselExampleFade" class="carousel slide carousel-fade mb-4">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -46,7 +42,7 @@
 
 
     <div class="dest">
-      Frase central
+      Produtos
     </div>
 
     <main>
@@ -88,22 +84,14 @@
           </div>
         </div>
       </section>
-
-      <section id="contato" class="bloco">
-        <h2 class="text-center">Contato e Redes Sociais</h2>
-        <div class="msn">
-          <img src="images/contato.png" alt="Imagem de contato" />
-          <div>
-            <p>Email: contato@empresa.com</p>
-            <p>Telefone: (99) 9999-9999</p>
-            <p>Instagram: empresa_empresa</p>
-            <p>TikTok: empresa_empresa</p>
-          </div>
+        </div>
+        <div> 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.999850372924!2d-61.38241022562322!3d-11.479935931604729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93c826519e7eca21%3A0x9c3ad57fa8cc996d!2sInstituto%20Federal%20de%20Rond%C3%B4nia%20-%20C%C3%A2mpus%20Cacoal!5e0!3m2!1spt-BR!2sbr!4v1756738790493!5m2!1spt-BR!2sbr" width="1000" height="400" style="border: 1px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
     </main>
     </section>
-
+       
   </main>
 
   <footer>

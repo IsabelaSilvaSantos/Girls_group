@@ -2,30 +2,30 @@
 
 class Usuario extends CRUD
 {
-    protected $table = "cadastro_usuario";
-    private $id;
-    private $nome;
+    protected $table = "usuario";
+    private $id_usuario;
+    private $nome_usuario;
     private $email;
     private $papel;
     private $senha;
 
 
-    public function getid()
+    public function getid_usuario()
     {
-        return $this->id;
+        return $this->id_usuario;
     }
-    public function setid($id)
+    public function setid_usuario($id_usuario)
     {
-        $this->id = $id;
+        $this->id_usuario = $id_usuario;
     }
 
     public function getnome()
     {
-        return $this->nome;
+        return $this->nome_usuario;
     }
-    public function setnome($nome)
+    public function setnome($nome_usuario)
     {
-        $this->nome = $nome;
+        $this->nome_usuario = $nome_usuario;
     }
 
     public function getemail()
@@ -60,32 +60,43 @@ class Usuario extends CRUD
     public function add()
     {
         $senhaComHash = password_hash($this->senha, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO $this->table(nome, email, papel, senha) VALUES (:nome, :email, :papel, :senha)";
+        $sql = "INSERT INTO $this->table(nome_usuario, email, papel, senha) VALUES (:nome_usuario, :email, :papel, :senha)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_usuario", $this->nome_usuario, PDO::PARAM_STR);
         $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
         $stmt->bindParam(":papel", $this->papel, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $senhaComHash, PDO::PARAM_STR);
         return $stmt->execute();
     }
 
-    public function update(string $campo, int $id)
+    public function update(string $campo, int $id_usuario)
     {
-        $sql = "UPDATE $this->table SET nome = :nome, email = :email, papel = :papel, senha = :senha WHERE $campo = :id";
+        if (!empty($this->senha)) {
+            $senha = password_hash($this->senha, PASSWORD_DEFAULT);
+        } else {
+            // mantém a senha atual do banco
+            $sqlSenha = "SELECT senha FROM $this->table WHERE $campo = :id";
+            $stmtSenha = $this->db->prepare($sqlSenha);
+            $stmtSenha->bindParam(":id", $id_usuario, PDO::PARAM_INT);
+            $stmtSenha->execute();
+            $senha = $stmtSenha->fetchColumn();
+        }
+
+        $sql = "UPDATE $this->table SET nome_usuario = :nome_usuario, email = :email, papel = :papel, senha = :senha WHERE $campo = :id_usuario";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
-        $stmt->bindParam(":papel", $this->papel, PDO::PARAM_STR);
-        $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":nome_usuario", $this->nome_usuario);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":papel", $this->papel);
+        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
         return $stmt->execute();
     }
 
     public function buscarUsuario($usuario): mixed
     {
-        $sql = "SELECT * FROM $this->table WHERE lower (nome) = lower (:nome)";
+        $sql = "SELECT * FROM $this->table WHERE lower (nome_usuario) = lower (:nome_usuario)";
         $stmt = $this->db->prepare(query: $sql);
-        $stmt->bindValue(param: ':nome', value: $usuario);
+        $stmt->bindValue(param: ':nome_usuario', value: $usuario);
         $stmt->execute();
         return $stmt->rowCount() > 0 ? $stmt->fetch(mode: PDO::FETCH_OBJ) : null;
     }

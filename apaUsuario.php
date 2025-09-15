@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/layoutProduto.css">
+    <link rel="stylesheet" href="CSS/layoutApa.css">
     <title>Usuarios</title>
 </head>
 
@@ -40,12 +40,12 @@
                 foreach ($usuario as $Usuario):
                     ?>
                     <tr>
-                        <td><?php echo $Usuario->id ?></td>
-                        <td><?php echo $Usuario->nome ?></td>
+                        <td><?php echo $Usuario->id_usuario ?></td>
+                        <td><?php echo $Usuario->nome_usuario ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerUsuario.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $Usuario->id_usuario ?>">
                                 <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar o Usuario?');">
                                     <i class="bi bi-pencil-square"></i>
@@ -53,7 +53,7 @@
                             </form>
 
                             <form action="<?php echo htmlspecialchars("dbUsuario.php") ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $Usuario->id ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $Usuario->id_usuario ?>">
                                 <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o Usuario?');">
                                     <i class="bi bi-trash"></i>
@@ -67,7 +67,7 @@
 
     </main>
     <footer>
-        <?php require_once "_parts/_footer.php"; ?>
+        <?php require_once "_parts/_footer.php"?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
     </script>

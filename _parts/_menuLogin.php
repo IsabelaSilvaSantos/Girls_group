@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #999;">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #de9ca4;">
     <div class="container-fluid">
 
         <a class="navbar-brand" href="#">
-            <img src="images/LOgoMenu.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
+            <img src="images/Logo.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

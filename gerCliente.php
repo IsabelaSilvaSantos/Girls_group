@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/layoutIsa.css">
+    <link rel="stylesheet" href="CSS/layoutGer.css">
 
     <title>Cadastro de Clintes</title>
 </head>
@@ -22,21 +22,21 @@
             require_once "classes/{$class}.class.php";
         });
 
-        if (filter_has_var(INPUT_POST, "id")):
+        if (filter_has_var(INPUT_POST, "id_cliente")):
             $edtCliente = new Cliente(); // Corrigido aqui
-            $id = intval(filter_input(INPUT_POST, "id"));
-            $Cliente = $edtCliente->search("id", $id);
+            $id_cliente = intval(filter_input(INPUT_POST, "id_cliente"));
+            $Cliente = $edtCliente->search("id_cliente", $id_cliente);
         endif;
         ?>
 
         <form action="dbCliente.php" method="post" class="row g-4 mt-3">
-            <input type="hidden" value="<?php echo $Cliente->id ?? null; ?>" name="id">
+            <input type="hidden" value="<?php echo $Cliente->id_cliente ?? null; ?>" name="id_cliente">
 
             <div class="row g-4">
                 <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required class="form-control"
-                        value="<?php echo $Cliente->nome ?? ''; ?>">
+                    <label for="nome_cliente" class="form-label">Nome</label>
+                    <input type="text" name="nome_cliente" id="nome_cliente" placeholder="Digite seu nome" required class="form-control"
+                        value="<?php echo $Cliente->nome_cliente ?? ''; ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="telefone" class="form-label">Telefone</label>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-dark" name="btnGravar">Enviar</button>
+                <button type="submit" class="btn btn-light" name="btnGravar">Enviar</button>
             </div>
         </form>
     </main>
