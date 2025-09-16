@@ -29,9 +29,9 @@
         endif;
         ?>
 
-        <form action="validarLogin.php" method="post" class="row g-4 mt-2">
+        <form action="validarLogin.php" method="post" class="row g-4 mt-1">
             <input type="hidden" value="<?php echo $Usuario->id ?? null; ?>" name="id">
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome" class="form-label">Usuário</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite o usuário" required

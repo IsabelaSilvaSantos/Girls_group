@@ -34,8 +34,8 @@ h3 {
 }
 
 .btn-sm {
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
 }
 
 .btn-outline-secondary {
@@ -91,18 +91,33 @@ nav a {
   transform: translateY(-4px);
 }
 
+.navbar-toggler {
+  border-radius: 12px;
+  border: 2px solid #ffeae9;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--color-font-clara);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,234,233)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 main {
   flex-grow: 1;
 }
 
 main.container {
   background-color: #de9ca4;
-  width: 90%;         
-  max-width: 600px;   
-  margin: 2rem auto;  
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .dest {
@@ -211,14 +226,14 @@ section:nth-child(even) .texto {
   border-bottom: none;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 600px) {
   .contact-item {
-    justify-content: flex-start !important; 
+    justify-content: flex-start !important;
     margin: 15px 0 !important;
   }
 
   .vertical-divider {
-    display: none !important; 
+    display: none !important;
   }
 
   footer .row.text-center {
@@ -229,19 +244,28 @@ section:nth-child(even) .texto {
 
 @media (max-width: 600px) {
   main.container {
-    width: 95% !important;    
-    padding: 1rem !important; 
-    margin: 1.5rem auto !important; 
+    width: 95% !important;
+    padding: 0.75rem 1rem !important;
+    margin: 1.1rem auto !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .btn-sm {
-    padding: 0.6rem 1rem !important;
+    padding: 0.75rem 1rem !important;
     font-size: 1.1rem !important;
   }
 
   .table-responsive {
     overflow-x: auto;
   }
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-link p {
+  color: var(--rosa-claro-texto);
 }

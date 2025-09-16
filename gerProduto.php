@@ -28,10 +28,10 @@
         endif;
         ?>
 
-        <form action="dbProduto.php" method="post" class="row g3 mt-3">
+        <form action="dbProduto.php" method="post" class="row g3 mt-1">
 
             <input type="hidden" value="<?php echo $Produto->id_produto ?? null; ?>" name="id_produto">
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome_produto" class="form-label">Nome</label>
                     <input type="text" name="nome_produto" id="nome_produto" placeholder="Digite seu nome" required 
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="preco" class="form-label">Preço</label>
                     <input type="text" name="preco" id="preco" placeholder="Digite o preço do produto" required

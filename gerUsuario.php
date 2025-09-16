@@ -40,10 +40,10 @@
         endif;
 
         ?>
-        <form action="dbUsuario.php" method="post" class="row g3 mt-3">
+        <form action="dbUsuario.php" method="post" class="row g3 mt-1">
 
             <input type="hidden" name="id_usuario" value="<?= $Usuario->getid_usuario() ?? ''; ?>">
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome_usuario" class="form-label">Nome</label>
                     <input type="text" name="nome_usuario" id="nome_usuario" placeholder="Digite seu nome" required
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="senha" class="form-label">Senha</label>
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha" class="form-control">

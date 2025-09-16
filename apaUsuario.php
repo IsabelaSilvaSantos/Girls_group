@@ -19,7 +19,7 @@
             <h3>Usuarios</h3>
         </div>
         <div class="mt-3 mb-4">
-            <a href="gerUsuario.php" class="btn btn-outline-secondary">Novo Usuario</a>
+            <a href="gerEmpresa.php" class="btn btn-outline-primary">Novo Usuario</a>
         </div>
         <table class="table">
             <thead class="table-secondary">

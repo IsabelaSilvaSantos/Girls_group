@@ -44,9 +44,9 @@ if (filter_has_var(INPUT_POST, "id_empresa")):
 endif;
         ?>
 
-        <form action="dbEmpresa.php" method="post" class="row g3 mt-3">
+        <form action="dbEmpresa.php" method="post" class="row g-3 mt-1">
             <input type="hidden" value="<?php echo $Empresa->getid_empresa() ?? null; ?>" name="id_empresa">
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome_empresa" class="form-label">Nome</label>
                     <input type="text" name="nome_empresa" id="nome_empresa" placeholder="Digite o nome da empresa"
@@ -59,7 +59,7 @@ endif;
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" id="email" placeholder="Digite o email da empresa" required
@@ -73,7 +73,7 @@ endif;
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="endereco" class="form-label">Endereço</label>
                     <input type="text" name="endereco" id="endereco" placeholder="Digite o endereço da empresa" required
@@ -86,7 +86,7 @@ endif;
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="razao_social" class="form-label">Razão Social</label>
                     <input type="text" name="razao_social" id="razao_social"
@@ -101,7 +101,7 @@ endif;
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="historia" class="form-label">História da Empresa</label>
                     <input type="text" name="historia" id="historia" placeholder="Digite a história da empresa" required

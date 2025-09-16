@@ -20,7 +20,7 @@
             <h3>Empresa</h3>
         </div>
         <div class="mt-3 mb-4">
-            <a href="gerEmpresa.php" class="btn btn-outline-secondary">Nova Empresa</a>
+            <a href="gerEmpresa.php" class="btn btn-outline-primary">Nova Empresa</a>
         </div>
         <table class="table">
             <thead class="table-secondary">

@@ -29,10 +29,10 @@
         endif;
         ?>
 
-        <form action="dbCliente.php" method="post" class="row g-4 mt-3">
+        <form action="dbCliente.php" method="post" class="row g-4 mt-1">
             <input type="hidden" value="<?php echo $Cliente->id_cliente ?? null; ?>" name="id_cliente">
 
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome_cliente" class="form-label">Nome</label>
                     <input type="text" name="nome_cliente" id="nome_cliente" placeholder="Digite seu nome" required class="form-control"
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-1">
                 <div class="col-md-6">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required
