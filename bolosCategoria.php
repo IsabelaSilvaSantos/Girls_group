@@ -7,13 +7,137 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/layoutCategorias.css" />
-    <title>Bolos - Nome da Empresa</title>
 </head>
 
 <body>
     <header>
         <?php require_once "_parts/_menu.php"; ?>
     </header>
+
+    <div class="content-wrapper">
+        <main class="container my-4">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" />
+                <span class="search-icon">
+                    <i class="bi bi-search"></i>
+                </span>
+                <span class="clear-icon">
+                    <i class="bi bi-x-circle-fill"></i>
+                </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/bolo1.png" class="card-img-top" alt="Bolo de Chocolate">
+                        <div class="card-body text-center">
+                            <p class="name">Bolo de Chocolate</p>
+                            <button class="btn btn-info-custom w-100" type="button">Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="content-wrapper">
+        <main class="container my-4">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" />
+                <span class="search-icon">
+                    <i class="bi bi-search"></i>
+                </span>
+                <span class="clear-icon">
+                    <i class="bi bi-x-circle-fill"></i>
+                </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/bolo1.png" class="card-img-top" alt="Bolo de Chocolate">
+                        <div class="card-body text-center">
+                            <p class="name">Bolo de Chocolate</p>
+                            <button class="btn btn-info-custom w-100" type="button">Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="content-wrapper">
+        <main class="container my-4">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" />
+                <span class="search-icon">
+                    <i class="bi bi-search"></i>
+                </span>
+                <span class="clear-icon">
+                    <i class="bi bi-x-circle-fill"></i>
+                </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/bolo1.png" class="card-img-top" alt="Bolo de Chocolate">
+                        <div class="card-body text-center">
+                            <p class="name">Bolo de Chocolate</p>
+                            <button class="btn btn-info-custom w-100" type="button">Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="content-wrapper">
+        <main class="container my-4">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" />
+                <span class="search-icon">
+                    <i class="bi bi-search"></i>
+                </span>
+                <span class="clear-icon">
+                    <i class="bi bi-x-circle-fill"></i>
+                </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/bolo1.png" class="card-img-top" alt="Bolo de Chocolate">
+                        <div class="card-body text-center">
+                            <p class="name">Bolo de Chocolate</p>
+                            <button class="btn btn-info-custom w-100" type="button">Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="content-wrapper">
+        <main class="container my-4">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" />
+                <span class="search-icon">
+                    <i class="bi bi-search"></i>
+                </span>
+                <span class="clear-icon">
+                    <i class="bi bi-x-circle-fill"></i>
+                </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/bolo1.png" class="card-img-top" alt="Bolo de Chocolate">
+                        <div class="card-body text-center">
+                            <p class="name">Bolo de Chocolate</p>
+                            <button class="btn btn-info-custom w-100" type="button">Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <div class="content-wrapper">
         <main class="container my-4">
