@@ -36,10 +36,10 @@
             Categorias
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="bolosCategoria.php">Bolos</a></li>
-            <li><a class="dropdown-item" href="tortasCategoria.php">Tortas</a></li>
-            <li><a class="dropdown-item" href="docesCategoria.php">Doces</a></li>
-            <li><a class="dropdown-item" href="salgadosCategoria.php">Salgados</a></li>
+            <li><a class="dropdown-item" href="categorias.php?id=1">Bolos</a></li>
+            <li><a class="dropdown-item" href="categorias.php?id=2">Tortas</a></li>
+            <li><a class="dropdown-item" href="categorias.php?id=3">Doces</a></li>
+            <li><a class="dropdown-item" href="categorias.php?id=4">Salgados</a></li>
           </ul>
         </li>
       </ul>

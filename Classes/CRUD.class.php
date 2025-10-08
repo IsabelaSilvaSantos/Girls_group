@@ -41,4 +41,31 @@ abstract class CRUD
             return false;
         }
     }
+
+    public function iniciarTransacao() 
+    {
+        // Chama o método beginTransaction() do objeto PDO
+        $this->db->beginTransaction();
+    }
+    
+    /**
+     * Confirma a transação (faz commit das mudanças).
+     */
+    public function confirmarTransacao() 
+    {
+        // Chama o método commit() do objeto PDO
+        $this->db->commit();
+    }
+    
+    /**
+     * Cancela a transação (faz rollback das mudanças).
+     */
+    public function cancelarTransacao() 
+    {
+        // Chama o método rollBack() do objeto PDO
+        if ($this->db->inTransaction()) {
+            $this->db->rollBack();
+        }
+    }
 }
+?>

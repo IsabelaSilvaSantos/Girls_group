@@ -20,7 +20,7 @@
             <h3>Produtos</h3>
         </div>
         <div class="mt-3 mb-4">
-            <a href="gerEmpresa.php" class="btn btn-outline-primary">Novo Produto</a>
+            <a href="gerProduto.php" class="btn btn-outline-primary">Novo Produto</a>
         </div>
         <table class="table">
             <thead class="table-secondary">
@@ -32,35 +32,61 @@
             </thead>
             <tbody>
                 <?php
+                // Configuração do Autoload (sempre necessário)
                 spl_autoload_register(function ($class) {
                     require_once "classes/{$class}.class.php";
                 });
 
                 $p = new Produto();
-                $produto = $p->all();
-                foreach ($produto as $Produto):
+                $produtos = $p->all(); // Renomeado para $produtos para clareza
+                
+                // Se o método all() retornar uma coleção vazia, inicialize como array para evitar erro
+                if (!is_array($produtos)) {
+                    $produtos = [];
+                }
+
+                foreach ($produtos as $Produto):
                     ?>
                     <tr>
                         <td><?php echo $Produto->id_produto ?></td>
                         <td><?php echo $Produto->nome_produto ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
-                            <form action="<?php echo htmlspecialchars("gerProduto.php") ?>" method="post">
-                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
-                                <button name="btnEditar" class="btn btn-outline-primary btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja editar esse produto?');">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                            </form>
 
-                            <form action="<?php echo htmlspecialchars("dbProduto.php") ?>" method="post">
-                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
-                                <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
+                            <!-- 1. BOTÃO GERENCIAR FOTOS (AGORA ESTILIZADO) -->
+                            <a
+                                href="listagemFotos.php?idProduto=<?php echo $Produto->id_produto; ?>"
+                                title="Gerenciar Fotos" class="btn-action-sm-custom">
+                                <!-- Classe customizada aplicada -->
+                                <i class="bi bi-camera text-rosa-escuro"></i>
+                                </a>
+
+                            <!-- 2. BOTÃO EDITAR (CLASSE ALTERADA) -->
+                            <form action="<?php echo htmlspecialchars("gerProduto.php") ?>"
+                                method="post">
+                                <input type="hidden" name="id_produto"
+                                    value="<?php echo $Produto->id_produto ?>">
+                                <button name="btnEditar" class="btn-action-sm-custom"
+                                    type="submit"
+                                    onclick="return confirm('Tem certeza que deseja editar esse produto?');">
+                                    <!-- Ícone de lápis, cor rosa escuro -->
+                                    <i class="bi bi-pencil-square text-rosa-escuro"></i>
+                                    </button>
+                                </form>
+
+                            <!-- 3. BOTÃO DELETAR (CLASSE ALTERADA) -->
+                            <form action="<?php echo htmlspecialchars("dbProduto.php") ?>"
+                                method="post">
+                                <input type="hidden" name="id_produto"
+                                    value="<?php echo $Produto->id_produto ?>">
+                                <button name="btnDeletar" class="btn-action-sm-custom"
+                                    type="submit" 
                                     onclick="return confirm('Tem certeza que deseja deletar esse produto?');">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </form>
-                        </td>
+                                    <!-- Ícone de lixeira, cor rosa escuro -->
+                                    <i class="bi bi-trash text-rosa-escuro"></i>
+                                    </button>
+                                </form>
+                            </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

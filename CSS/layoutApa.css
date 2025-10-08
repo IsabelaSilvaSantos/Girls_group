@@ -199,6 +199,7 @@ section:nth-child(even) .texto {
   color: var(--rosa-escuro-texto);
 }
 
+/* Regras de Novo Produto (Mantida a estrutura original, mas pode ser ajustada) */
 .btn-outline-primary {
   background-color: var(--rosa-claro-texto);
   color: var(--rosa-escuro-texto);
@@ -210,17 +211,8 @@ section:nth-child(even) .texto {
   border-color: var(--rosa-claro-texto);
 }
 
-.btn-outline-danger {
-  background-color: var(--rosa-claro-texto);
-  color: var(--rosa-escuro-texto);
-  border-color: var(--rosa-claro-texto);
-}
+/* FIM DAS REGRAS PARA NOVO PRODUTO */
 
-.btn-outline-danger:hover {
-  background-color: var(--rosa-escuro-texto);
-  color: #fff;
-  border-color: var(--rosa-escuro-texto);
-}
 
 .table tbody tr:last-child {
   border-bottom: none;
@@ -268,4 +260,38 @@ section:nth-child(even) .texto {
 
 .contact-link p {
   color: var(--rosa-claro-texto);
+}
+
+/* CLASSE UNIFICADA PARA OS TRÊS BOTÕES DE AÇÃO (Fotos, Editar, Deletar) */
+.btn-action-sm-custom {
+  /* Fundo Rosa Médio, conforme o box da sua imagem */
+  background-color: var(--rosa-medio) !important;
+  border: 1px solid var(--rosa-medio) !important;
+  color: var(--rosa-escuro-texto) !important;
+  /* Cor do ícone no rosa escuro */
+
+  /* MODIFICAÇÕES AQUI: Aumento do padding e leve arredondamento */
+  border-radius: 4px;
+  /* Mais quadrado, menos arredondado */
+  padding: 0.7rem 0.8rem;
+  /* Aumenta o padding para ser mais quadrado e maior */
+  font-size: 1rem;
+
+  /* Para alinhar o ícone */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+.btn-action-sm-custom:hover {
+  /* Fundo ainda mais claro no hover */
+  background-color: var(--rosa-claro) !important;
+  border-color: var(--rosa-claro) !important;
+}
+
+/* CLASSE DE COR DO ÍCONE (Necessária para garantir que o ícone é rosa escuro) */
+.text-rosa-escuro {
+  color: var(--rosa-escuro-texto) !important;
 }

@@ -368,3 +368,71 @@ section {
     text-align: left !important;
   }
 }
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* CORRIGIDO: Rosa mais escuro para o botão */
+    background-color: #c77d89; /* Um tom de rosa mais escuro */
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-file-upload:hover {
+    /* CORRIGIDO: Tom ainda mais escuro no hover para efeito */
+    background-color: #b06a74; /* Um tom ainda mais escuro para o hover */
+}
+
+.custom-file-upload i {
+    margin-right: 8px;
+}
+
+/* Esconde o input de arquivo padrão, mas o mantém funcional */
+.input-file-hidden {
+    display: none;
+}
+
+/* Estilo para o nome do arquivo selecionado */
+.file-name-display {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+.btn-info-custom {
+    background-color: #c77d89; /* Seu tom de rosa mais escuro */
+    border: none;
+    color: #fff;
+    
+    /* CHAVE: Aumentar o border-radius e padding para o visual arredondado */
+    border-radius: 20px; 
+    padding: 10px 20px; /* Aumentar o padding para dar mais volume */
+    
+    font-size: 0.9rem;
+    font-weight: bold; /* Deixar o texto mais grosso para destacar */
+    transition: all 0.3s ease;
+    text-decoration: none; /* Garante que links (como Cancelar) fiquem limpos */
+}
+
+.btn-info-custom:hover {
+    /* Mesmo hover mais escuro para consistência */
+    background-color: #b06a74; 
+    color: #fff; /* Mantém o texto branco */
+}
+
+.select-rosa-claro {
+    /* Usa a variável de rosa claro que você já definiu */
+    background-color: var(--rosa-claro) !important; 
+    /* Borda para destacar */
+    border: 1px solid var(--borda-botao-rosa) !important;
+    /* Texto na cor rosa escuro para ter contraste */
+    color: var(--rosa-escuro-texto) !important; 
+}
+
