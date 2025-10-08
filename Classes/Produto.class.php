@@ -79,15 +79,28 @@ class Produto extends CRUD
     }
     
     public function getByCategoriaId(int $id_categoria) 
-    {
-        $sql = "SELECT id_produto, nome_produto, preco FROM $this->table WHERE id_categoria = :id_categoria ORDER BY nome_produto ASC";
-        $stmt = $this->db->prepare($sql);
-        
-        $stmt->bindParam(":id_categoria", $id_categoria, PDO::PARAM_INT);
-        $stmt->execute();
-        
-        return $stmt->fetchAll(PDO::FETCH_OBJ);
-    }
+{
+    $sql = "
+        SELECT 
+            p.id_produto, 
+            p.nome_produto, 
+            p.preco, 
+            (SELECT nome_arquivo 
+             FROM foto_produto fp 
+             WHERE fp.id_produto = p.id_produto 
+             ORDER BY fp.id_foto ASC LIMIT 1) as nome_imagem_principal
+        FROM {$this->table} p
+        WHERE p.id_categoria = :id_categoria 
+        ORDER BY p.nome_produto ASC
+    ";
+    
+    $stmt = $this->db->prepare($sql);
+    
+    $stmt->bindParam(":id_categoria", $id_categoria, PDO::PARAM_INT);
+    $stmt->execute();
+    
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
     
     public function update(string $campo, int $id_produto)
     {
