@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menu.php"; ?>
+        <?php require_once "_parts/_menuLogin.php"; ?>
     </header>
     <div class="content-wrapper">
         <main class="container">

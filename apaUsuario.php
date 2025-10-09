@@ -1,3 +1,7 @@
+<?php
+require_once "verifica_usuario.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -54,7 +58,7 @@
 
                             <form action="<?php echo htmlspecialchars("dbUsuario.php") ?>" method="post">
                                 <input type="hidden" name="id_usuario" value="<?php echo $Usuario->id_usuario ?>">
-                                <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
+                                <button name="btnDeletar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o Usuario?');">
                                     <i class="bi bi-trash"></i>
                                 </button>
@@ -67,7 +71,7 @@
 
     </main>
     <footer>
-        <?php require_once "_parts/_footer.php"?>
+        <?php require_once "_parts/_footer.php" ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
     </script>

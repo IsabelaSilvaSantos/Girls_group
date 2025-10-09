@@ -215,3 +215,32 @@ main {
 .footer-custom p {
   color: var(--rosa-escuro-texto);
 }
+
+.dropdown-menu-custom {
+  background-color: rgba(222, 156, 164, 0.9);
+  border: none;
+}
+
+.dropdown-menu-custom .dropdown-item {
+  color: white !important;
+  font-weight: 500;
+}
+
+.dropdown-menu-custom .dropdown-item:hover,
+.dropdown-menu-custom .dropdown-item:focus {
+  background-color: rgba(180, 120, 128, 0.8);
+  color: white !important;
+}
+
+.dropdown-menu-custom .dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon-no-focus,
+.icon-no-focus:hover,
+.icon-no-focus:focus,
+.icon-no-focus:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

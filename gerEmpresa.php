@@ -1,3 +1,7 @@
+<?php
+require_once "verifica_usuario.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,26 +26,26 @@
             require_once "classes/{$class}.class.php";
         });
 
-       $Empresa = new Empresa();
+        $Empresa = new Empresa();
 
-if (filter_has_var(INPUT_POST, "id_empresa")):
-    $id_empresa = intval(filter_input(INPUT_POST, "id_empresa"));
-    $empresaEncontrada = $Empresa->search("id_empresa", $id_empresa);
+        if (filter_has_var(INPUT_POST, "id_empresa")):
+            $id_empresa = intval(filter_input(INPUT_POST, "id_empresa"));
+            $empresaEncontrada = $Empresa->search("id_empresa", $id_empresa);
 
-    if ($empresaEncontrada) {
-        $Empresa->setid_empresa($empresaEncontrada->id_empresa);
-        $Empresa->setNome($empresaEncontrada->nome_empresa);
-        $Empresa->setEndereco($empresaEncontrada->endereco);
-        $Empresa->setEmail($empresaEncontrada->email);
-        $Empresa->setTelefone($empresaEncontrada->telefone);
-        $Empresa->setNomeFantasia($empresaEncontrada->nome_fantasia);
-        $Empresa->setRazaoSocial($empresaEncontrada->razao_social);
-        $Empresa->setCnpj($empresaEncontrada->cnpj);
-        $Empresa->setprincipalAtividade($empresaEncontrada->principal_atividade);
-        $Empresa->sethistoria($empresaEncontrada->historia);
-        $Empresa->setapresentacao($empresaEncontrada->apresentacao);
-    }
-endif;
+            if ($empresaEncontrada) {
+                $Empresa->setid_empresa($empresaEncontrada->id_empresa);
+                $Empresa->setNome($empresaEncontrada->nome_empresa);
+                $Empresa->setEndereco($empresaEncontrada->endereco);
+                $Empresa->setEmail($empresaEncontrada->email);
+                $Empresa->setTelefone($empresaEncontrada->telefone);
+                $Empresa->setNomeFantasia($empresaEncontrada->nome_fantasia);
+                $Empresa->setRazaoSocial($empresaEncontrada->razao_social);
+                $Empresa->setCnpj($empresaEncontrada->cnpj);
+                $Empresa->setprincipalAtividade($empresaEncontrada->principal_atividade);
+                $Empresa->sethistoria($empresaEncontrada->historia);
+                $Empresa->setapresentacao($empresaEncontrada->apresentacao);
+            }
+        endif;
         ?>
 
         <form action="dbEmpresa.php" method="post" class="row g-3 mt-1">

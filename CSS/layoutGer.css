@@ -48,7 +48,6 @@ nav a {
 
 .navbar-nav {
   gap: 10px;
-
 }
 
 .nav-link {
@@ -66,16 +65,65 @@ nav a {
 .navbar-toggler {
   border-radius: 12px;
   border: 2px solid #ffeae9;
+  position: relative;
+  z-index: 1060;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,234,233)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: none !important;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon {
+  background-color: var(--color-font-clara);
+  width: 70%;
+  height: 2px;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-toggler-icon::before {
+  content: '';
+  transform: translate(-50%, -50%) translateY(-8px);
+}
+
+.navbar-toggler-icon::after {
+  content: '';
+  transform: translate(-50%, -50%) translateY(8px);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background-color: transparent !important;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
-  outline: none !important; 
-  box-shadow: 0 0 0 2px var(--color-font-clara); 
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--color-font-clara);
 }
 
 main {
@@ -370,69 +418,146 @@ section {
 }
 
 .custom-file-upload {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    /* CORRIGIDO: Rosa mais escuro para o botão */
-    background-color: #c77d89; /* Um tom de rosa mais escuro */
-    color: white;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: none;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #c77d89;
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .custom-file-upload:hover {
-    /* CORRIGIDO: Tom ainda mais escuro no hover para efeito */
-    background-color: #b06a74; /* Um tom ainda mais escuro para o hover */
+  background-color: #b06a74;
 }
 
 .custom-file-upload i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
-/* Esconde o input de arquivo padrão, mas o mantém funcional */
 .input-file-hidden {
-    display: none;
+  display: none;
 }
 
-/* Estilo para o nome do arquivo selecionado */
 .file-name-display {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #666;
-    text-align: center;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+  text-align: center;
 }
 
 .btn-info-custom {
-    background-color: #c77d89; /* Seu tom de rosa mais escuro */
-    border: none;
-    color: #fff;
-    
-    /* CHAVE: Aumentar o border-radius e padding para o visual arredondado */
-    border-radius: 20px; 
-    padding: 10px 20px; /* Aumentar o padding para dar mais volume */
-    
-    font-size: 0.9rem;
-    font-weight: bold; /* Deixar o texto mais grosso para destacar */
-    transition: all 0.3s ease;
-    text-decoration: none; /* Garante que links (como Cancelar) fiquem limpos */
+  background-color: #c77d89;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-info-custom:hover {
-    /* Mesmo hover mais escuro para consistência */
-    background-color: #b06a74; 
-    color: #fff; /* Mantém o texto branco */
+  background-color: #b06a74;
+  color: #fff;
 }
 
 .select-rosa-claro {
-    /* Usa a variável de rosa claro que você já definiu */
-    background-color: var(--rosa-claro) !important; 
-    /* Borda para destacar */
-    border: 1px solid var(--borda-botao-rosa) !important;
-    /* Texto na cor rosa escuro para ter contraste */
-    color: var(--rosa-escuro-texto) !important; 
+  background-color: var(--rosa-claro) !important;
+  border: 1px solid var(--borda-botao-rosa) !important;
+  color: var(--rosa-escuro-texto) !important;
 }
 
+.navbar-collapse {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  visibility: hidden;
+  position: static;
+  transform: none;
+  visibility: visible;
+}
+
+.navbar-backdrop {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-collapse.show {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.navbar-collapse.show+.navbar-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    max-width: 80%;
+    height: 100vh;
+    background-color: rgba(222, 156, 164, 0.95);
+    padding: 20px;
+    z-index: 1050;
+    border-radius: 15px 0 0 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: left;
+    padding: 10px 0;
+    color: var(--color-font-clara);
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-backdrop {
+    display: none;
+  }
+}
+
+.btn-custom-pink {
+    background-color: #f7e6e6; 
+    color: #e0949b; 
+    border-radius: 25px; 
+    border: none; 
+    padding: 10px 30px; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+}
+
+.btn-custom-pink:hover {
+    background-color: #f0d5d5; 
+    color: #cc7f86;
+}

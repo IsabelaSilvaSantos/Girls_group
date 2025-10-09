@@ -1,38 +1,41 @@
 <?php
-// Classe utilitária para gerenciar o upload e exclusão de arquivos de imagem
+class Imagem
+{
+    private $diretorio = 'images/';
+    private $prefixo;
+    private $tam_Max;
+    private $ext_Perm;
+    private $larMax;
+    private $altMax;
 
-class Imagem {
-    private $diretorio = 'images/'; // Diretório padrão de upload
-    private $prefixo;               // Prefixo para o nome do arquivo (ex: 'prod_')
-
-    /**
-     * Construtor da classe Imagem
-     * @param string $diretorio Onde salvar a imagem (relativo ao script)
-     * @param string $prefixo Prefixo para renomear o arquivo
-     */
-    public function __construct(string $diretorio = 'images/', string $prefixo = '') {
-        $this->diretorio = $diretorio;
+    public function __construct(
+        string $diretorio = 'images/',
+        int $tam_Max = 5242880, 
+        array $ext_Perm = ['jpg', 'jpeg', 'png', 'gif'],
+        int $larMax = 2000,
+        int $altMax = 2000,
+        string $prefixo = ''
+    ) {
+        $this->diretorio = rtrim($diretorio, '/') . '/';
         $this->prefixo = $prefixo;
-        
-        // Garante que o diretório existe e é gravável
+        $this->tam_Max = $tam_Max;
+        $this->ext_Perm = $ext_Perm;
+        $this->larMax = $larMax;
+        $this->altMax = $altMax;
+
         if (!is_dir($this->diretorio)) {
-            mkdir($this->diretorio, 0777, true);
+            mkdir($this->diretorio, 0755, true);
         }
     }
 
-    /**
-     * Faz o upload do arquivo
-     * @param array $file O array $_FILES['nome_do_campo']
-     * @return string O novo nome do arquivo gerado
-     */
-    public function upload(array $file): string {
-        if ($file['error'] !== UPLOAD_ERR_OK) {
-            throw new Exception("Erro no upload do arquivo: Código " . $file['error']);
-        }
+    public function upload(array $file): string
+    {
+        $this->validarErro($file);
+        $this->validarTamanho($file);
+        $this->validarExtensao($file);
+        $this->validarDimensao($file);
 
         $extensao = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-        
-        // Gera um nome único e seguro (ex: prod_6527c08b3e8e7.jpg)
         $nomeArquivo = $this->prefixo . uniqid() . '.' . $extensao;
         $caminhoCompleto = $this->diretorio . $nomeArquivo;
 
@@ -43,22 +46,49 @@ class Imagem {
         }
     }
 
-    /**
-     * Deleta um arquivo do diretório de upload
-     * @param string $nomeArquivo Nome do arquivo a ser deletado
-     * @return bool
-     */
-    public function deletar(string $nomeArquivo): bool {
+    public function deletar(string $nomeArquivo): bool
+    {
         if (empty($nomeArquivo)) {
             return true;
         }
+
         $caminhoCompleto = $this->diretorio . $nomeArquivo;
-        
-        // Verifica se o arquivo existe e o deleta
+
+       
         if (file_exists($caminhoCompleto) && is_file($caminhoCompleto)) {
             return unlink($caminhoCompleto);
         }
         return false;
     }
+
+    private function validarErro(array $arquivo)
+    {
+        if ($arquivo['error'] !== UPLOAD_ERR_OK) {
+            throw new Exception("Erro no upload da imagem. Código: " . $arquivo['error']);
+        }
+    }
+
+    private function validarTamanho(array $arquivo)
+    {
+        if ($arquivo['size'] > $this->tam_Max) {
+            $tamanhoMB = round($this->tam_Max / 1024 / 1024, 2);
+            throw new Exception("A imagem excede o tamanho máximo permitido de {$tamanhoMB}MB.");
+        }
+    }
+
+    private function validarExtensao(array $arquivo)
+    {
+        $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
+        if (!in_array($extensao, $this->ext_Perm)) {
+            throw new Exception("Extensão de arquivo não permitida. Permitidas: " . implode(", ", $this->ext_Perm));
+        }
+    }
+    private function validarDimensao(array $arquivo)
+    {
+        $dimensao = getimagesize($arquivo['tmp_name']);
+    
+        if ($dimensao === false || $dimensao[0] > $this->larMax || $dimensao[1] > $this->altMax) {
+            throw new Exception("A imagem excede as dimensões máximas de {$this->larMax}x{$this->altMax}px.");
+        }
+    }
 }
-?>

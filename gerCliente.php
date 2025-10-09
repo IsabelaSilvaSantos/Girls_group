@@ -23,7 +23,7 @@
         });
 
         if (filter_has_var(INPUT_POST, "id_cliente")):
-            $edtCliente = new Cliente(); // Corrigido aqui
+            $edtCliente = new Cliente();
             $id_cliente = intval(filter_input(INPUT_POST, "id_cliente"));
             $Cliente = $edtCliente->search("id_cliente", $id_cliente);
         endif;
@@ -35,8 +35,8 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nome_cliente" class="form-label">Nome</label>
-                    <input type="text" name="nome_cliente" id="nome_cliente" placeholder="Digite seu nome" required class="form-control"
-                        value="<?php echo $Cliente->nome_cliente ?? ''; ?>">
+                    <input type="text" name="nome_cliente" id="nome_cliente" placeholder="Digite seu nome" required
+                        class="form-control" value="<?php echo $Cliente->nome_cliente ?? ''; ?>">
                 </div>
                 <div class="col-md-6">
                     <label for="telefone" class="form-label">Telefone</label>

@@ -1,5 +1,4 @@
 <?php
-//email, senha, telefone
 class Cliente extends CRUD
 {
     protected $table = "cliente";

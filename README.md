@@ -12,7 +12,7 @@
 ## 👫 Integrantes do Grupo
 - **Aluna Amanda Gisele** - Responsável por: Página de Usuário e Login.
 - **Aluna Emanuele Ester** - Responsável por: Página de Produto e Página Inicial.
-- **Aluna Isabela da Silva** - Responsável por: Página de Cliente e Página Inicial.
+- **Aluna Isabela da Silva** - Responsável por: Página de Cliente e Categorias.
 - **Aluna Kamilla Kempim** - Responsável por: Página de Empresa e Página Inicial.
 
 ---

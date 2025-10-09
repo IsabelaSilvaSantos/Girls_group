@@ -1,23 +1,18 @@
 <?php
-// ATENÇÃO: É FUNDAMENTAL INCLUIR AQUI AS CLASSES NECESSÁRIAS
+
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
 
-// 1. Obter o ID da categoria da URL (Método GET)
-// Exemplo de URL: produtos_por_categoria.php?id=1
 $idCategoria = $_GET['id'] ?? null;
 
-// Verifica se o ID é válido e é um número
 if (!is_numeric($idCategoria) || $idCategoria <= 0) {
     die("ID de Categoria inválido ou não fornecido.");
 }
 
-// 2. Inicializar classes
 $c = new Categoria();
 $p = new Produto();
 
-// Buscar o nome da categoria para o título da página
 $categoria = $c->getCategoriaById((int) $idCategoria);
 
 if (!$categoria) {
@@ -25,11 +20,8 @@ if (!$categoria) {
 }
 
 $tituloCategoria = $categoria->nome_categoria;
-
-// Buscar todos os produtos da categoria (COM A CORREÇÃO nome_imagem_principal)
 $produtos = $p->getByCategoriaId((int) $idCategoria);
-
-$diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
+$diretorio_imagens = 'images/';
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +32,15 @@ $diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($tituloCategoria); ?> | Girls Group</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/layoutApa.css">
+    <link rel="stylesheet" href="CSS/layoutCategorias.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body style="background-color: var(--rosa-claro);">
+<body>
+
+ <header>
+        <?php require_once "_parts/_menuLogin.php"; ?>
+    </header>
 
     <main class="container">
         <h2 class="text-center mb-4" style="color: var(--rosa-escuro-texto);">
@@ -63,7 +59,7 @@ $diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
                             <div class="product-image-container"
                                 style="height: 200px; overflow: hidden; border-radius: 12px 12px 0 0;">
                                 <?php
-                                // Monta o caminho completo da imagem
+
                                 $url_imagem = !empty($produto->nome_imagem_principal)
                                     ? $diretorio_imagens . $produto->nome_imagem_principal
                                     : 'https://placehold.co/400x200/de9ca4/ffeae9?text=Sem+Foto';
@@ -77,9 +73,9 @@ $diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
                                 <h5 class="card-title" style="color: var(--rosa-escuro-texto);">
                                     <?php echo htmlspecialchars($produto->nome_produto); ?>
                                 </h5>
-                                
+
                                 <p class="card-text text-muted" style="color: var(--rosa-escuro-texto); font-size: 0.9em;">
-                                     <?php // Deixei a descrição aqui, mas ela será mais detalhada no Modal ?>
+                                    <?php ?>
                                     <?php echo htmlspecialchars($produto->descricao ?? 'Sem descrição.'); ?>
                                 </p>
 
@@ -99,7 +95,7 @@ $diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
                                         Ver Detalhes
                                     </button>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -116,63 +112,63 @@ $diretorio_imagens = 'images/'; // Diretório onde suas imagens estão salvas
     <div class="modal fade" id="detalhesModal" tabindex="-1" aria-labelledby="detalhesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="background-color: var(--rosa-claro);">
-                
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="detalhesModalLabel" style="color: var(--rosa-escuro-texto);">Detalhes do Produto</h5>
+                    <h5 class="modal-title" id="detalhesModalLabel" style="color: var(--rosa-escuro-texto);">Detalhes do
+                        Produto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
+
                 <div class="modal-body">
                     <div class="text-center mb-3">
-                        <img id="modal-img" class="img-fluid rounded shadow-sm mb-3" style="max-height: 200px; object-fit: cover;" alt="Imagem do Produto">
-                        
+                        <img id="modal-img" class="img-fluid rounded shadow-sm mb-3"
+                            style="max-height: 200px; object-fit: cover;" alt="Imagem do Produto">
+
                         <h4 id="modal-nome" style="color: var(--rosa-escuro-texto);"></h4>
                         <p id="modal-preco" class="fw-bold fs-5"></p>
                     </div>
-                    
+
                     <hr style="border-color: var(--rosa-escuro-texto);">
-                    
+
                     <p><strong>Descrição:</strong> <span id="modal-desc"></span></p>
                     <p><strong>Unidade de Medida:</strong> <span id="modal-unidmed"></span></p>
                 </div>
-                
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Seleciona o elemento Modal
         const detalhesModal = document.getElementById('detalhesModal');
-        
-        // Escuta o evento que é disparado antes do modal ser mostrado
         detalhesModal.addEventListener('show.bs.modal', event => {
-            // Pega o botão que disparou o modal
-            const button = event.relatedTarget; 
 
-            // 1. Pega os dados dos atributos data-
+            const button = event.relatedTarget;
             const nome = button.getAttribute('data-nome');
             const preco = button.getAttribute('data-preco');
             const desc = button.getAttribute('data-desc');
             const unidmed = button.getAttribute('data-unidmed');
             const imgUrl = button.getAttribute('data-img');
 
-            // 2. Define o conteúdo dentro do modal
             detalhesModal.querySelector('#modal-nome').textContent = nome;
             detalhesModal.querySelector('#modal-preco').textContent = preco;
             detalhesModal.querySelector('#modal-desc').textContent = desc;
             detalhesModal.querySelector('#modal-unidmed').textContent = unidmed;
-            
-            // Define a imagem
+
             const imgElement = detalhesModal.querySelector('#modal-img');
             imgElement.src = imgUrl;
             imgElement.alt = "Imagem de " + nome;
         });
     </script>
 
+ <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

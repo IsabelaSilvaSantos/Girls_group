@@ -1,30 +1,50 @@
 <?php
-session_start();
+ob_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$destino = filter_input(INPUT_GET, 'redirect', FILTER_SANITIZE_URL);
+$destino = !empty($destino) ? $destino : 'IdexAdmin.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = filter_input(type: INPUT_POST, var_name: 'nome', filter: FILTER_SANITIZE_STRING);
-    $senha = filter_input(type: INPUT_POST, var_name: 'senha', filter: FILTER_SANITIZE_STRING);
 
-    spl_autoload_register(callback: function ($class): void {
+    $usuario = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+
+    spl_autoload_register(function ($class): void {
         require_once "Classes/{$class}.class.php";
     });
+
     $login = new Usuario();
+
     $dados = $login->buscarUsuario($usuario);
 
     if ($dados) {
-        if (password_verify(password: $senha, hash: $dados->senha)) {
-            $_SESSION['nome'] = $dados->nome;
-            $_SESSION['id'] = $dados->id;
-            header('Location: IdexAdmin.php');
+        if (password_verify($senha, $dados->senha)) {
+
+            $_SESSION['user_id'] = $dados->id_usuario;
+            $_SESSION['nome_usuario'] = $dados->nome_usuario;
+
+            session_write_close();
+
+            header("Location: {$destino}");
             exit();
+
         } else {
-            echo "<script>alert('Senha incorreta'); window.history.back();</script>";
+
+            echo "<script>console.error('Senha incorreta.'); window.history.back();</script>";
         }
     } else {
-        echo "<script>alert('Usuário não encontrado'); window.history.back();</script>";
+
+        echo "<script>console.error('Usuário não encontrado.'); window.history.back();</script>";
     }
 } else {
-    header(header: "Location: IdexAdmin.php");
+
+    header("Location: gerLogin.php");
     exit;
 }
+
+ob_end_flush();
 ?>
