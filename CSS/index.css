@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 
 :root {
   --rosa-claro: #ffeae9;
@@ -73,6 +75,15 @@ main {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   padding: 30px;
   margin: 30px 0;
+}
+
+.msnLateral {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  
+  flex-direction: row-reverse; /* adiciona esta linha */
 }
 
 .msn {
@@ -302,4 +313,12 @@ main {
 
 .product-info .buy-button:hover {
   background-color: #c88c98;
+}
+
+.TextoManuscrito {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  text-align: center;
+  margin: 40px 0;
+  color: #000;
 }
