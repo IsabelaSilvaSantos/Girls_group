@@ -8,7 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="CSS/index.css" />
-  <link rel="stylesheet" href="CSS/catalogo.css" />
   <title>Nome da empresa - frase curta</title>
 </head>
 
@@ -43,27 +42,28 @@
 
 
 
-    <div>
-      <h3 class = "ProdutosTexto"> Produtos</h3>
-      <div class="product-grid">
-      <div class="product">
-      <img src="images/bolo1.png" alt="bolo cor de rosa">
-      <p class="name"> Bolo Rosa</p>
-      <p class="prince">R$20,00</p>
-      </div>
+    <div class="product-grid">
+  <div class="product-card">
+    <img src="images/bolo1.png" alt="Bolo branco com flores" class="product-image">
+    <div class="product-info">
+      <button class="buy-button">Informações</button>
+    </div>
+  </div>
 
-    <div class="product">
-      <img src="images/bolo1.png" alt="bolo cor de rosa">
-      <p class="name"> Bolo Rosa</p>
-      <p class="prince">R$20,00</p>
-      </div>
+  <div class="product-card">
+    <img src="images/bolo1.png" alt="Bolo rosa" class="product-image">
+    <div class="product-info">
+      <button class="buy-button">Informações</button>
+    </div>
+  </div>
 
-      <div class="product">
-      <img src="images/bolo1.png" alt="bolo cor de rosa">
-      <p class="name"> Bolo Rosa</p>
-      <p class="prince">R$20,00</p>
-      </div>
-      </div>
+  <div class="product-card">
+    <img src="images/bolo1.png" alt="Bolo claro com flores" class="product-image">
+    <div class="product-info">
+      <button class="buy-button">Informações</button>
+    </div>
+  </div>
+</div>
         
       
 
