@@ -2,7 +2,19 @@
 class Categoria extends CRUD
 {
     protected $table = "categoria";
+    private $id_categoria;
     private $nome_categoria;
+
+    public function getid_categoria()
+    {
+        return $this->id_categoria;
+    }
+
+    public function setid_categoria($id_categoria)
+    {
+        $this->id_categoria = $id_categoria;
+    }
+
     public function getNome_categoria()
     {
         return $this->nome_categoria;

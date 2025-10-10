@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menuAlterar.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     <main class="container mt-5">

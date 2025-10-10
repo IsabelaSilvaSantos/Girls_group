@@ -57,49 +57,55 @@ endif;
                     <label for="id_categoria" class="form-label">Categoria</label>
                     <select name="id_categoria" id="id_categoria" class="form-control select-rosa-claro" required>
                         <option value="">Selecione a Categoria</option>
+
                         <?php if (empty($categorias)): ?>
                             <option value="" disabled style="color: red;">ATENÇÃO: A tabela 'categoria' está vazia!</option>
                         <?php else: ?>
+
+                            <?php
+                            $idCategoriaProduto = $Produto->id_categoria ?? null;
+                            ?>
+
                             <?php foreach ($categorias as $cat): ?>
                                 <?php
-                                $selected = (!empty($Produto) && $Produto->id_categoria == $cat->id_categoria) ? 'selected' : '';
+                                $selected = ($idCategoriaProduto == $cat->id_categoria) ? 'selected' : '';
                                 ?>
                                 <option value="<?php echo $cat->id_categoria; ?>" <?php echo $selected; ?>>
-                                    <?php echo $cat->nome_categoria; ?>
+                                    <?php echo htmlspecialchars($cat->nome_categoria); ?>
                                 </option>
                             <?php endforeach; ?>
+
                         <?php endif; ?>
                     </select>
                 </div>
-            </div>
 
-            <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <textarea name="descricao" id="descricao" placeholder="Digite a descrição do produto." required
-                        class="form-control" rows="4"><?php print $Produto->descricao ?? ''; ?></textarea>
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <textarea name="descricao" id="descricao" placeholder="Digite a descrição do produto." required
+                            class="form-control" rows="4"><?php print $Produto->descricao ?? ''; ?></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="unidade_medida" class="form-label">Unidade de Medida</label>
+                        <input type="text" name="unidade_medida" id="unidade_medida"
+                            placeholder="Digite a unidade de medida" required class="form-control"
+                            value="<?php print $Produto->unidade_medida ?? null; ?>">
+                    </div>
                 </div>
 
-                <div class="col-md-6">
-                    <label for="unidade_medida" class="form-label">Unidade de Medida</label>
-                    <input type="text" name="unidade_medida" id="unidade_medida"
-                        placeholder="Digite a unidade de medida" required class="form-control"
-                        value="<?php print $Produto->unidade_medida ?? null; ?>">
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <label for="preco" class="form-label">Preço</label>
+                        <input type="text" name="preco" id="preco" placeholder="Digite o preço do produto" required
+                            class="form-control" value="<?php print $Produto->preco ?? null; ?>">
+                    </div>
+                    <div class="col-md-6"></div>
                 </div>
-            </div>
 
-            <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                    <label for="preco" class="form-label">Preço</label>
-                    <input type="text" name="preco" id="preco" placeholder="Digite o preço do produto" required
-                        class="form-control" value="<?php print $Produto->preco ?? null; ?>">
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-light" name="btnGravar">Enviar</button>
                 </div>
-                <div class="col-md-6"></div>
-            </div>
-
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-light" name="btnGravar">Enviar</button>
-            </div>
         </form>
     </main>
     <footer>

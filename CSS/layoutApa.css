@@ -321,7 +321,6 @@ section:nth-child(even) .texto {
   visibility: visible;
 }
 
-/* --- ESTILOS MOBILE (max-width: 991.98px) --- */
 @media (max-width: 991.98px) {
   .navbar-collapse {
     position: fixed;
@@ -462,4 +461,11 @@ section:nth-child(even) .texto {
 .navbar .dropdown-toggle::after {
   margin-left: 0;
   vertical-align: middle;
+}
+
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(222, 156, 164, 0.5) !important;
+    background-color: var(--cor-principal) !important;
+    border-color: var(--cor-principal) !important;
+    color: var(--color-font-clara) !important;
 }

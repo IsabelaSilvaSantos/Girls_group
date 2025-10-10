@@ -93,15 +93,12 @@ main.container {
     color: #fffefe;
 }
 
-/* Título menor e no canto */
 main.container h3 {
     font-size: 1.5em;
-    /* Tamanho reduzido para desktop */
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 20px;
     text-align: left;
-    /* Alinhado ao canto esquerdo */
 }
 
 .dest {
@@ -208,15 +205,11 @@ section:nth-child(even) .texto {
     color: var(--rosa-claro);
 }
 
-/* Alterado: Usando Flexbox para centralizar e espaçar os botões */
 .button-group {
     margin-top: 30px;
-    /* Mais espaço acima do grupo */
     display: flex;
     justify-content: center;
-    /* Centraliza o grupo de botões */
     gap: 20px;
-    /* Espaço entre os botões */
 }
 
 .col-12.mt-4 {
@@ -315,26 +308,20 @@ section:nth-child(even) .texto {
         margin: 60px auto;
     }
 
-    /* Ajuste do tamanho do título principal em telas menores */
     main.container h3 {
         font-size: 1.2em;
-        /* Tamanho ainda menor para dispositivos móveis */
         text-align: left;
-        /* Mantém o alinhamento no canto esquerdo */
     }
 }
 
-/* Adicionado: Regra para empilhar os botões em telas muito pequenas */
 @media (max-width: 500px) {
     .button-group {
         flex-direction: column;
-        /* Empilha os botões verticalmente */
         gap: 15px;
     }
 
     .btn-info-custom {
         width: 100%;
-        /* Ocupa a largura total quando empilhado */
     }
 }
 

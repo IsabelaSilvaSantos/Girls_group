@@ -24,10 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($dados) {
         if (password_verify($senha, $dados->senha)) {
 
-            $_SESSION['user_id'] = $dados->id_usuario;
+            $_SESSION['id_usuario'] = $dados->id_usuario;
             $_SESSION['nome_usuario'] = $dados->nome_usuario;
-
-            session_write_close();
 
             header("Location: {$destino}");
             exit();

@@ -90,7 +90,7 @@ if ($id_categoria) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/layoutCategorias.css" />
-    
+
     <title><?php echo htmlspecialchars($tituloPagina); ?> | Sua Loja</title>
 </head>
 
@@ -121,8 +121,8 @@ if ($id_categoria) {
                 <?php else: ?>
                     <?php foreach ($produtos as $Produto): ?>
                         <?php
-                        $imagePath = 'images/placeholder.png'; 
-                
+                        $imagePath = 'images/placeholder.png';
+
                         if (isset($Produto->id_produto) && $fp) {
                             try {
                                 $primeiraFoto = $fp->getFirstPhotoPathByProductId($Produto->id_produto);
@@ -139,8 +139,8 @@ if ($id_categoria) {
                         $descricao_encoded = htmlspecialchars(json_encode($html_description), ENT_QUOTES, 'UTF-8');
                         $nome_produto = htmlspecialchars($Produto->nome_produto);
                         ?>
-                       
-                        <div class="col">
+
+                        <div class="col product-col">
                             <div class="card h-100">
                                 <img src="<?php echo htmlspecialchars($imagePath); ?>" class="card-img-top"
                                     alt="Imagem de <?php echo $nome_produto; ?>"
@@ -159,6 +159,9 @@ if ($id_categoria) {
                     <?php endforeach; ?>
                 <?php endif; ?>
 
+                <div class="col-12 text-center my-5 no-results-message" style="display: none;">
+                    <p class="h4 text-secondary"></p>
+                </div>
 
             </div>
 
@@ -175,7 +178,7 @@ if ($id_categoria) {
                 </div>
                 <div class="modal-body">
                     <h4 id="modalProductName" class="mb-3"></h4>
-                    <div id="modalProductDescription"></div> 
+                    <div id="modalProductDescription"></div>
                     <p class="text-end fw-bold" id="modalProductPrice"></p>
                 </div>
                 <div class="modal-footer">
@@ -189,12 +192,12 @@ if ($id_categoria) {
         const searchInput = document.querySelector('.search-input');
         const clearIcon = document.querySelector('.clear-icon');
         const productCols = document.querySelectorAll('.product-col');
-
+        const noResultsMessage = document.querySelector('.no-results-message');
 
         const filterProducts = (searchTerm) => {
             const term = searchTerm.toLowerCase().trim();
-
             let foundProducts = false;
+
             productCols.forEach(col => {
                 const nameElement = col.querySelector('.name');
                 if (nameElement) {
@@ -209,16 +212,9 @@ if ($id_categoria) {
                 }
             });
 
-            const noResultsMessage = document.querySelector('.no-results-message');
             if (term.length > 0 && !foundProducts) {
-                if (!noResultsMessage) {
-                    const grid = document.querySelector('.row.g-4.mt-3');
-                    const messageHtml = `<div class="col-12 text-center my-5 no-results-message"><p class="h4 text-secondary">Nenhum resultado encontrado para "${term}".</p></div>`;
-                    grid.insertAdjacentHTML('afterbegin', messageHtml);
-                } else {
-                    noResultsMessage.style.display = 'block';
-                    noResultsMessage.querySelector('p').innerHTML = `Nenhum resultado encontrado para "${term}".`;
-                }
+                noResultsMessage.style.display = 'block';
+                noResultsMessage.querySelector('p').innerHTML = `Nenhum resultado encontrado para "${term}".`;
             } else if (noResultsMessage) {
                 noResultsMessage.style.display = 'none';
             }

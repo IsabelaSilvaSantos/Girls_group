@@ -5,23 +5,17 @@ class Imagem
     private $prefixo;
     private $tam_Max;
     private $ext_Perm;
-    private $larMax;
-    private $altMax;
 
     public function __construct(
         string $diretorio = 'images/',
-        int $tam_Max = 5242880, 
+        int $tam_Max = 20971520,
         array $ext_Perm = ['jpg', 'jpeg', 'png', 'gif'],
-        int $larMax = 2000,
-        int $altMax = 2000,
         string $prefixo = ''
     ) {
         $this->diretorio = rtrim($diretorio, '/') . '/';
         $this->prefixo = $prefixo;
         $this->tam_Max = $tam_Max;
         $this->ext_Perm = $ext_Perm;
-        $this->larMax = $larMax;
-        $this->altMax = $altMax;
 
         if (!is_dir($this->diretorio)) {
             mkdir($this->diretorio, 0755, true);
@@ -33,7 +27,6 @@ class Imagem
         $this->validarErro($file);
         $this->validarTamanho($file);
         $this->validarExtensao($file);
-        $this->validarDimensao($file);
 
         $extensao = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
         $nomeArquivo = $this->prefixo . uniqid() . '.' . $extensao;
@@ -54,7 +47,7 @@ class Imagem
 
         $caminhoCompleto = $this->diretorio . $nomeArquivo;
 
-       
+
         if (file_exists($caminhoCompleto) && is_file($caminhoCompleto)) {
             return unlink($caminhoCompleto);
         }
@@ -81,14 +74,6 @@ class Imagem
         $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
         if (!in_array($extensao, $this->ext_Perm)) {
             throw new Exception("Extensão de arquivo não permitida. Permitidas: " . implode(", ", $this->ext_Perm));
-        }
-    }
-    private function validarDimensao(array $arquivo)
-    {
-        $dimensao = getimagesize($arquivo['tmp_name']);
-    
-        if ($dimensao === false || $dimensao[0] > $this->larMax || $dimensao[1] > $this->altMax) {
-            throw new Exception("A imagem excede as dimensões máximas de {$this->larMax}x{$this->altMax}px.");
         }
     }
 }
