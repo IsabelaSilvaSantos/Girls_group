@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #de9ca4;">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="Index.php">
             <img src="images/Logo.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
         </a>
 
@@ -9,5 +9,13 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav gap-4">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-semibold" href="Index.php" class="nav-link">Home</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

@@ -1,7 +1,4 @@
 <?php
-
-//Endereço, email, telefone, nome, nome fantasia, rasão social, cnpj
-
 class Empresa extends CRUD
 {
     protected $table = "empresa";

@@ -1,29 +1,30 @@
 <?php
-
-// A classe Categoria estende a classe base CRUD.
 class Categoria extends CRUD
 {
     protected $table = "categoria";
-    
-    // Propriedades
+    private $id_categoria;
     private $nome_categoria;
-    
-    // GETTERS & SETTERS
-    public function getNome_categoria() {
+
+    public function getid_categoria()
+    {
+        return $this->id_categoria;
+    }
+
+    public function setid_categoria($id_categoria)
+    {
+        $this->id_categoria = $id_categoria;
+    }
+
+    public function getNome_categoria()
+    {
         return $this->nome_categoria;
     }
-    
-    public function setNome_categoria(string $nome_categoria) {
+
+    public function setNome_categoria(string $nome_categoria)
+    {
         $this->nome_categoria = $nome_categoria;
     }
 
-    /**
-     * Busca uma categoria pelo seu ID (necessário para mostrar o título da página).
-     * Nota: O método getById do CRUD base foi sobrescrito ou ajustado 
-     * no CRUD.php para usar 'id_produto'. Por segurança, criamos um específico.
-     * @param int $id ID da categoria
-     * @return object|null
-     */
     public function getCategoriaById(int $id)
     {
         $sql = "SELECT id_categoria, nome_categoria FROM {$this->table} WHERE id_categoria = :id";
@@ -32,8 +33,7 @@ class Categoria extends CRUD
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
-    
-    // Implementação do método abstrato add()
+
     public function add()
     {
         $sql = "INSERT INTO {$this->table} (nome_categoria) VALUES (:nome_categoria)";
@@ -42,7 +42,6 @@ class Categoria extends CRUD
         return $stmt->execute();
     }
 
-    // Implementação do método abstrato update()
     public function update(string $campo, int $id)
     {
         $sql = "UPDATE {$this->table} SET nome_categoria = :nome_categoria WHERE id_categoria = :id_categoria";

@@ -8,10 +8,8 @@ abstract class CRUD
     {
         $this->db = Database::getInstance()->getConnection();
     }
-    //Métodos Abstratos
     abstract public function add();
     abstract public function update(string $campo, int $id);
-    //Método listar todos os registros
     public function all()
     {
         $sql = "SELECT * FROM {$this->table}";
@@ -19,7 +17,6 @@ abstract class CRUD
         $stmt->execute();
         return $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     }
-    //Método de buscar registro por campo
     public function search(string $campo, int $id)
     {
         $sql = "SELECT * FROM $this->table WHERE $campo = :id";
@@ -28,7 +25,6 @@ abstract class CRUD
         $stmt->execute();
         return $stmt->rowCount() > 0 ? $stmt->fetch(PDO::FETCH_OBJ) : null;
     }
-    //Método para excluir um registro pelo ID
     public function delete(string $campo, int $id)
     {
         $sql = "DELETE FROM $this->table where $campo = :id";
@@ -44,25 +40,16 @@ abstract class CRUD
 
     public function iniciarTransacao() 
     {
-        // Chama o método beginTransaction() do objeto PDO
         $this->db->beginTransaction();
     }
     
-    /**
-     * Confirma a transação (faz commit das mudanças).
-     */
     public function confirmarTransacao() 
     {
-        // Chama o método commit() do objeto PDO
         $this->db->commit();
     }
     
-    /**
-     * Cancela a transação (faz rollback das mudanças).
-     */
     public function cancelarTransacao() 
     {
-        // Chama o método rollBack() do objeto PDO
         if ($this->db->inTransaction()) {
             $this->db->rollBack();
         }

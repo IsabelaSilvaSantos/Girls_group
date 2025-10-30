@@ -96,7 +96,7 @@ main {
 .msn img {
   max-width: 300px;
   border-radius: 0px;
-  
+
 }
 
 .msn p,
@@ -233,25 +233,25 @@ main {
   color: var(--rosa-escuro-texto);
 }
 
-.ProdutosTexto{
+.ProdutosTexto {
   text-align: center;
 }
 
 .dropdown-menu {
-  background-color: rgba(222, 156, 164, 0.9); 
-  border: none; 
-  border-radius: 8px; 
+  background-color: rgba(222, 156, 164, 0.9);
+  border: none;
+  border-radius: 8px;
   padding: 8px 0;
 }
 
 .dropdown-item {
-  color: #fff; 
+  color: #fff;
   font-weight: 500;
 }
 
 .dropdown-item:hover {
-  background-color: rgba(255, 234, 233, 0.9); 
-  color: #de9ca4; 
+  background-color: rgba(255, 234, 233, 0.9);
+  color: #de9ca4;
 }
 .product-grid {
   display: flex;

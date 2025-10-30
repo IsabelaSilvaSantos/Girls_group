@@ -1,3 +1,7 @@
+<?php
+require_once "verifica_usuario.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -32,15 +36,13 @@
             </thead>
             <tbody>
                 <?php
-                // Configuração do Autoload (sempre necessário)
                 spl_autoload_register(function ($class) {
                     require_once "classes/{$class}.class.php";
                 });
 
                 $p = new Produto();
-                $produtos = $p->all(); // Renomeado para $produtos para clareza
-                
-                // Se o método all() retornar uma coleção vazia, inicialize como array para evitar erro
+                $produtos = $p->all();
+
                 if (!is_array($produtos)) {
                     $produtos = [];
                 }
@@ -52,41 +54,27 @@
                         <td><?php echo $Produto->nome_produto ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
-
-                            <!-- 1. BOTÃO GERENCIAR FOTOS (AGORA ESTILIZADO) -->
-                            <a
-                                href="listagemFotos.php?idProduto=<?php echo $Produto->id_produto; ?>"
+                            <a href="listagemFotos.php?idProduto=<?php echo $Produto->id_produto; ?>"
                                 title="Gerenciar Fotos" class="btn-action-sm-custom">
-                                <!-- Classe customizada aplicada -->
                                 <i class="bi bi-camera text-rosa-escuro"></i>
-                                </a>
+                            </a>
 
-                            <!-- 2. BOTÃO EDITAR (CLASSE ALTERADA) -->
-                            <form action="<?php echo htmlspecialchars("gerProduto.php") ?>"
-                                method="post">
-                                <input type="hidden" name="id_produto"
-                                    value="<?php echo $Produto->id_produto ?>">
-                                <button name="btnEditar" class="btn-action-sm-custom"
-                                    type="submit"
+                            <form action="<?php echo htmlspecialchars("gerProduto.php") ?>" method="post">
+                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
+                                <button name="btnEditar" class="btn-action-sm-custom" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar esse produto?');">
-                                    <!-- Ícone de lápis, cor rosa escuro -->
                                     <i class="bi bi-pencil-square text-rosa-escuro"></i>
-                                    </button>
-                                </form>
+                                </button>
+                            </form>
 
-                            <!-- 3. BOTÃO DELETAR (CLASSE ALTERADA) -->
-                            <form action="<?php echo htmlspecialchars("dbProduto.php") ?>"
-                                method="post">
-                                <input type="hidden" name="id_produto"
-                                    value="<?php echo $Produto->id_produto ?>">
-                                <button name="btnDeletar" class="btn-action-sm-custom"
-                                    type="submit" 
+                            <form action="<?php echo htmlspecialchars("dbProduto.php") ?>" method="post">
+                                <input type="hidden" name="id_produto" value="<?php echo $Produto->id_produto ?>">
+                                <button name="btnDeletar" class="btn-action-sm-custom" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar esse produto?');">
-                                    <!-- Ícone de lixeira, cor rosa escuro -->
                                     <i class="bi bi-trash text-rosa-escuro"></i>
-                                    </button>
-                                </form>
-                            </td>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

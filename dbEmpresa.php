@@ -2,7 +2,7 @@
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
-//Criando uma instância da classe Empresa
+
 $Empresa = new Empresa();
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
@@ -19,7 +19,6 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $id_empresa = filter_input(INPUT_POST, 'id_empresa');
 
     if (empty($id_empresa)):
-        //Tentar adicionar exibir mensagem a empresa
         if ($Empresa->add()) {
             echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href='apaEmpresa.php';</script>";
         } else {

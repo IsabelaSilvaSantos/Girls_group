@@ -49,6 +49,17 @@ h3 {
   border-color: var(--color-font-clara);
 }
 
+.btn-outline-primary {
+  background-color: var(--rosa-claro-texto);
+  color: var(--rosa-escuro-texto);
+  border-color: var(--rosa-claro-texto);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--rosa-escuro-texto);
+  border-color: var(--rosa-claro-texto);
+}
+
 .table-secondary {
   --bs-table-bg: var(--rosa-medio);
   --bs-table-color: var(--color-font-clara);
@@ -59,8 +70,15 @@ h3 {
   color: var(--rosa-escuro-texto);
 }
 
+.table tbody td {
+  color: var(--rosa-escuro-texto);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
 nav {
-  padding: 5px;
   text-align: center;
 }
 
@@ -94,16 +112,65 @@ nav a {
 .navbar-toggler {
   border-radius: 12px;
   border: 2px solid #ffeae9;
+  position: relative;
+  z-index: 1060;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 70%;
+  height: 2px;
+  position: relative;
+  background-image: none !important;
+  background-color: var(--color-font-clara);
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  background-color: var(--color-font-clara);
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-toggler-icon::before {
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.navbar-toggler-icon::after {
+  transform: translateX(-50%) translateY(8px);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background-color: transparent !important;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none !important;
   box-shadow: 0 0 0 2px var(--color-font-clara);
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,234,233)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 main {
@@ -148,7 +215,6 @@ section:nth-child(even) .texto {
 }
 
 .footer-custom {
-
   color: var(--rosa-claro-texto);
   padding: 30px 0;
 }
@@ -191,31 +257,118 @@ section:nth-child(even) .texto {
   color: var(--rosa-escuro-texto);
 }
 
-.footer-custom p {
-  color: var(--rosa-escuro-texto);
+.contact-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.table tbody td {
-  color: var(--rosa-escuro-texto);
+.contact-link p {
+  color: var(--rosa-claro-texto);
 }
 
-/* Regras de Novo Produto (Mantida a estrutura original, mas pode ser ajustada) */
-.btn-outline-primary {
-  background-color: var(--rosa-claro-texto);
-  color: var(--rosa-escuro-texto);
-  border-color: var(--rosa-claro-texto);
+.btn-action-sm-custom {
+  background-color: var(--rosa-medio) !important;
+  border: 1px solid var(--rosa-medio) !important;
+  color: var(--rosa-escuro-texto) !important;
+  border-radius: 4px;
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.btn-outline-primary:hover {
-  background-color: var(--rosa-escuro-texto);
-  border-color: var(--rosa-claro-texto);
+.btn-action-sm-custom:hover {
+  background-color: var(--rosa-claro) !important;
+  border-color: var(--rosa-claro) !important;
 }
 
-/* FIM DAS REGRAS PARA NOVO PRODUTO */
+.text-rosa-escuro {
+  color: var(--rosa-escuro-texto) !important;
+}
 
+.navbar-collapse {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  visibility: hidden;
+  position: static;
+  transform: none;
+  visibility: visible;
+}
 
-.table tbody tr:last-child {
-  border-bottom: none;
+.navbar-backdrop {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-collapse.show {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.navbar-collapse.show+.navbar-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(222, 156, 164, 0.95);
+    padding: 20px;
+    z-index: 1050;
+    border-radius: 15px 0 0 15px;
+    overflow-y: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .navbar-nav .user-icon {
+    margin-left: auto !important;
+  }
+
+  .navbar-collapse:not(.show) {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-backdrop {
+    display: none;
+  }
+
+  .navbar-nav .user-icon {
+    display: none !important;
+  }
+
+  .d-flex .nav-item.dropdown:not(.user-icon) {
+    display: block !important;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -232,17 +385,13 @@ section:nth-child(even) .texto {
     justify-content: center !important;
     text-align: left !important;
   }
-}
 
-@media (max-width: 600px) {
   main.container {
     width: 95% !important;
     padding: 0.75rem 1rem !important;
     margin: 1.1rem auto !important;
   }
-}
 
-@media (max-width: 600px) {
   .btn-sm {
     padding: 0.75rem 1rem !important;
     font-size: 1.1rem !important;
@@ -253,45 +402,70 @@ section:nth-child(even) .texto {
   }
 }
 
-.contact-link {
-  text-decoration: none;
-  color: inherit;
+.dropdown-menu-custom {
+  z-index: 1060;
+  background-color: rgba(222, 156, 164, 0.9);
+  border: none;
 }
 
-.contact-link p {
-  color: var(--rosa-claro-texto);
+.dropdown-menu-custom .dropdown-item {
+  color: white !important;
+  font-weight: 500;
 }
 
-/* CLASSE UNIFICADA PARA OS TRÊS BOTÕES DE AÇÃO (Fotos, Editar, Deletar) */
-.btn-action-sm-custom {
-  /* Fundo Rosa Médio, conforme o box da sua imagem */
-  background-color: var(--rosa-medio) !important;
-  border: 1px solid var(--rosa-medio) !important;
-  color: var(--rosa-escuro-texto) !important;
-  /* Cor do ícone no rosa escuro */
+.dropdown-menu-custom .dropdown-item:hover,
+.dropdown-menu-custom .dropdown-item:focus {
+  background-color: rgba(180, 120, 128, 0.8);
+  color: white !important;
+}
 
-  /* MODIFICAÇÕES AQUI: Aumento do padding e leve arredondamento */
-  border-radius: 4px;
-  /* Mais quadrado, menos arredondado */
-  padding: 0.7rem 0.8rem;
-  /* Aumenta o padding para ser mais quadrado e maior */
-  font-size: 1rem;
+.dropdown-menu-custom .dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  /* Para alinhar o ícone */
-  display: inline-flex;
+.navbar .d-flex.align-items-center.gap-3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar .nav-link i {
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  transition: all 0.2s ease;
 }
 
-.btn-action-sm-custom:hover {
-  /* Fundo ainda mais claro no hover */
-  background-color: var(--rosa-claro) !important;
-  border-color: var(--rosa-claro) !important;
+@media (max-width: 991.98px) {
+  .dropdown-menu-custom {
+    position: fixed !important;
+    top: 60px !important;
+    right: 10px !important;
+    transform: none !important;
+    border-radius: 10px;
+    z-index: 1080 !important;
+  }
 }
 
-/* CLASSE DE COR DO ÍCONE (Necessária para garantir que o ícone é rosa escuro) */
-.text-rosa-escuro {
-  color: var(--rosa-escuro-texto) !important;
+.navbar .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar .dropdown-toggle i {
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.navbar .dropdown-toggle::after {
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(222, 156, 164, 0.5) !important;
+    background-color: var(--cor-principal) !important;
+    border-color: var(--cor-principal) !important;
+    color: var(--color-font-clara) !important;
 }

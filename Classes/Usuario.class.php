@@ -1,5 +1,4 @@
 <?php
-
 class Usuario extends CRUD
 {
     protected $table = "usuario";
@@ -8,7 +7,6 @@ class Usuario extends CRUD
     private $email;
     private $papel;
     private $senha;
-
 
     public function getid_usuario()
     {
@@ -41,12 +39,11 @@ class Usuario extends CRUD
     {
         return $this->papel;
     }
+
     public function setpapel($papel)
     {
         $this->papel = $papel;
     }
-
-
     public function getsenha()
     {
         return $this->senha;
@@ -55,7 +52,6 @@ class Usuario extends CRUD
     {
         $this->senha = $senha;
     }
-
 
     public function add()
     {
@@ -74,7 +70,6 @@ class Usuario extends CRUD
         if (!empty($this->senha)) {
             $senha = password_hash($this->senha, PASSWORD_DEFAULT);
         } else {
-            // mantém a senha atual do banco
             $sqlSenha = "SELECT senha FROM $this->table WHERE $campo = :id";
             $stmtSenha = $this->db->prepare($sqlSenha);
             $stmtSenha->bindParam(":id", $id_usuario, PDO::PARAM_INT);
@@ -99,5 +94,72 @@ class Usuario extends CRUD
         $stmt->bindValue(param: ':nome_usuario', value: $usuario);
         $stmt->execute();
         return $stmt->rowCount() > 0 ? $stmt->fetch(mode: PDO::FETCH_OBJ) : null;
+    }
+    public function atualiza_email()
+    {
+        try {
+            $sql = "SELECT senha, nome_usuario FROM $this->table WHERE nome_usuario = :nome_usuario";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':nome_usuario', $this->nome_usuario);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $usuario = $stmt->fetch(PDO::FETCH_OBJ);
+
+                if (password_verify($this->senha, $usuario->senha)) {
+
+                    $sql = "UPDATE $this->table SET email = :email WHERE nome_usuario = :nome_usuario";
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindParam(':email', $this->email, PDO::PARAM_STR);
+                    $stmt->bindParam(':nome_usuario', $this->nome_usuario);
+
+                    return $stmt->execute() ? true : "Erro ao executar a atualização do e-mail no banco de dados.";
+                } else {
+                    return 'A Senha atual fornecida está incorreta.';
+                }
+            } else {
+                return 'Usuário não encontrado.';
+            }
+        } catch (PDOException $e) {
+            if ($e->getCode() == 23000) {
+                return 'Erro: Este e-mail já está em uso por outro usuário.';
+            }
+            return 'Erro no sistema contate o administrador.';
+        }
+    }
+
+    public function alterarSenha($senhaAtual)
+    {
+        if (empty($this->id_usuario)) {
+            return false;
+        }
+
+        try {
+            $sql = "SELECT senha FROM $this->table WHERE id_usuario = :id_usuario";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id_usuario', $this->id_usuario, PDO::PARAM_INT);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $usuario = $stmt->fetch(PDO::FETCH_OBJ);
+                if (password_verify($senhaAtual, $usuario->senha)) {
+
+                    $novaSenhaHash = password_hash($this->senha, PASSWORD_DEFAULT);
+                    $sql = "UPDATE $this->table SET senha = :novaSenha WHERE id_usuario = :id_usuario";
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindParam(':novaSenha', $novaSenhaHash, PDO::PARAM_STR);
+                    $stmt->bindParam(':id_usuario', $this->id_usuario, PDO::PARAM_INT);
+
+                    return $stmt->execute();
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            error_log("Erro ao alterar senha: " . $e->getMessage());
+            return false;
+        }
     }
 }

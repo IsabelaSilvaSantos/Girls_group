@@ -2,7 +2,7 @@
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
-//Criando uma instância da classe Cliente
+
 $Cliente = new Cliente();
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
@@ -13,7 +13,6 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $id_cliente = filter_input(INPUT_POST, 'id_cliente');
 
     if (empty($id_cliente)):
-        //Tentar adicionar exibir mensagem ao cliente
         if ($Cliente->add()) {
             echo "<script>window.alert('Cliente inserido com sucesso!');window.location.href='apaCliente.php';</script>";
         } else {
