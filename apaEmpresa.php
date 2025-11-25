@@ -59,7 +59,7 @@ require_once "verifica_usuario.php";
 
                             <form action="<?php echo htmlspecialchars("dbEmpresa.php") ?>" method="post">
                                 <input type="hidden" name="id_empresa" value="<?php echo $Empresa->id_empresa ?>">
-                                <button name="btnDeletar" class="btn btn-outline-danger btn-sm" type="submit"
+                                <button name="btnDeletar" class="btn btn-outline-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar essa empresa?');">
                                     <i class="bi bi-trash"></i>
                                 </button>
