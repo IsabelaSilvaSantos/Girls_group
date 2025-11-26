@@ -65,7 +65,6 @@ body {
     .dropdown-menu.show {
         display: block;
         visibility: visible;
-        /* position: static; - Removido para ser mais específico abaixo */
     }
 }
 
@@ -214,17 +213,13 @@ body {
         padding-top: 50px;
     }
 
-    /* CORREÇÃO APLICADA: Esta regra agora seletiva aninha o dropdown dentro do menu sanduíche */
     .navbar-nav .dropdown-menu {
         position: static;
-        /* Isso aninha o menu, fazendo ele rolar junto */
         width: 100%;
         border: none;
         border-radius: 0;
         background-color: transparent;
-        /* Usa o fundo do menu lateral */
         padding-left: 20px;
-        /* Adiciona indentação para visual de submenu */
     }
 }
 
