@@ -12,7 +12,7 @@
 ## 👫 Integrantes do Grupo
 - **Aluna Amanda Gisele** - Responsável por: Página de Usuário e Login.
 - **Aluna Emanuele Ester** - Responsável por: Página de Produto e Página Inicial.
-- **Aluna Isabela da Silva** - Responsável por: Página de Cliente e Categorias.
+- **Aluna Isabela da Silva** - Responsável por: Página de categorias, página de cadastro de categorias, página de listagem de categorias, página de cadastro de fotos de produtos, página de listagem de fotos de produtos, página de produtos por categoria, folha de estilo (CSS) aplicada às interfaces e página do administrador.
 - **Aluna Kamilla Kempim** - Responsável por: Página de Empresa e Página Inicial.
 
 ---
@@ -27,10 +27,17 @@
 
 ## 🗃️ Estrutura do Projeto
 ```
+/parts
 /classes        
-/css            
-/js             
-/views          
+/css 
+/images           
+/js   
+alterar_email.php
+alterar_senha.php
+apaCategoria.php
+apaEmpresa.php
+apaProduto.php
+cadastroFotoProduto.php                  
 index.php       
 README.md       
 ```
@@ -41,10 +48,11 @@ README.md
 Nome do banco: **gilrs_group**
 
 Tabelas principais:
-- Produtos  
-- clientes  
+- Usuario
 - Empresa
-- cadastro_usuario  
+- Categoria
+- Produtos  
+- foto_produto 
 
 ---
 
@@ -52,6 +60,6 @@ Tabelas principais:
 1. Clone este repositório  
 2. Importe o arquivo SQL no MySQL  
 3. Configure `config.ini`  
-4. Acesse no navegador: `http://localhost/[Girls_group]`
+4. Acesse no navegador: `http://localhost/Girls_Group/`
 
 ---
