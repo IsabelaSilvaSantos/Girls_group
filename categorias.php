@@ -1,4 +1,8 @@
 <?php
+require_once "verifica_usuario.php";
+?>
+
+<?php
 
 function formatar_descricao_md($text)
 {
