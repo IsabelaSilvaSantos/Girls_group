@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="CSS/index.css" />
-  <title>Nome da empresa - frase curta</title>
+  <title>Girls Group</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <?php require_once "_parts/_menu.php"; ?>
   </header>
 
-  
+  <!-- Carrossel-->
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade mb-4">
       <div class="carousel-inner">
@@ -40,76 +40,145 @@
       </button>
     </div>
 
+    <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+  <div class="carousel-inner">
 
-    <h2 class="TextoManuscrito">Produtos</h2>
-    <div class="product-grid">
-  <div class="product-card">
-    <img src="images/bolo.png" alt="Bolo branco com flores" class="product-image">
-    <div class="product-info">
-      <button class="buy-button">Informações</button>
-    </div>
-  </div>
+  
+    <!-- Produtos -->
+    <h2 class="TextoManuscrito text-center">Produtos</h2>
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-center gap-3">
 
-  <div class="product-card">
-    <img src="images/bolo.png" alt="Bolo rosa" class="product-image">
-    <div class="product-info">
-      <button class="buy-button">Informações</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="images/bolo.png" alt="Bolo claro com flores" class="product-image">
-    <div class="product-info">
-      <button class="buy-button">Informações</button>
-    </div>
-  </div>
-</div>
-        
-      
-
-    <main>
-      <section id="sobre Nós" class="bloco">
-        <h2 class="TextoManuscrito">Sobre Nós</h2>
-        <div class="msn">
-          <img src="images/Sobre.png" alt="Imagem do sobre nós" />
-          <div>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
-            <p>Texto Texto Texto Texto Texto</p>
+        <!-- Card 1 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Bolo de Morango">
+          <div class="card-body text-center">
+            <h5 class="card-title">Bolo</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
-      </section>
 
-      <section id="Empresa" >
-         <h2 class="TextoManuscrito">Nossa Empresa</h2>
-        <div class="msnLateral">
-          <img src="images/Empresa.png" alt="Imagem de produtos"/>
-          <ul>
-            <li>Produtos</li>
-            <li>Proutos</li>
-            <li>Produtos</li>
-            <li>Produtos</li>
-          </ul>
+        <!-- Card 2 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Alface">
+          <div class="card-body text-center">
+            <h5 class="card-title">Alface</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
+          </div>
         </div>
-      </section>
 
-      <section id="Empresa" >
-        <div class="msn">
-          <img src="images/Empresa2.png" alt="Imagem de produtos"/>
-          <ul>
-            <li>Produtos</li>
-            <li>Proutos</li>
-            <li>Produtos</li>
-            <li>Produtos</li>
-          </ul>
+        <!-- Card 3 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Pitaya">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pitaya</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
+          </div>
         </div>
-      </section>
 
-      
-        
-      
+      </div>
+    </div>
+
+    <!-- Produtos 2 -->
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center gap-3">
+
+        <!-- card 4 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Maçã">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maçã</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
+          </div>
         </div>
+
+        <!-- card 5 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Banana">
+          <div class="card-body text-center">
+            <h5 class="card-title">Banana</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
+          </div>
+        </div>
+
+        <!-- card 6 -->
+        <div class="card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="Laranja">
+          <div class="card-body text-center">
+            <h5 class="card-title">Laranja</h5>
+            <p class="card-text">Descrição...</p>
+            <a href="#" class="btn btn-rosa">Informações</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdutos" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselProdutos" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+    <!-- Sobre Nós -->
+  <section id="sobre-nos">
+    <h2 class="TextoManuscrito">Profissionais</h2>
+    <div class="cards-equipe">
+
+      <!--Amanda -->
+      <div class="card-equipe">
+        <img src="images/Amanda.jpeg" alt="Foto da integrante Amanda" class="foto-perfil">
+        <h2 class="TextoManuscrito">Amanda</h2>
+        <p>
+         Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
+        </p>
+      </div>
+
+       <!--Emanuele -->
+      <div class="card-equipe">
+        <img src="images/Emanueli.jpeg" alt="Foto da integrante Emanuele" class="foto-perfil">
+        <h2 class="TextoManuscrito">Emanuele</h2>
+        <p>
+           Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
+        </p>
+      </div>
+
+      <!-- Isabela -->
+      <div class="card-equipe">
+        <img src="Images/Isabela.jpeg" alt="Foto da integrante Isabela" class="foto-perfil">
+        <h2 class="TextoManuscrito">Isabela</h2>
+        <p>
+          Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
+      </div>
+
+      <!-- Kamilla-->
+      <div class="card-equipe">
+        <img src="images/Kamilla.jpg" alt="Foto da integrante Kamilla" class="foto-perfil">
+       <h2 class="TextoManuscrito">Kamilla</h2>
+        <p>
+           Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="foto-centro-container">
+    <img src="images/foto em grupo.png" class="foto-centro" alt="Foto especial">
+</div>
+
+   </div>
         <div> 
            <h2 class="TextoManuscrito">Localização</h2>
            <div style="text-align: center;">
@@ -119,6 +188,7 @@
       </section>
     </main>
     </section>
+
        
   </main>
 
