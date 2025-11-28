@@ -34,6 +34,7 @@
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaEmpresa.php">Empresa</a></li>
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaProdutos.php">Produto</a></li>
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaUsuario.php">Usuário</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.php">Página Inicial</a></li>
                 
                 <li class="nav-item dropdown ms-auto d-none d-lg-block">
                     <a class="nav-link dropdown-toggle text-white fw-semibold icon-no-focus me-4" href="#"

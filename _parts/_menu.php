@@ -13,19 +13,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav gap-4">
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#sobre" class="nav-link">Sobre</a>
+          <a class="nav-link text-white fw-semibold" href="#sobre-nos" class="nav-link">Sobre</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white fw-semibold" href="#produtos" class="nav-link">Produtos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#estrutura" class="nav-link">Estrutura</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#iframe" class="nav-link">Localização</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#" class="nav-link">Contato</a>
+          <a class="nav-link text-white fw-semibold" href="#empresa" class="nav-link">Estrutura</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white fw-semibold" href="gerLogin.php" class="nav-link">Entrar</a>
