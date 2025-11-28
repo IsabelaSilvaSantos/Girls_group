@@ -43,7 +43,7 @@
     <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
   <div class="carousel-inner">
 
-  
+   <section id= produtos>
     <!-- Produtos -->
     <h2 class="TextoManuscrito text-center">Produtos</h2>
     <div class="carousel-item active">
@@ -51,7 +51,7 @@
 
         <!-- Card 1 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Bolo de Morango">
+          <img src="images/Bolo 1.png" class="card-img-top" alt="Bolo de Morango">
           <div class="card-body text-center">
             <h5 class="card-title">Bolo</h5>
             <p class="card-text">Descrição...</p>
@@ -129,7 +129,55 @@
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+</section>
 
+
+<section class="qualidade-section-custom p-5 mb-5">
+    <div class="container-fluid">
+        <div class="row align-items-center mb-4">
+            <div class="col-12 col-lg-6 text-start">
+                <h1 class="titulo-qualidade-custom TextoManuscrito display-2">Qualidade</h1>
+            </div>
+            </div>
+
+        <div class="row mb-5">
+            <div class="col-12 col-lg-8">
+                <p class="lead texto-qualidade-desc">
+                    Nossos produtos são feitos com ingredientes selecionados, sabores marcantes e o cuidado de quem ama produzir o melhor. Cada detalhe é pensado para entregar frescor, aroma e uma experiência deliciosa em cada pedaço. Do preparo à finalização, qualidade é o nosso principal ingrediente.
+                </p>
+            </div>
+            
+            <div class="col-12 col-lg-4 d-none d-lg-block">
+                </div>
+        </div>
+
+        <div class="row destaques-grid-custom pt-4">
+            
+            <div class="col-12 col-md-4 text-center pb-4">
+                <h2 class="numero-destaque-custom">100%</h2>
+                <p class="texto-destaque-custom">Maior cremosidade garantida: nossos recheios passam por um processo especial que deixa tudo mais macio e saboroso.</p>
+            </div>
+            
+            <div class="col-12 col-md-4 text-center pb-4">
+                <h2 class="numero-destaque-custom">100%</h2>
+                <p class="texto-destaque-custom">Redução de açúcares artificiais, mantendo o sabor autêntico e equilibrado em cada fatia dos nossos bolos.</p>
+            </div>
+            
+            <div class="col-12 col-md-4 text-center pb-4">
+                <h2 class="numero-destaque-custom">100%</h2>
+                <p class="texto-destaque-custom">Aumento na seleção de frutas frescas, escolhidas manualmente para garantir mais aroma, cor e qualidade.</p>
+            </div>
+
+        </div>
+
+    </div>
+    <img src="images/Bolo Qualidade.png" alt="Fatia de bolo com morangos" class="imagem-bolo-qualidade d-none d-md-block">
+</div>
+</section>
+
+<div class="glace-bottom">
+    <img src="images/glace escorrendo.png" alt="Glacê escorrendo">
+</div>
 
     <!-- Sobre Nós -->
   <section id="sobre-nos">
@@ -174,9 +222,35 @@
     </div>
   </section>
 
+
+
   <div class="foto-centro-container">
     <img src="images/foto em grupo.png" class="foto-centro" alt="Foto especial">
 </div>
+<section id= empresa>
+<section class="secao-nossa-empresa">
+    <h2 class="TextoManuscrito">Nossa Empresa</h2>
+
+    <div class="linha linha-superior">
+        <div class="conteudo texto-esquerda">
+            <p>Nossa história começou com um sonho doce: criar um espaço acolhedor, cheio de charme e feito para encantar. Aqui, cada detalhe foi pensado para receber nossos clientes com carinho e proporcionar uma experiência inesquecível desde o primeiro olhar.</p>
+
+        </div>
+        <div class="conteudo imagem-direita">
+            <img src="images/Empresa 1.png" alt="Fachada da Confeitaria Girls Group">
+        </div>
+    </div>
+
+    <div class="linha linha-inferior">
+        <div class="conteudo imagem-esquerda">
+            <img src="images/Empresa 2.png" alt="Interior da Confeitaria Girls Group">
+        </div>
+        <div class="conteudo texto-direita">
+            <p>Por dentro, nossa confeitaria reúne sabor, dedicação e cuidado em cada receita. Trabalhamos com ingredientes selecionados e técnicas artesanais para garantir produtos frescos e irresistíveis todos os dias. Aqui, tudo é feito com amor.</p>
+        </div>
+    </div>
+    
+</section>
 
    </div>
         <div> 
