@@ -10,8 +10,8 @@
 ---
 
 ## 👫 Integrantes do Grupo
-- **Aluna Amanda Gisele** - Responsável por: Página de Usuário e Login.
-- **Aluna Emanuele Ester** - Responsável por: Página de Produto e Página Inicial.
+- **Aluna Amanda Gisele** - Responsável por: Página de Usuário, Validação de Login, Validação de Usuário, páginas de alterar senha e e-mail e folha de estilo (CSS) aplicada às interfaces. 
+- **Aluna Emanuele Ester** - Responsável por: Pagina de catálogo, pagina referente a produtos, listagem de produtos, cadastro de produtos e folha de estilo (CSS) aplicada às interfaces.
 - **Aluna Isabela da Silva** - Responsável por: Página de categorias, página de cadastro de categorias, página de listagem de categorias, página de cadastro de fotos de produtos, página de listagem de fotos de produtos, página de produtos por categoria e folha de estilo (CSS) aplicada às interfaces.
 - **Aluna Kamilla Kempim** - Responsável por: Página inicial (index) e protótipo no Canva, página de cadastro de empresas, página de listagem de empresas, folha de estilo (css) da página inicial e das páginas da empresa.
 
@@ -73,7 +73,6 @@ Tabelas principais:
 - Categoria
 - Produtos  
 - foto_produto 
-
 ---
 
 ## 🚀 Como Executar o Projeto
