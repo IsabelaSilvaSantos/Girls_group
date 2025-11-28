@@ -9,6 +9,8 @@ require_once "verifica_usuario.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--datable link css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/layoutApa.css">
     <title>Empresa</title>
@@ -26,14 +28,14 @@ require_once "verifica_usuario.php";
         <div class="mt-3 mb-4">
             <a href="gerEmpresa.php" class="btn btn-outline-primary">Nova Empresa</a>
         </div>
-        <table class="table">
-            <thead class="table-secondary">
-                <tr>
-                    <th>#</th>
-                    <th>Empresa</th>
-                    <th class="text-center">Ações</th>
-                </tr>
-            </thead>
+        <table class="table dataTable">
+    <thead class="table-secondary">
+        <tr>
+            <th>#</th>
+            <th>Empresa</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
             <tbody>
                 <?php
                 spl_autoload_register(function ($class) {
@@ -75,9 +77,17 @@ require_once "verifica_usuario.php";
     <footer>
         <?php require_once "_parts/_footer.php" ?>
     </footer>
+    <!-- Link JQuery deve ser primeiro-->
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js" type="text/javascript"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- Link dataTable JS-->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <!-- Link dataTable JS bootstrap5 -->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link para o JS de configuração -->
+    <script src="JS/paginacao.js"></script>
+    
 </body>
 
 </html>
