@@ -1,3 +1,7 @@
+<?php
+require_once "verifica_usuario.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -13,7 +17,7 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menu.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
 
     <main class="container">

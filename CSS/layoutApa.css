@@ -469,3 +469,45 @@ section:nth-child(even) .texto {
     border-color: var(--cor-principal) !important;
     color: var(--color-font-clara) !important;
 }
+
+.dataTables_length .form-select {
+  background-color: var(--rosa-claro-texto) !important; 
+  color: var(--rosa-escuro-texto) !important;
+  border-color: var(--rosa-medio) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23de9ca4' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.dataTables_length .form-select:focus {
+  border-color: var(--cor-principal) !important;
+  box-shadow: 0 0 0 0.25rem rgba(222, 156, 164, 0.5) !important;
+}
+
+.pagination .page-item .page-link {
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.85rem; 
+  margin: 0 1px; 
+  border-radius: 4px !important;
+  color: var(--cor-principal); 
+  background-color: var(--rosa-claro-texto); 
+  border: 1px solid var(--borda-botao-rosa);
+}
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item .page-link:focus {
+  color: var(--rosa-claro-texto);
+  background-color: var(--cor-principal);
+  border-color: var(--cor-principal);
+  box-shadow: none;
+}
+
+.pagination .page-item.active .page-link {
+  color: var(--rosa-claro-texto);
+  background-color: var(--cor-principal);
+  border-color: var(--cor-principal);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: var(--borda-botao-rosa);
+  background-color: var(--rosa-claro-texto);
+  border-color: var(--rosa-medio);
+}

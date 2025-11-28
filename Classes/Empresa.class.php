@@ -13,6 +13,7 @@ class Empresa extends CRUD
     private $principal_atividade;
     private $historia;
     private $apresentacao;
+    private $id_usuario;
 
     public function setNome($nome_empresa)
     {
@@ -22,6 +23,11 @@ class Empresa extends CRUD
     public function setid_empresa($id_empresa)
     {
         $this->id_empresa = $id_empresa;
+    }
+
+    public function setid_usuario($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
     }
 
     public function setEndereco($endereco)
@@ -68,6 +74,10 @@ class Empresa extends CRUD
     {
         return $this->id_empresa;
     }
+    public function getid_usuario()
+    {
+        return $this->id_usuario;
+    }
     public function getEndereco()
     {
         return $this->endereco;
@@ -108,7 +118,7 @@ class Empresa extends CRUD
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome_empresa, endereco, email, telefone, nome_fantasia, razao_social, cnpj, principal_atividade, historia, apresentacao ) VALUES (:nome_empresa, :endereco, :email, :telefone, :nome_fantasia, :razao_social, :cnpj, :principal_atividade, :historia, :apresentacao)";
+        $sql = "INSERT INTO $this->table (nome_empresa, endereco, email, telefone, nome_fantasia, razao_social, cnpj, principal_atividade, historia, apresentacao, id_usuario) VALUES (:nome_empresa, :endereco, :email, :telefone, :nome_fantasia, :razao_social, :cnpj, :principal_atividade, :historia, :apresentacao, :id_usuario)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome_empresa", $this->nome_empresa, PDO::PARAM_STR);
         $stmt->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
@@ -120,6 +130,7 @@ class Empresa extends CRUD
         $stmt->bindParam(":principal_atividade", $this->principal_atividade, PDO::PARAM_STR);
         $stmt->bindParam(":historia", $this->historia, PDO::PARAM_STR);
         $stmt->bindParam(":apresentacao", $this->apresentacao, PDO::PARAM_STR);
+        $stmt->bindParam(":id_usuario", $this->id_usuario, PDO::PARAM_INT);
         return $stmt->execute();
     }
     public function update(string $campo, int $id_empresa)

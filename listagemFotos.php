@@ -1,3 +1,7 @@
+<?php
+require_once "verifica_usuario.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +16,7 @@
 
 <body>
     <header>
-        <?php require_once "_parts/_menuLogin.php"; ?>
+        <?php require_once "_parts/_menuAdmin.php"; ?>
     </header>
     <div class="content-wrapper">
         <main class="container">
@@ -81,8 +85,7 @@
             </div>
 
             <div class="mt-4 mb-5">
-                <a href="apaProdutos.php" class="btn btn-info-custom"><i class="bi bi-arrow-left"></i> Voltar para
-                    Produtos</a>
+                <a href="apaProdutos.php" class="btn btn-info-custom"><i class="bi bi-arrow-left"></i> Voltar para Produtos</a>
             </div>
     </div>
     </main>

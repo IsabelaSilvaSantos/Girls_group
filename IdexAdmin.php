@@ -1,5 +1,4 @@
 <?php
-    // Mantém a verificação de usuário
     require_once "verifica_usuario.php";
 ?>
 

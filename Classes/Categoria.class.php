@@ -1,7 +1,7 @@
 <?php
 class Categoria extends CRUD
 {
-    protected $table = "categoria";
+    protected $table = "categoria"; 
     private $id_categoria;
     private $nome_categoria;
 

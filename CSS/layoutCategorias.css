@@ -65,7 +65,6 @@ body {
     .dropdown-menu.show {
         display: block;
         visibility: visible;
-        position: static;
     }
 }
 
@@ -214,12 +213,13 @@ body {
         padding-top: 50px;
     }
 
-    .dropdown-menu {
+    .navbar-nav .dropdown-menu {
         position: static;
         width: 100%;
         border: none;
         border-radius: 0;
         background-color: transparent;
+        padding-left: 20px;
     }
 }
 

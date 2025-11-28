@@ -1,9 +1,15 @@
 <?php
+session_start(); 
+
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
 
 $Empresa = new Empresa();
+
+$id_do_usuario_logado = $_SESSION['id_usuario'];
+
+
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
     $Empresa->setNome(filter_input(INPUT_POST, "nome_empresa", FILTER_SANITIZE_STRING));
@@ -19,6 +25,9 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
     $id_empresa = filter_input(INPUT_POST, 'id_empresa');
 
     if (empty($id_empresa)):
+        
+        $Empresa->setid_usuario($id_do_usuario_logado);
+
         if ($Empresa->add()) {
             echo "<script>window.alert('Empresa inserido com sucesso!');window.location.href='apaEmpresa.php';</script>";
         } else {
