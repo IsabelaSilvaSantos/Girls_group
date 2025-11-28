@@ -54,27 +54,27 @@
           <img src="images/Bolo 1.png" class="card-img-top" alt="Bolo de Morango">
           <div class="card-body text-center">
             <h5 class="card-title">Bolo</h5>
-            <p class="card-text">Descrição...</p>
+            <p class="card-text">Bolo com cobertura de morango</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Alface">
+          <img src="images/dunuts.png" class="card-img-top" alt="Dunuts">
           <div class="card-body text-center">
-            <h5 class="card-title">Alface</h5>
-            <p class="card-text">Descrição...</p>
+            <h5 class="card-title">Dunuts</h5>
+            <p class="card-text">Dunuts de todos os sabores</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Pitaya">
+          <img src="images/macarons.png" class="card-img-top" alt="Pitaya">
           <div class="card-body text-center">
-            <h5 class="card-title">Pitaya</h5>
-            <p class="card-text">Descrição...</p>
+            <h5 class="card-title">Macarons</h5>
+            <p class="card-text">Macarons gourmet</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
@@ -88,30 +88,30 @@
 
         <!-- card 4 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Maçã">
+          <img src="images/bolo chocolate.png" class="card-img-top" alt="Bolo de chocolate branco">
           <div class="card-body text-center">
-            <h5 class="card-title">Maçã</h5>
-            <p class="card-text">Descrição...</p>
+            <h5 class="card-title">Bolo</h5>
+            <p class="card-text">Bolo de chocolate branco</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
 
         <!-- card 5 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Banana">
+          <img src="images/torta.png" class="card-img-top" alt="torta">
           <div class="card-body text-center">
-            <h5 class="card-title">Banana</h5>
-            <p class="card-text">Descrição...</p>
+            <h5 class="card-title">Torta</h5>
+            <p class="card-text">Torta Doce</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
 
         <!-- card 6 -->
         <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="Laranja">
+          <img src="images/salgado.png" class="card-img-top" alt="Salgado">
           <div class="card-body text-center">
-            <h5 class="card-title">Laranja</h5>
-            <p class="card-text">Descrição...</p>
+            <h5 class="card-title">Salgados</h5>
+            <p class="card-text">Veja nossas variedades de salgados...</p>
             <a href="#" class="btn btn-rosa">Informações</a>
           </div>
         </div>
@@ -188,9 +188,7 @@
       <div class="card-equipe">
         <img src="images/Amanda.jpeg" alt="Foto da integrante Amanda" class="foto-perfil">
         <h2 class="TextoManuscrito">Amanda</h2>
-        <p>
-         Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
-        </p>
+        <p>Amanda ficou responsável pela implementação da página de Usuário, da listagem de usuários e da página de Login. Seu trabalho garantiu uma navegação segura, funcional e intuitiva para os usuários.        </p>
       </div>
 
        <!--Emanuele -->
@@ -198,25 +196,21 @@
         <img src="images/Emanueli.jpeg" alt="Foto da integrante Emanuele" class="foto-perfil">
         <h2 class="TextoManuscrito">Emanuele</h2>
         <p>
-           Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
-        </p>
+Emanueli ficou responsável pela implementação da página de catálogo, da página referente a produtos, da listagem de produtos, do cadastro de produtos, bem como da folha de estilo (CSS) aplicada a essas interfaces. Seu trabalho contribuiu para uma navegação organizada, funcional e uma experiência mais agradável para os usuários.        </p>
       </div>
 
       <!-- Isabela -->
       <div class="card-equipe">
         <img src="Images/Isabela.jpeg" alt="Foto da integrante Isabela" class="foto-perfil">
         <h2 class="TextoManuscrito">Isabela</h2>
-        <p>
-          Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
-      </div>
+        <p>Isabela ficou responsável pela implementação das interfaces relacionadas à página de categorias, página de cadastro de categorias, página de listagem de categorias, página de cadastro de fotos de produtos, página de listagem de fotos de produtos, página de produtos por categoria e pela folha de estilo (CSS) aplicada a essas telas. Seu trabalho contribuiu para uma navegação mais organizada, intuitiva e eficiente dentro da aplicação.      </div>
 
       <!-- Kamilla-->
       <div class="card-equipe">
         <img src="images/Kamilla.jpg" alt="Foto da integrante Kamilla" class="foto-perfil">
        <h2 class="TextoManuscrito">Kamilla</h2>
         <p>
-           Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto, Texto
-        </p>
+Kamilla ficou responsável pela implementação da página inicial (index) e do protótipo no Canva, da página de cadastro de empresas, da página de listagem de empresas, bem como da folha de estilo (CSS) aplicada à página inicial e às páginas relacionadas às empresas. Seu trabalho proporcionou uma interface organizada, visual agradável e uma navegação mais eficiente para os usuários.        </p>
       </div>
 
     </div>
