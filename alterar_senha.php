@@ -6,6 +6,7 @@ require_once "verifica_usuario.php";
 <html lang="pt-BR">
 
 <head>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@ require_once "verifica_usuario.php";
 
         <h3 class="text-center">Alterar Senha</h3>
 
-        <form action="dbUsuario.php" method="post" class="row g3 mt-5">
+        <form action="dbUsuario.php" method="post" class="row g3 mt-5" onsubmit="return validarSenha()">
             
             <div class="row g-3 mb-4"> 
                 <div class="col-md-6">
@@ -44,6 +45,10 @@ require_once "verifica_usuario.php";
                     <input type="password" name="confirma" id="confirma" placeholder="Confirma senha"
                         class="form-control">
                 </div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <div id="msg-erro-senha" class="alert alert-danger d-none" role="alert"></div>
             </div>
 
             <div class="col-12 mt-4">

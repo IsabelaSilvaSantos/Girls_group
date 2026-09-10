@@ -112,7 +112,7 @@ main.container h3 {
     justify-content: center;
     color: white;
     font-size: 32px;
-    font-family: var(--font-primaria);
+    font-family: var(--cor-primaria);
     text-shadow: 2px 2px 6px var(--rosa-escuro-texto);
     border-radius: 10px;
     margin: 30px 0;
@@ -121,7 +121,7 @@ main.container h3 {
 .texto {
     flex: 1;
     padding: 20px;
-    font-family: var(--font-secundaria);
+    font-family: var(--cor-secundaria);
 }
 
 section:nth-child(even) .texto {
@@ -457,3 +457,5 @@ section {
     border: 1px solid var(--borda-botao-rosa) !important;
     color: var(--rosa-escuro-texto) !important;
 }
+
+html, body { min-width: 300px; overflow-x: hidden; }

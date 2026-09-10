@@ -1,15 +1,15 @@
 <?php
-require_once "verifica_usuario.php";
+require_once "verifica_admin.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--datable link css-->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/layoutApa.css">
@@ -28,6 +28,7 @@ require_once "verifica_usuario.php";
         <div class="mt-3 mb-4">
             <a href="gerEmpresa.php" class="btn btn-outline-primary">Nova Empresa</a>
         </div>
+        <div class="table-responsive">
         <table class="table dataTable">
     <thead class="table-secondary">
         <tr>
@@ -48,7 +49,7 @@ require_once "verifica_usuario.php";
                     ?>
                     <tr>
                         <td><?php echo $Empresa->id_empresa ?></td>
-                        <td><?php echo $Empresa->nome_empresa ?></td>
+                        <td><?php echo htmlspecialchars($Empresa->nome_empresa) ?></td>
 
                         <td class="d-flex gap-2 justify-content-center">
                             <form action="<?php echo htmlspecialchars("gerEmpresa.php") ?>" method="post">
@@ -71,21 +72,17 @@ require_once "verifica_usuario.php";
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
 
     </main>
 
     <footer>
         <?php require_once "_parts/_footer.php" ?>
     </footer>
-    <!-- Link JQuery deve ser primeiro-->
-    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js" type="text/javascript"></script>
-
-    <!-- Link dataTable JS-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
-    <!-- Link dataTable JS bootstrap5 -->
     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Link para o JS de configuração -->
     <script src="JS/paginacao.js"></script>
     
 </body>

@@ -4,16 +4,17 @@ spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
 
-$foto = new FotoProduto();
+$foto    = new FotoProduto();
 $imgFile = new Imagem(prefixo: "prod_");
 $nomeArquivo = '';
 
 if (filter_has_var(INPUT_POST, "btnGravar")):
     $foto->iniciarTransacao();
     try {
-        $idFoto = filter_input(INPUT_POST, 'idFoto', FILTER_VALIDATE_INT);
+        $idFoto    = filter_input(INPUT_POST, 'idFoto',    FILTER_VALIDATE_INT);
         $idProduto = filter_input(INPUT_POST, 'idProduto', FILTER_VALIDATE_INT);
-        $fotoAntiga = filter_input(INPUT_POST, 'fotoAntiga');
+        $fotoAntiga = filter_input(INPUT_POST, 'fotoAntiga', FILTER_DEFAULT);
+
         $foto->setIdProduto($idProduto);
         $foto->setNomeArquivo($fotoAntiga);
 
@@ -26,58 +27,51 @@ if (filter_has_var(INPUT_POST, "btnGravar")):
             }
         }
 
-        $foto->setLegenda(filter_input(INPUT_POST, 'legenda'));
-        $foto->setTextoAlternativo(filter_input(INPUT_POST, 'textoAlt'));
+        $foto->setLegenda(filter_input(INPUT_POST, 'legenda', FILTER_DEFAULT));
+        $foto->setTextoAlternativo(filter_input(INPUT_POST, 'textoAlt', FILTER_DEFAULT));
 
         if (empty($idFoto)):
-            if ($foto->add()) {
-                $mensagem = 'Foto adicionada com sucesso!';
-            } else {
-                $mensagem = 'Erro ao adicionar foto.';
-            }
+            $sucesso = $foto->add();
+            $mensagem = $sucesso ? 'Foto adicionada com sucesso!' : 'Erro ao adicionar foto.';
         else:
-            if ($foto->update('id_foto', $idFoto)) {
-                $mensagem = 'Foto atualizada com sucesso.';
-            }
+            $sucesso = $foto->update('id_foto', $idFoto);
+            $mensagem = $sucesso ? 'Foto atualizada com sucesso.' : 'Erro ao atualizar foto.';
         endif;
 
-        echo "<script>window.alert('$mensagem'); window.location.href='listagemFotos.php?idProduto=$idProduto';</script>";
+        $mensagemSafe = addslashes($mensagem);
+        echo "<script>window.alert('{$mensagemSafe}'); window.location.href='listagemFotos.php?idProduto={$idProduto}';</script>";
         $foto->confirmarTransacao();
 
     } catch (\Throwable $th) {
-
         if (!empty($nomeArquivo)) {
             $imgFile->deletar($nomeArquivo);
         }
         $foto->cancelarTransacao();
-        $erro = $th->getMessage();
-        echo "<script>
-                  window.alert('Erro: $erro.'); 
-                  window.open(document.referrer, '_self');
-              </script>";
+        $erro = addslashes($th->getMessage());
+        echo "<script>window.alert('Erro: {$erro}'); window.open(document.referrer, '_self');</script>";
     }
-
 
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     try {
-
         $foto->iniciarTransacao();
         $idFoto = intval(filter_input(INPUT_POST, 'idFoto'));
-        $ftDel = $foto->search('id_foto', $idFoto);
-        $imgFile->deletar($ftDel->nome_arquivo);
+        $ftDel  = $foto->search('id_foto', $idFoto);
+
+        if ($ftDel) {
+            $imgFile->deletar($ftDel->nome_arquivo);
+        }
 
         if ($foto->delete('id_foto', $idFoto)) {
-            header("location:listagemFotos.php?idProduto=$ftDel->id_produto");
+            $foto->confirmarTransacao();
+            header("location:listagemFotos.php?idProduto=" . intval($ftDel->id_produto ?? 0));
+            exit;
         }
         $foto->confirmarTransacao();
 
     } catch (\Throwable $th) {
         $foto->cancelarTransacao();
-        $erro = $th->getMessage();
-        echo "<script>
-                window.alert('Erro: " . addslashes($erro) . "');
-                window.open(document.referrer,'_self');
-              </script>";
+        $erro = addslashes($th->getMessage());
+        echo "<script>window.alert('Erro: {$erro}'); window.open(document.referrer,'_self');</script>";
     }
 
 endif;

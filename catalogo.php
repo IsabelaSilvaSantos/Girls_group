@@ -17,6 +17,7 @@ if (!is_array($produtos)) {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>

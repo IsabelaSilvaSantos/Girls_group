@@ -26,6 +26,7 @@ endif;
 <html lang="pt-BR">
 
 <head>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +60,7 @@ endif;
                         <option value="">Selecione a Categoria</option>
 
                         <?php if (empty($categorias)): ?>
-                            <option value="" disabled style="color: red;">ATENÇÃO: A tabela 'categoria' está vazia!</option>
+                            <option value="" disabled class="text-danger">ATENÇÃO: A tabela 'categoria' está vazia!</option>
                         <?php else: ?>
 
                             <?php

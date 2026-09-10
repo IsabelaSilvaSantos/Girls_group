@@ -1,44 +1,52 @@
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #de9ca4;">
+<?php
+spl_autoload_register(function ($class) {
+  require_once __DIR__ . "/../Classes/{$class}.class.php";
+});
+$_catObj = new Categoria();
+$_cats = $_catObj->all();
+?>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #de9ca4; z-index: 1030;">
   <div class="container-fluid">
 
     <a class="navbar-brand" href="index.php">
       <img src="images/Logo.png" alt="Logo da empresa" style="width: 100px; height: auto;" />
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Alternar navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav gap-4">
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav gap-4 me-auto">
+
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#sobre-nos" class="nav-link">Sobre</a>
+          <a class="nav-link text-white fw-semibold" href="index.php">Início</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#produtos" class="nav-link">Produtos</a>
+          <a class="nav-link text-white fw-semibold" href="index.php#sobre-nos">Sobre</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="#empresa" class="nav-link">Estrutura</a>
+          <a class="nav-link text-white fw-semibold" href="index.php#produtos">Produtos</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="gerLogin.php" class="nav-link">Entrar</a>
+          <a class="nav-link text-white fw-semibold" href="index.php#empresa">Estrutura</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="catalogo.php" class="nav-link">Catalogo</a>
+          <a class="nav-link text-white fw-semibold" href="categorias.php">Categorias</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Categorias
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="categorias.php?id=1">Bolos</a></li>
-            <li><a class="dropdown-item" href="categorias.php?id=2">Tortas</a></li>
-            <li><a class="dropdown-item" href="categorias.php?id=3">Doces</a></li>
-            <li><a class="dropdown-item" href="categorias.php?id=4">Salgados</a></li>
-          </ul>
+
+        <li class="nav-item">
+          <a class="nav-link text-white fw-semibold" href="gerLogin.php">Entrar</a>
         </li>
+
       </ul>
     </div>
+  </div>
 </nav>
+
+<div class="navbar-backdrop"></div>

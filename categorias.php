@@ -1,8 +1,4 @@
 <?php
-require_once "verifica_usuario.php";
-?>
-
-<?php
 
 function formatar_descricao_md($text)
 {
@@ -10,29 +6,26 @@ function formatar_descricao_md($text)
         return '';
     }
 
-    $safe_text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
-    $lines = explode("\n", $safe_text);
+    $safe_text  = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+    $lines      = explode("\n", $safe_text);
     $html_output = [];
-    $in_list = false;
+    $in_list    = false;
 
     foreach ($lines as $line) {
         $trimmed_line = trim($line);
 
         if (preg_match('/^[\*\-] (.+)/', $trimmed_line, $matches)) {
             $item_content = trim($matches[1]);
-
             if (!$in_list) {
                 $html_output[] = '<ul>';
                 $in_list = true;
             }
             $html_output[] = '<li>' . $item_content . '</li>';
         } else {
-
             if ($in_list) {
                 $html_output[] = '</ul>';
                 $in_list = false;
             }
-
             if (!empty($trimmed_line)) {
                 $html_output[] = '<p>' . nl2br($trimmed_line) . '</p>';
             }
@@ -46,9 +39,8 @@ function formatar_descricao_md($text)
     return implode("\n", $html_output);
 }
 
-
 spl_autoload_register(function ($class) {
-    require_once "classes/{$class}.class.php";
+    require_once "Classes/{$class}.class.php";
 });
 
 $id_categoria = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
@@ -61,8 +53,8 @@ try {
     $fp = null;
 }
 
-$categoria = null;
-$produtos = [];
+$categoria    = null;
+$produtos     = [];
 $tituloPagina = "Produtos";
 $mensagemErro = '';
 
@@ -71,7 +63,7 @@ if ($id_categoria) {
 
     if ($categoria) {
         $tituloPagina = $categoria->nome_categoria;
-        $produtos = $p->getByCategoriaId($id_categoria);
+        $produtos     = $p->getByCategoriaId($id_categoria);
 
         if (empty($produtos)) {
             $mensagemErro = 'Nenhum produto cadastrado nesta categoria.';
@@ -82,20 +74,18 @@ if ($id_categoria) {
 } else {
     $mensagemErro = 'ID de categoria inválido ou não fornecido.';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/layoutCategorias.css" />
-
-    <title><?php echo htmlspecialchars($tituloPagina); ?> | Sua Loja</title>
+    <title><?php echo htmlspecialchars($tituloPagina); ?> | Girls Group</title>
 </head>
 
 <body>
@@ -130,7 +120,6 @@ if ($id_categoria) {
                         if (isset($Produto->id_produto) && $fp) {
                             try {
                                 $primeiraFoto = $fp->getFirstPhotoPathByProductId($Produto->id_produto);
-
                                 if ($primeiraFoto) {
                                     $imagePath = 'images/' . $primeiraFoto;
                                 }
@@ -138,10 +127,10 @@ if ($id_categoria) {
                                 error_log("Erro ao buscar primeira foto: " . $e->getMessage());
                             }
                         }
-                        $precoFormatado = 'R$ ' . number_format($Produto->preco ?? 0, 2, ',', '.');
+                        $precoFormatado   = 'R$ ' . number_format($Produto->preco ?? 0, 2, ',', '.');
                         $html_description = formatar_descricao_md($Produto->descricao ?? 'Descrição não disponível.');
                         $descricao_encoded = htmlspecialchars(json_encode($html_description), ENT_QUOTES, 'UTF-8');
-                        $nome_produto = htmlspecialchars($Produto->nome_produto);
+                        $nome_produto     = htmlspecialchars($Produto->nome_produto);
                         ?>
 
                         <div class="col product-col">
@@ -154,9 +143,11 @@ if ($id_categoria) {
                                     <p class="price">R$ <?php echo number_format($Produto->preco ?? 0, 2, ',', '.'); ?></p>
 
                                     <button class="btn btn-info-custom w-100 btn-view-details" data-bs-toggle="modal"
-                                        data-bs-target="#productDetailModal" data-name="<?php echo $nome_produto; ?>"
+                                        data-bs-target="#productDetailModal"
+                                        data-name="<?php echo $nome_produto; ?>"
                                         data-description='<?php echo $descricao_encoded; ?>'
-                                        data-price="<?php echo $precoFormatado; ?>" type="button">Ver Detalhes</button>
+                                        data-price="<?php echo $precoFormatado; ?>"
+                                        type="button">Ver Detalhes</button>
                                 </div>
                             </div>
                         </div>
@@ -195,9 +186,9 @@ if ($id_categoria) {
     <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="JS/categorias.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/Categorias.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,21 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 spl_autoload_register(function ($class) {
     require_once "Classes/{$class}.class.php";
 });
 
 $Produto = new Produto();
+
 if (filter_has_var(INPUT_POST, 'btnGravar')):
 
-    $Produto->setNome(filter_input(INPUT_POST, "nome_produto", FILTER_SANITIZE_STRING));
-    $Produto->setDesc(filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_STRING));
-    $Produto->setPreco(filter_input(INPUT_POST, "preco", FILTER_SANITIZE_STRING));
-    $Produto->setUnidMed(filter_input(INPUT_POST, "unidade_medida", FILTER_SANITIZE_STRING));
-    $id_produto = filter_input(INPUT_POST, 'id_produto', FILTER_VALIDATE_INT);
+    $Produto->setNome(filter_input(INPUT_POST, "nome_produto", FILTER_DEFAULT));
+    $Produto->setDesc(filter_input(INPUT_POST, "descricao", FILTER_DEFAULT));
+    $Produto->setPreco(filter_input(INPUT_POST, "preco", FILTER_DEFAULT));
+    $Produto->setUnidMed(filter_input(INPUT_POST, "unidade_medida", FILTER_DEFAULT));
+    $id_produto   = filter_input(INPUT_POST, 'id_produto', FILTER_VALIDATE_INT);
     $id_categoria = filter_input(INPUT_POST, 'id_categoria', FILTER_VALIDATE_INT);
     $Produto->setId_categoria($id_categoria);
 
@@ -24,9 +29,9 @@ if (filter_has_var(INPUT_POST, 'btnGravar')):
 
     else:
         if ($Produto->update('id_produto', $id_produto)) {
-            echo "<script> window.alert('Produto alterado com sucesso.');window.location.href='apaProdutos.php'; </script>";
+            echo "<script>window.alert('Produto alterado com sucesso.');window.location.href='apaProdutos.php';</script>";
         } else {
-            echo "<script> window.alert('Erro ao alterar o produto.');window.open(document.referrer, '_self'); </script>";
+            echo "<script>window.alert('Erro ao alterar o produto.');window.open(document.referrer,'_self');</script>";
         }
 
     endif;
@@ -36,6 +41,7 @@ elseif (filter_has_var(INPUT_POST, "btnDeletar")):
     if ($Produto->delete("id_produto", $id_produto)) {
         header("location:apaProdutos.php");
     } else {
-        echo "<script>window.alert('Erro ao Excluir');window(document.referrer,'_self');</script>";
+        echo "<script>window.alert('Erro ao Excluir');window.open(document.referrer,'_self');</script>";
     }
 endif;
+?>

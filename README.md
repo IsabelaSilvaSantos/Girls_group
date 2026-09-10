@@ -63,7 +63,7 @@ verifica_usuario.php
 ---
 
 ## 🗄️ Banco de Dados
-Nome do banco: **gilrs_group**
+Nome do banco: **girls_group**
 
 Tabelas principais:
 - Usuario

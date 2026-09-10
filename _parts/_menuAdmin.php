@@ -13,13 +13,11 @@
                     <i class="bi bi-person-circle fs-4"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom" aria-labelledby="navbarDropdownUserIcon">
-                    <li><a class="dropdown-item" href="alterar_email.php"><i class="bi bi-envelope-fill me-2"></i>Alterar
-                            E-mail</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="alterar_senha.php"><i class="bi bi-key-fill me-2"></i>Alterar Senha</a>
-                    </li>
+                    <li><a class="dropdown-item" href="alterar_email.php"><i class="bi bi-envelope-fill me-2"></i>Alterar E-mail</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="alterar_senha.php"><i class="bi bi-key-fill me-2"></i>Alterar Senha</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
                 </ul>
             </div>
 
@@ -28,14 +26,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav gap-4 me-auto align-items-lg-center">
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaCategoria.php">Categorias</a></li>
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaEmpresa.php">Empresa</a></li>
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaProdutos.php">Produto</a></li>
                 <li class="nav-item"><a class="nav-link text-white fw-semibold" href="apaUsuario.php">Usuário</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.php">Página Inicial</a></li>
-                
+
                 <li class="nav-item dropdown ms-auto d-none d-lg-block">
                     <a class="nav-link dropdown-toggle text-white fw-semibold icon-no-focus me-4" href="#"
                         id="navbarDropdownUserIconDesktop" role="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -44,12 +42,11 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom"
                         aria-labelledby="navbarDropdownUserIconDesktop">
-                        <li><a class="dropdown-item" href="alterar_email.php"><i class="bi bi-envelope-fill me-2"></i>Alterar E-mail</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <li><a class="dropdown-item" href="alterar_email.php"><i class="bi bi-envelope-fill me-2"></i>Alterar E-mail</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="alterar_senha.php"><i class="bi bi-key-fill me-2"></i>Alterar Senha</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
                     </ul>
                 </li>
             </ul>

@@ -62,37 +62,65 @@ class Produto extends CRUD
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome_produto, descricao, preco, unidade_medida, id_categoria) VALUES (:nome_produto, :descricao, :preco, :unidade_medida, :id_categoria)";
+        $sql = "INSERT INTO $this->table (nome_produto, descricao, preco, unidade_medida, id_categoria)
+                VALUES (:nome_produto, :descricao, :preco, :unidade_medida, :id_categoria)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome_produto", $this->nome_produto, PDO::PARAM_STR);
-        $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
-        $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_produto",   $this->nome_produto,   PDO::PARAM_STR);
+        $stmt->bindParam(":descricao",      $this->descricao,      PDO::PARAM_STR);
+        $stmt->bindParam(":preco",          $this->preco,          PDO::PARAM_STR);
         $stmt->bindParam(":unidade_medida", $this->unidade_medida, PDO::PARAM_STR);
-        $stmt->bindParam(":id_categoria", $this->id_categoria, PDO::PARAM_INT);
+        $stmt->bindParam(":id_categoria",   $this->id_categoria,   PDO::PARAM_INT);
         return $stmt->execute();
+    }
+
+    public function getVitrine(int $limite = 6)
+    {
+        $sql = "SELECT p.id_produto, p.nome_produto, p.descricao, p.preco, p.unidade_medida, p.id_categoria,
+                    (SELECT fp.nome_arquivo FROM foto_produto fp
+                     WHERE fp.id_produto = p.id_produto
+                     ORDER BY fp.id_foto ASC LIMIT 1) AS nome_imagem_principal
+                FROM {$this->table} p
+                ORDER BY p.id_produto ASC
+                LIMIT :limite";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':limite', $limite, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function getByCategoriaId(int $id_categoria)
     {
-        $sql = "SELECT p.id_produto, p.nome_produto, p.descricao, p.preco, 
-            (SELECT nome_arquivo FROM foto_produto fp WHERE fp.id_produto = p.id_produto ORDER BY fp.id_foto ASC LIMIT 1) as nome_imagem_principal
-            FROM {$this->table} p WHERE p.id_categoria = :id_categoria ORDER BY p.nome_produto ASC";
+        $sql = "SELECT p.id_produto, p.nome_produto, p.descricao, p.preco, p.unidade_medida,
+                    (SELECT nome_arquivo FROM foto_produto fp
+                     WHERE fp.id_produto = p.id_produto
+                     ORDER BY fp.id_foto ASC LIMIT 1) as nome_imagem_principal
+                FROM {$this->table} p
+                WHERE p.id_categoria = :id_categoria
+                ORDER BY p.nome_produto ASC";
 
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":id_categoria", $id_categoria, PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_OBJ); 
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function update(string $campo, int $id_produto)
     {
-        $sql = "UPDATE $this->table SET nome_produto = :nome_produto, descricao = :descricao, preco = :preco, unidade_medida = :unidade_medida WHERE $campo = :id_produto";
+        $sql = "UPDATE $this->table
+                SET nome_produto    = :nome_produto,
+                    descricao       = :descricao,
+                    preco           = :preco,
+                    unidade_medida  = :unidade_medida,
+                    id_categoria    = :id_categoria
+                WHERE $campo = :id_produto";
+
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome_produto", $this->nome_produto, PDO::PARAM_STR);
-        $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
-        $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
+        $stmt->bindParam(":nome_produto",   $this->nome_produto,   PDO::PARAM_STR);
+        $stmt->bindParam(":descricao",      $this->descricao,      PDO::PARAM_STR);
+        $stmt->bindParam(":preco",          $this->preco,          PDO::PARAM_STR);
         $stmt->bindParam(":unidade_medida", $this->unidade_medida, PDO::PARAM_STR);
-        $stmt->bindParam(":id_produto", $id_produto, PDO::PARAM_INT);
+        $stmt->bindParam(":id_categoria",   $this->id_categoria,   PDO::PARAM_INT);
+        $stmt->bindParam(":id_produto",     $id_produto,           PDO::PARAM_INT);
         return $stmt->execute();
     }
 }
