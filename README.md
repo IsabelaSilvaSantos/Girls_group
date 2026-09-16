@@ -75,8 +75,8 @@ Tabelas principais:
 
 ## 🚀 Como Executar o Projeto
 1. Clone este repositório  
-2. Importe o arquivo SQL no MySQL  
-3. Configure `config.ini`  
+2. Importe o arquivo SQL localizado em `/database/gilrs_group.sql` no MySQL
+3. Copiar o arquivo `config.example.ini` como `config.ini` e configurar suas credenciais  
 4. Acesse no navegador: `http://localhost/Girls_Group/`
 
 ---
